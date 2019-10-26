@@ -1,7 +1,8 @@
 import React from "react"
 import {Helmet} from "react-helmet";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../styled/GlobalStyles";
+import theme from "../../styled/theme";
 
 import SFBlack from '../../../static/fonts/sf-ui-display-black.woff';
 import SFBold from '../../../static/fonts/sf-ui-display-bold.woff';
@@ -27,17 +28,20 @@ const fonts = [
 const LayoutContainer = styled.div``;
 
 export default ({ children }) => (
-    <LayoutContainer>
-        <Helmet>
-            {fonts.map(font => <link rel="preload"
-                  as="font"
-                  key={font}
-                  href={font}
-                  type="font/woff"
-                  crossOrigin="anonymous" />
-            )}
-        </Helmet>
-        <GlobalStyle/>
-        {children}
-    </LayoutContainer>
+    <ThemeProvider theme={theme}>
+        <LayoutContainer>
+            <Helmet>
+                {fonts.map(font =>
+                    <link rel="preload"
+                          as="font"
+                          key={font}
+                          href={font}
+                          type="font/woff"
+                          crossOrigin="anonymous" />
+                )}
+            </Helmet>
+            <GlobalStyle/>
+            {children}
+        </LayoutContainer>
+    </ThemeProvider>
 )

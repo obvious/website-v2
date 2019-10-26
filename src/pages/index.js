@@ -8,6 +8,7 @@ const IndexPage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: ${props => props.theme.fontSizes[4]}px;
 `;
 
 export default () => (
