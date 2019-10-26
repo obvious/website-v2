@@ -722,6 +722,14 @@
     "@babel/plugin-transform-react-jsx-self" "^7.0.0"
     "@babel/plugin-transform-react-jsx-source" "^7.0.0"
 
+"@babel/runtime-corejs2@^7.4.2":
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.6.3.tgz#de3f446b3fb688b98cbd220474d1a7cad909bcb8"
+  integrity sha512-nuA2o+rgX2+PrNTZ063ehncVcg7sn+tU71BB81SaWRVUbGwCOlb0+yQA1e0QqmzOfRSYOxfvf8cosYqFbJEiwQ==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.3":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
@@ -4451,6 +4459,14 @@ gatsby-react-router-scroll@^2.1.14:
     scroll-behavior "^0.9.10"
     warning "^3.0.0"
 
+gatsby-source-storyblok@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/gatsby-source-storyblok/-/gatsby-source-storyblok-0.2.6.tgz#1babac7cd11d3a4df2c999501d2096f5148df998"
+  integrity sha512-4Y3jwaORIuUlHRsEAMsuDfvOA3nV/4RpmB69/BI6i1YgYk9xaD/SnCszQeojQMvHEbiUqjd/xS5ze9T9w+A93w==
+  dependencies:
+    json-stringify-safe "^5.0.1"
+    storyblok-js-client "^1.0.22"
+
 gatsby-telemetry@^1.1.33:
   version "1.1.33"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.1.33.tgz#2c0956c95e7d341e2740d8c4f3a3ffd6bc636c4e"
@@ -8031,6 +8047,11 @@ qs@6.7.0:
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
   integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
 
+qs@^6.5.2:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.0.tgz#d1297e2a049c53119cb49cca366adbbacc80b409"
+  integrity sha512-27RP4UotQORTpmNQDX8BHPukOnBP3p1uUJY5UnDhaJB+rMt9iMsok724XL+UHU23bEFOHRMQ2ZhI99qOWUMGFA==
+
 query-string@^4.1.0:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
@@ -9173,6 +9194,15 @@ static-extend@^0.1.1:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+
+storyblok-js-client@^1.0.22:
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-1.0.34.tgz#bc6076f052c5e820d8779a7e0fe1b3f22e18993e"
+  integrity sha512-8Jj9G7lcLT3wiTxs7UCctWAmazLdXS7qqjNe0QZ0qF2c9fnDbcBlF7MOgvkI48/8tVs8PvEITWfUVFKUH3K6JA==
+  dependencies:
+    "@babel/runtime-corejs2" "^7.4.2"
+    axios "^0.19.0"
+    qs "^6.5.2"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
