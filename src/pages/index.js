@@ -1,6 +1,7 @@
 import React from "react"
 import DefaultLayout from "../components/layouts/DefaultLayout";
 import styled from "styled-components";
+import { graphql } from 'gatsby'
 
 const IndexPageContainer = styled.div`
   width: 100vw;
