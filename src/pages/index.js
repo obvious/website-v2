@@ -1,4 +1,5 @@
 import React from "react"
+import DefaultLayout from "../components/layouts/DefaultLayout";
 import styled from "styled-components";
 
 const IndexPage = styled.div`
@@ -9,4 +10,10 @@ const IndexPage = styled.div`
   justify-content: center;
 `;
 
-export default () => <IndexPage>Hello world!</IndexPage>
+export default () => (
+    <DefaultLayout>
+        <IndexPage>
+            Hello world!
+        </IndexPage>
+    </DefaultLayout>
+)
