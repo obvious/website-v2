@@ -1,11 +1,13 @@
 import { createGlobalStyle } from 'styled-components'
+import fonts from "../util/font";
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'SF UI Display Light';
         font-style: normal;
         font-weight: normal;
-        src: local('SF UI Display Light'), url('fonts/sf-ui-display-light.woff') format('woff');
+        src: local('SF UI Display Light'), url(${fonts.SFLight}) format('woff');
+        font-display: block;
     }
     
     
@@ -13,7 +15,8 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'SF UI Display Medium';
         font-style: normal;
         font-weight: normal;
-        src: local('SF UI Display Medium'), url('fonts/sf-ui-display-medium.woff') format('woff');
+        src: local('SF UI Display Medium'), url(${fonts.SFMedium}) format('woff');
+        font-display: block;
     }
     
     
@@ -21,7 +24,8 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'SF UI Display Semibold';
         font-style: normal;
         font-weight: normal;
-        src: local('SF UI Display Semibold'), url('fonts/sf-ui-display-semibold.woff') format('woff');
+        src: local('SF UI Display Semibold'), url(${fonts.SFSemibold}) format('woff');
+        font-display: block;
     }
     
     
@@ -29,7 +33,8 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'SF UI Display Bold';
         font-style: normal;
         font-weight: normal;
-        src: local('SF UI Display Bold'), url('fonts/sf-ui-display-bold.woff') format('woff');
+        src: local('SF UI Display Bold'), url(${fonts.SFBold}) format('woff');
+        font-display: block;
     }
     
     
@@ -37,7 +42,8 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'SF UI Display Heavy';
         font-style: normal;
         font-weight: normal;
-        src: local('SF UI Display Heavy'), url('fonts/sf-ui-display-heavy.woff') format('woff');
+        src: local('SF UI Display Heavy'), url(${fonts.SFHeavy}) format('woff');
+        font-display: block;
     }
     
     
@@ -45,7 +51,24 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'SF UI Display Black';
         font-style: normal;
         font-weight: normal;
-        src: local('SF UI Display Black'), url('fonts/sf-ui-display-black.woff') format('woff');
+        src: local('SF UI Display Black'), url(${fonts.SFBlack}) format('woff');
+        font-display: block;
+    }
+    
+     @font-face {
+        font-family: 'SF UI Display Thin';
+        font-style: normal;
+        font-weight: normal;
+        src: local('SF UI Display Thin'), url(${fonts.SFThin}) format('woff');
+        font-display: block;
+    }
+    
+     @font-face {
+        font-family: 'SF UI Display Ultralight';
+        font-style: normal;
+        font-weight: normal;
+        src: local('SF UI Display Ultralight'), url(${fonts.SFUltralight}) format('woff');
+        font-display: block;
     }
     body {
         margin: 0;
