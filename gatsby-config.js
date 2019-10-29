@@ -15,6 +15,7 @@ module.exports = {
                 homeSlug: 'home',
                 version: 'published'
             }
-        }
+        },
+        `gatsby-plugin-offline`
     ],
 };
