@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: local('SF UI Display Light'), url('fonts/sf-ui-display-light.woff') format('woff');
+        font-display: swap;
     }
     
     
@@ -14,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: local('SF UI Display Medium'), url('fonts/sf-ui-display-medium.woff') format('woff');
+        font-display: swap;
     }
     
     
@@ -22,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: local('SF UI Display Semibold'), url('fonts/sf-ui-display-semibold.woff') format('woff');
+        font-display: swap;
     }
     
     
@@ -30,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: local('SF UI Display Bold'), url('fonts/sf-ui-display-bold.woff') format('woff');
+        font-display: swap;
     }
     
     
@@ -38,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: local('SF UI Display Heavy'), url('fonts/sf-ui-display-heavy.woff') format('woff');
+        font-display: swap;
     }
     
     
@@ -46,6 +51,7 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: normal;
         src: local('SF UI Display Black'), url('fonts/sf-ui-display-black.woff') format('woff');
+        font-display: swap;
     }
     body {
         margin: 0;

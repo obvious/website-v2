@@ -4,25 +4,15 @@ import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../styled/GlobalStyles";
 import theme from "../../styled/theme";
 
-import SFBlack from '../../../static/fonts/sf-ui-display-black.woff';
-import SFBold from '../../../static/fonts/sf-ui-display-bold.woff';
-import SFHeavy from '../../../static/fonts/sf-ui-display-heavy.woff';
-import SFLight from '../../../static/fonts/sf-ui-display-light.woff';
-import SFMedium from '../../../static/fonts/sf-ui-display-medium.woff';
-import SFSemibold from '../../../static/fonts/sf-ui-display-semibold.woff';
-import SFThin from '../../../static/fonts/sf-ui-display-thin.woff';
-import SFUltralight from '../../../static/fonts/sf-ui-display-ultralight.woff';
-
 const fonts = [
-    SFBlack,
-    SFBold,
-    SFHeavy,
-    SFLight,
-    SFMedium,
-    SFBold,
-    SFSemibold,
-    SFThin,
-    SFUltralight
+    'fonts/sf-ui-display-black.woff',
+    'fonts/sf-ui-display-bold.woff',
+    'fonts/sf-ui-display-heavy.woff',
+    'fonts/sf-ui-display-light.woff',
+    'fonts/sf-ui-display-medium.woff',
+    'fonts/sf-ui-display-semibold.woff',
+    'fonts/sf-ui-display-thin.woff',
+    'fonts/sf-ui-display-ultralight.woff'
 ];
 
 const LayoutContainer = styled.div``;
