@@ -1,5 +1,4 @@
 import React from "react"
-import DefaultLayout from "../components/layouts/DefaultLayout";
 import styled from "styled-components";
 import { graphql } from 'gatsby'
 
@@ -13,12 +12,10 @@ const IndexPageContainer = styled.div`
 `;
 
 const IndexPage = ({data}) => (
-    <DefaultLayout>
-        <IndexPageContainer>
-            Hello world!
-            <p>{JSON.stringify(data)}</p>
-        </IndexPageContainer>
-    </DefaultLayout>
+    <IndexPageContainer>
+        Hello world!
+        <p>{JSON.stringify(data)}</p>
+    </IndexPageContainer>
 );
 
 export const query = graphql`
