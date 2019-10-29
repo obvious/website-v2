@@ -1,0 +1,80 @@
+
+@font-face {
+    font-family: 'SF UI Display Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Light'), url('../../static/fonts/sf-ui-display-light.woff') format('woff');
+    font-display: block;
+}
+
+
+@font-face {
+    font-family: 'SF UI Display Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Medium'), url('../../static/fonts/sf-ui-display-medium.woff') format('woff');
+    font-display: block;
+}
+
+
+@font-face {
+    font-family: 'SF UI Display Semibold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Semibold'), url('../../static/fonts/sf-ui-display-semibold.woff') format('woff');
+    font-display: block;
+}
+
+
+@font-face {
+    font-family: 'SF UI Display Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Bold'), url('../../static/fonts/sf-ui-display-bold.woff') format('woff');
+    font-display: block;
+}
+
+
+@font-face {
+    font-family: 'SF UI Display Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Heavy'), url('../../static/fonts/sf-ui-display-heavy.woff') format('woff');
+    font-display: block;
+}
+
+
+@font-face {
+    font-family: 'SF UI Display Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Black'), url('../../static/fonts/sf-ui-display-black.woff') format('woff');
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'SF UI Display Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Thin'), url('../../static/fonts/sf-ui-display-thin.woff') format('woff');
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'SF UI Display Ultralight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Ultralight'), url('../../static/fonts/sf-ui-display-ultralight.woff') format('woff');
+    font-display: block;
+}
+body {
+    margin: 0;
+    /*font-family: 'SF UI Display Ultralight';*/
+    /*font-family: 'SF UI Display Thin';*/
+    /*font-family: 'SF UI Display Light';*/
+    /*font-family: 'SF UI Display Medium';*/
+    /*font-family: 'SF UI Display Semibold';*/
+    /*font-family: 'SF UI Display Bold';*/
+    /*font-family: 'SF UI Display Heavy';*/
+    font-family: 'SF UI Display Black';
+}
