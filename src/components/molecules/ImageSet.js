@@ -12,6 +12,7 @@ const ImageSetContainer = styled.ul`
   
   .featured-image {
     grid-area: a;
+    overflow: hidden;
   }
   .text {
     grid-area: b;

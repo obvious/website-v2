@@ -44,7 +44,7 @@ const Video = (props) => {
             </div>
             <div className="content-overlay">
                 <BodyText3 className="heading" richText={props.overlayHeading}></BodyText3>
-                <Button>Watch</Button>
+                <Button>{props.overlayButtonText || 'Watch'}</Button>
             </div>
         </VideoContainer>
     )
