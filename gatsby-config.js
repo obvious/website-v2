@@ -11,9 +11,10 @@ module.exports = {
         {
             resolve: 'gatsby-source-storyblok',
             options: {
-                accessToken: 'JphGt7wK2Cs7YpdOGcEUNwtt',
+                accessToken: 'StXtcN8NRmv5zl3qzv6QzAtt',
                 homeSlug: 'home',
-                version: 'published'
+                version: 'published',
+                includeLinks: true
             }
         },
         `gatsby-plugin-offline`
