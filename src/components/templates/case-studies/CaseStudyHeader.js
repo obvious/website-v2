@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
 
-import {BodyText2} from "../atoms/BodyText";
-import {HeaderText1} from "../atoms/HeaderText";
-import LinkGroup from "../molecules/LinkGroup";
+import {BodyText2} from "../../atoms/BodyText";
+import {HeaderText1} from "../../atoms/HeaderText";
+import LinkGroup from "../../molecules/LinkGroup";
 
 const CaseStudyHeaderContainer = styled.section`
   max-width: 60%;
