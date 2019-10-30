@@ -1,5 +1,7 @@
 const path = require('path');
 
+const utils = require('./utils');
+
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -59,11 +61,13 @@ exports.createPages = ({ graphql, actions }) => {
                             break;
                     }
 
+                    let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
+                    console.log(data);
                     createPage({
                         path: `/${pagePath}`,
                         component: component,
                         context: {
-                            data: JSON.parse(entry.node.content)
+                            data: data
                         }
                     })
                 })

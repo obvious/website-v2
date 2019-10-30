@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+var credentials = require("./credentials");
+
 module.exports = {
     plugins: [
         `gatsby-plugin-styled-components`,
@@ -11,7 +13,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-storyblok',
             options: {
-                accessToken: 'StXtcN8NRmv5zl3qzv6QzAtt',
+                accessToken: credentials.storyblokPublicKey,
                 homeSlug: 'home',
                 version: 'published',
                 includeLinks: true
