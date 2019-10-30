@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
 
-import {BodyText2} from "../atoms/BodyText";
 import {HeaderText3} from "../atoms/HeaderText";
 
 const NavContainer = styled.nav`
