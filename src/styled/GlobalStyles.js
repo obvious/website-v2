@@ -51,6 +51,11 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
+body {
+max-width: ${props => props.theme.containerSizes.default};
+margin: auto;
+padding-top: ${props => props.theme.navHeight};
+}
 `
 
 export default GlobalStyle;
