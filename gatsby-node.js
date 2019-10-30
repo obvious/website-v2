@@ -62,7 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
                     }
 
                     let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
-                    console.log(data);
+
                     createPage({
                         path: `/${pagePath}`,
                         component: component,
