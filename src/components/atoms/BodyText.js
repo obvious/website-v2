@@ -8,32 +8,71 @@ let Storyblok = new StoryblokClient({
     accessToken: credentials.storyblokPublicKey
 });
 
-const BodyText1Container = styled.p`
+const BodyText1Container = styled.div`
   font-size: ${props => props.theme.fontSizes[1]};
   line-height: ${props => props.theme.lineHeights[1]};
-  font-family: 'SF UI Display Medium';
+  > div > p {
+    &:not(last-child) {
+      margin-bottom: ${props => props.theme.lineHeights[1]}
+    }
+  }
+  ul {
+    list-style: initial; 
+  }
+  li {
+    list-style-position:inside;
+    p {
+      display: inline;
+    }
+  }
 `;
 
 export const BodyText1 = ({richText, ...otherProps}) => (
-    <BodyText1Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? Storyblok.richTextResolver.render(richText) : richText}}/>
+    <BodyText1Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? `<div>${Storyblok.richTextResolver.render(richText)}</div>` : richText}}/>
 );
 
-const BodyText2Container = styled.p`
+const BodyText2Container = styled.div`
   font-size: ${props => props.theme.fontSizes[2]};
   line-height: ${props => props.theme.lineHeights[2]};
-  font-family: 'SF UI Display Medium';
+  > div > p {
+    &:not(last-child) {
+      margin-bottom: ${props => props.theme.lineHeights[2]}
+    }
+  }
+  ul {
+    list-style: initial; 
+  }
+  li {
+    list-style-position:inside;
+    p {
+      display: inline;
+    }
+  }
 `;
 
 export const BodyText2 = ({richText, ...otherProps}) => (
-    <BodyText2Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? Storyblok.richTextResolver.render(richText) : richText}}/>
+    <BodyText2Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? `<div>${Storyblok.richTextResolver.render(richText)}</div>` : richText}}/>
 );
 
-const BodyText3Container = styled.p`
+const BodyText3Container = styled.div`
   font-size: ${props => props.theme.fontSizes[5]};
   line-height: ${props => props.theme.lineHeights[5]};
-  font-family: 'SF UI Display Medium';
+  > div > p {
+    //&:not(last-child) {
+      margin-bottom: ${props => props.theme.lineHeights[5]}
+    //}
+  }
+  ul {
+    list-style: initial; 
+  }
+  li {
+    list-style-position:inside;
+    p {
+      display: inline;
+    }
+  }
 `;
 
 export const BodyText3 = ({richText, ...otherProps}) => (
-    <BodyText3Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? Storyblok.richTextResolver.render(richText) : richText}}/>
+    <BodyText3Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? `<div>${Storyblok.richTextResolver.render(richText)}</div>` : richText}}/>
 );
