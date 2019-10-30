@@ -34,6 +34,14 @@ const theme = {
         between('20px','40px'),
         between('12px','24px'),
     ],
+    paddings: [
+        between('12px','24px'),
+        between('10px','20px'),
+        between('8px','16px'),
+        between('6px','12px'),
+        between('4px','8px'),
+        between('2px','4px'),
+    ],
     colors: {
         blue: '#0070E0',
         black: '#000',

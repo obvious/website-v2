@@ -9,7 +9,7 @@ const LinkGroupContainer = styled.ul`
   justify-content: flex-start;
   align-items: center;
   span {
-    margin: 0 0.5rem;
+    margin: 0 ${props=> props.theme.paddings[4]};
   }
 `;
 
