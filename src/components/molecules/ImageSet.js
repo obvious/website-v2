@@ -8,7 +8,7 @@ const ImageSetContainer = styled.ul`
   display: grid;
   grid-gap: ${props => props.theme.spacings[4]};
   grid-template-areas: 'a a b'
-  'a a b'
+  'a a .'
   'a a c';
   
   .featured-image {
