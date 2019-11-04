@@ -59,6 +59,8 @@ exports.createPages = ({ graphql, actions }) => {
                         case 'article':
                             component = PublicationArticleStory;
                             break;
+                        default:
+                            return;
                     }
 
                     let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
