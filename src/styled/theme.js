@@ -50,6 +50,11 @@ const theme = {
     },
     backgrounds: {
         gray: 'rgba(10, 73, 100, 0.1)'
+    },
+    breakpoints: {
+        small: '40em',
+        medium: '52em',
+        large: '64em'
     }
 };
 
