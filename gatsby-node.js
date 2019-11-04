@@ -2,8 +2,27 @@ const path = require('path');
 
 const utils = require('./utils');
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
+
+    const getNav = new Promise((resolve, reject) => {
+        return resolve(
+            graphql(
+                `{
+          navData: storyblokEntry (slug: { eq: "main-navigation" }) {
+			content
+            id
+            name
+		}
+        }`
+            ).then(result => {
+                if (result.errors) {
+                    console.log(result.errors);
+                    reject(result.errors)
+                }
+                return result.data.navData;
+            }));
+    });
 
     return new Promise((resolve, reject) => {
         const CaseStudyStory = path.resolve('src/templates/case-study.js');
@@ -11,9 +30,10 @@ exports.createPages = ({ graphql, actions }) => {
         const PublicationArticleStory = path.resolve('src/templates/article.js');
         const IndexStory = path.resolve('src/templates/index.js');
 
-        resolve(
-            graphql(
-                `{
+        getNav.then(navData => {
+            resolve(
+                graphql(
+                    `{
           stories: allStoryblokEntry {
             edges {
               node {
@@ -32,48 +52,51 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }`
-            ).then(result => {
-                if (result.errors) {
-                    console.log(result.errors);
-                    reject(result.errors)
-                }
-                const {stories} = result.data;
-                const {edges} = stories;
-                edges.forEach((entry) => {
-                    const {full_slug} = entry.node;
-
-                    let pagePath = full_slug === 'home' ? '' : `${full_slug}/`;
-
-                    let component = null;
-
-                    switch (full_slug.split('/')[0]) {
-                        case 'home':
-                            component = IndexStory;
-                            break;
-                        case 'case-studies':
-                            component = CaseStudyStory;
-                            break;
-                        case 'article-collection':
-                            component = PublicationArticlesCollectionStory;
-                            break;
-                        case 'article':
-                            component = PublicationArticleStory;
-                            break;
-                        default:
-                            return;
+                ).then(result => {
+                    if (result.errors) {
+                        console.log(result.errors);
+                        reject(result.errors)
                     }
+                    const {stories} = result.data;
+                    const {edges} = stories;
+                    edges.forEach((entry) => {
+                        const {full_slug} = entry.node;
 
-                    let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
+                        let pagePath = full_slug === 'home' ? '' : `${full_slug}/`;
 
-                    createPage({
-                        path: `/${pagePath}`,
-                        component: component,
-                        context: {
-                            data: data
+                        let component = null;
+
+
+                        switch (full_slug.split('/')[0]) {
+                            case 'home':
+                                component = IndexStory;
+                                break;
+                            case 'case-studies':
+                                component = CaseStudyStory;
+                                break;
+                            case 'article-collection':
+                                component = PublicationArticlesCollectionStory;
+                                break;
+                            case 'article':
+                                component = PublicationArticleStory;
+                                break;
+                            default:
+                                return;
                         }
+
+                        let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
+                        createPage({
+                            path: `/${pagePath}`,
+                            component: component,
+                            context: {
+                                data: data,
+                                navData: JSON.parse(navData.content)
+                            }
+                        })
                     })
                 })
-            })
-        )
+            )
+        });
+
     })
 };
