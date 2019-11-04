@@ -12,7 +12,7 @@ const BodyText1Container = styled.div`
   font-size: ${props => props.theme.fontSizes[1]};
   line-height: ${props => props.theme.lineHeights[1]};
   > div > p {
-    &:not(last-child) {
+    &:not(:last-child) {
       margin-bottom: ${props => props.theme.lineHeights[1]}
     }
   }
@@ -35,7 +35,7 @@ const BodyText2Container = styled.div`
   font-size: ${props => props.theme.fontSizes[2]};
   line-height: ${props => props.theme.lineHeights[2]};
   > div > p {
-    &:not(last-child) {
+    &:not(:last-child) {
       margin-bottom: ${props => props.theme.lineHeights[2]}
     }
   }
@@ -58,9 +58,9 @@ const BodyText3Container = styled.div`
   font-size: ${props => props.theme.fontSizes[5]};
   line-height: ${props => props.theme.lineHeights[5]};
   > div > p {
-    //&:not(last-child) {
+    &:not(:last-child) {
       margin-bottom: ${props => props.theme.lineHeights[5]}
-    //}
+    }
   }
   ul {
     list-style: initial; 

@@ -7,14 +7,40 @@ import {HeaderText4} from "../../atoms/HeaderText";
 import {BodyText3} from "../../atoms/BodyText";
 
 const CaseStudySection2Container = styled.section`
-  .video {
-    margin-bottom: ${props => props.theme.spacings[2]};
-  }
   .subsection-1 {
-    
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: ${props => props.theme.spacings[4]};
+
+    //grid-template-areas: 'header-and-description video video'
+    //'header-and-description video video'
+    //'header-and-description video video';
+    //  
+    //.header-and-description {
+    //  grid-area: header-and-description;
+    //}
+    
+    .header {
+      margin-bottom: ${props => props.theme.spacings[4]};
+    }
+    
+    margin-bottom: ${props => props.theme.spacings[4]};
+    
+    .video:not(video) {
+      overflow: hidden;
+      display: grid;
+    }
+  }
+  
+  .subsection-2 {
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: ${props => props.theme.spacings[4]};
+    
+    margin-bottom: ${props => props.theme.spacings[2]};
+    
+    
   }
   
   margin-bottom: ${props => props.theme.spacings[1]};
@@ -23,10 +49,17 @@ const CaseStudySection2Container = styled.section`
 const CaseStudySection2 = (props) => {
     return (
         <CaseStudySection2Container>
-            <Video className="video" {...props.otherBlocks[0]}/>
             <div className="subsection-1">
-                <HeaderText4>{props.heading.text}</HeaderText4>
-                <BodyText3 richText={props.description.text} />
+                <div className="header-and-description">
+                    <HeaderText4 className="header">{props.heading.text}</HeaderText4>
+                    <BodyText3 className="description" richText={props.description.text} />
+                </div>
+                <Video className="video full" {...props.otherBlocks[1]}/>
+            </div>
+
+            <div className="subsection-2">
+                <div></div>
+                <BodyText3 richText={props.otherBlocks[0].text} />
             </div>
         </CaseStudySection2Container>
     )

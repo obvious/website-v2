@@ -20,7 +20,7 @@ const ButtonContainer = styled.a`
 const Button = ({url, children, icon, openInNewTab}) => (
     <ButtonContainer className='button'>
         {children}
-        <span><img src={icon}/></span>
+        {icon? <span><img src={icon}/></span>: null}
     </ButtonContainer>
 );
 

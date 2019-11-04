@@ -9,7 +9,7 @@ const CaseStudy = ({pageContext}) => {
         <div>
             <CaseStudyHeader {...pageContext.data.header}/>
             <CaseStudySection1 {...pageContext.data.sections[0]}/>
-            {/*<CaseStudySection2 {...pageContext.data.sections[1]}/>*/}
+            <CaseStudySection2 {...pageContext.data.sections[1]}/>
         </div>
     )
 };

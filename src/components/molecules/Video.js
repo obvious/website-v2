@@ -8,9 +8,17 @@ import {BodyText3} from "../atoms/BodyText";
 const VideoContainer = styled.div`
   position: relative;
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
+  //overflow: hidden;
+  &.full {
+    max-height: 40vh !important;
+    overflow: hidden;
+    video {
+      width: auto !important;
+      height: 100% !important;
+      
+    }
   }
+
   .overlay {
     position: absolute;
     background: ${props => props.theme.colors.blue};
@@ -22,8 +30,9 @@ const VideoContainer = styled.div`
   }
   .content-overlay {
     position: absolute;
-    left: ${props => props.theme.spacings[1]};
-    bottom: ${props => props.theme.spacings[2]};
+    left: ${props => props.hasOverlay ? props.theme.spacings[1] : 'auto'};
+    right: ${props => props.hasOverlay ? 'auto' : props.theme.spacings[4]};
+    bottom: ${props => props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
     .heading {
       max-width: 60%;
       color: ${props => props.theme.colors.white};
@@ -35,16 +44,15 @@ const VideoContainer = styled.div`
   }
 `;
 
-const Video = (props) => {
-
+const Video = ({video, ...otherProps}) => {
     return (
-        <VideoContainer {...props}>
-            <ReactPlayer url={props.video} width="100%" height="auto" playing={true} loop={true} />
-            <div className="overlay">
-            </div>
+        <VideoContainer {...otherProps}>
+            <ReactPlayer url={video}  width="100%" height="auto" playing={true} loop={true} />
+            {otherProps.hasOverlay ? <div className="overlay">
+            </div> : null}
             <div className="content-overlay">
-                <BodyText3 className="heading" richText={props.overlayHeading}></BodyText3>
-                <Button>{props.overlayButtonText || 'Watch'}</Button>
+                {otherProps.hasOverlay ?<BodyText3 className="heading" richText={otherProps.overlayHeading}></BodyText3> :null}
+                <Button>{otherProps.overlayButtonText || 'Watch'}</Button>
             </div>
         </VideoContainer>
     )
