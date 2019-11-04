@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from "styled-components";
 
-import {HeaderText3} from "../atoms/HeaderText";
+
+import NavItemsList from "../molecules/NavItemList";
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -19,18 +20,41 @@ const NavContainer = styled.nav`
     display: grid;
     align-content: center;
     margin: auto;
+    grid-template-columns: 35% auto;
   }
-  .title {
-    color: ${props => props.theme.colors.white};
+  
+  .logo-container {
+    height: calc(${props => props.theme.navHeight} * 0.6);
+    display: grid;
+    img {
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: ${props => props.theme.breakpoints.large}) {
+    .nav-inner {
+      grid-template-columns: 30% auto;
+    }
+    .logo-container {
+      height: calc(${props => props.theme.navHeight} * 0.7);
+    }
+  }
+  @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
+    .nav-inner {
+      grid-template-columns: 50% auto;
+      ul {
+        display: none;
+      }
+    }
   }
 `;
 
-const Nav = () => {
+const Nav = (props) => {
     return (
         <NavContainer>
             <div className="nav-inner">
-                <HeaderText3 className='title'>Obvious</HeaderText3>
-
+                <a href="/" className="logo-container"><img src={props.logo} alt=""/></a>
+                <NavItemsList {...props}/>
             </div>
         </NavContainer>
     )

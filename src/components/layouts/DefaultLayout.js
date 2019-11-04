@@ -3,15 +3,20 @@ import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../styled/GlobalStyles";
 import theme from "../../styled/theme";
 import Nav from "../templates/Nav";
+import {graphql} from "gatsby";
 
 const LayoutContainer = styled.div``;
 
-export default ({ children }) => (
-    <ThemeProvider theme={theme}>
-        <LayoutContainer>
-            <GlobalStyle/>
-            <Nav/>
-            {children}
-        </LayoutContainer>
-    </ThemeProvider>
-)
+const DefaultLayout = ({children, pageContext}) => {
+    return (
+        <ThemeProvider theme={theme}>
+            <LayoutContainer>
+                <GlobalStyle/>
+                <Nav {...pageContext.navData}/>
+                {children}
+            </LayoutContainer>
+        </ThemeProvider>
+    )
+};
+
+export default DefaultLayout;
