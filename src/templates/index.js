@@ -11,7 +11,7 @@ const IndexPageContainer = styled.div`
   flex-direction: column;
 `;
 
-const IndexPage = ({pageContext}) => (
+const IndexPage = ({pageContext: {data}}) => (
     <IndexPageContainer>
             <HeaderText1>Hello World.</HeaderText1>
     </IndexPageContainer>

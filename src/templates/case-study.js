@@ -3,13 +3,13 @@ import CaseStudyHeader from "../components/templates/case-studies/CaseStudyHeade
 import CaseStudySection1 from "../components/templates/case-studies/CaseStudySection1";
 import CaseStudySection2 from "../components/templates/case-studies/CaseStudySection2";
 
-const CaseStudy = ({pageContext}) => {
+const CaseStudy = ({pageContext: {data}}) => {
 
     return (
         <div>
-            <CaseStudyHeader {...pageContext.data.header}/>
-            <CaseStudySection1 {...pageContext.data.sections[0]}/>
-            <CaseStudySection2 {...pageContext.data.sections[1]}/>
+            <CaseStudyHeader {...data.header}/>
+            <CaseStudySection1 {...data.sections[0]}/>
+            <CaseStudySection2 {...data.sections[1]}/>
         </div>
     )
 };
