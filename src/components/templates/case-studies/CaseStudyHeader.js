@@ -26,9 +26,9 @@ const CaseStudyHeaderContainer = styled.section`
 const CaseStudyHeader = (props) => {
     return (
         <CaseStudyHeaderContainer>
-            <HeaderText1 className='title'>{props.title.text}</HeaderText1>
-            <BodyText2 className='caption' richText={props.caption.text}/>
-            <LinkGroup className='links' links={props.links.links}></LinkGroup>
+            <HeaderText1 className='title'>{props.title[0].text}</HeaderText1>
+            <BodyText2 className='caption' richText={props.caption[0].text}/>
+            <LinkGroup className='links' links={props.links[0].links}></LinkGroup>
         </CaseStudyHeaderContainer>
     )
 };

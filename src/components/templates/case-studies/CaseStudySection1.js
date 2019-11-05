@@ -29,8 +29,8 @@ const CaseStudySection1 = (props) => {
         <CaseStudySection1Container>
             <Video className="video" {...props.otherBlocks[0]}/>
             <div className="subsection-2">
-                <HeaderText4>{props.heading.text}</HeaderText4>
-                <BodyText3 richText={props.description.text} />
+                <HeaderText4>{props.heading[0].text}</HeaderText4>
+                <BodyText3 richText={props.description[0].text} />
             </div>
             <div className="subsection-3">
                 <ImageSet {...props.otherBlocks[1]}/>

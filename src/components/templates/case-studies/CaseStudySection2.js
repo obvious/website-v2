@@ -51,8 +51,8 @@ const CaseStudySection2 = (props) => {
         <CaseStudySection2Container>
             <div className="subsection-1">
                 <div className="header-and-description">
-                    <HeaderText4 className="header">{props.heading.text}</HeaderText4>
-                    <BodyText3 className="description" richText={props.description.text} />
+                    <HeaderText4 className="header">{props.heading[0].text}</HeaderText4>
+                    <BodyText3 className="description" richText={props.description[0].text} />
                 </div>
                 <Video className="video full" {...props.otherBlocks[1]}/>
             </div>

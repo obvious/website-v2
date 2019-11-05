@@ -1,7 +1,5 @@
 const path = require('path');
 
-const utils = require('./utils');
-
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -66,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             return;
                     }
 
-                    let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
+                    let data = JSON.parse(entry.node.content);
                     createPage({
                         path: `/${pagePath}`,
                         component: component,
