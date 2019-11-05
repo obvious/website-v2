@@ -4,10 +4,9 @@ import CaseStudySection1 from "../components/templates/case-studies/CaseStudySec
 import CaseStudySection2 from "../components/templates/case-studies/CaseStudySection2";
 
 const CaseStudy = ({pageContext: {data}}) => {
-
     return (
         <div>
-            <CaseStudyHeader {...data.header}/>
+            <CaseStudyHeader {...data.header[0]}/>
             <CaseStudySection1 {...data.sections[0]}/>
             <CaseStudySection2 {...data.sections[1]}/>
         </div>
