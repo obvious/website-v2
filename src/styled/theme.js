@@ -7,7 +7,7 @@ import {between} from 'polished';
 const theme = {
     navHeight: between('32px','64px'),
     containerSizes: {
-        default: '70vw',
+        default: '80vw',
         mobile: '90vw'
     },
     fontSizes: [

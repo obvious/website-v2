@@ -7,12 +7,15 @@ const NavItemsListContainer = styled.ul`
   display: grid;
   grid-auto-flow: column;
   align-items: center;
+  grid-gap:${props => props.theme.paddings[2]};
+  grid-auto-columns: max-content;
+  justify-content: end;
 `;
 
 const NavItemsList = (props) => {
     return (
         <NavItemsListContainer>
-            {props.navItems.map(navItem => <li key={navItem._uid}><NavItem {...navItem}/></li>)}
+            {props.navItems && props.navItems.map(navItem => <li key={navItem._uid}><NavItem {...navItem}/></li>)}
         </NavItemsListContainer>
     )
 };

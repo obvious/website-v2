@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-
-
+import {graphql, useStaticQuery} from "gatsby";
+import {prepeareStoryblokGraphqlResponse} from "../../../utils";
 import NavItemsList from "../molecules/NavItemList";
 
 const NavContainer = styled.nav`
@@ -18,9 +18,10 @@ const NavContainer = styled.nav`
     }
     height: 100%;
     display: grid;
-    align-content: center;
+    align-items: center;
     margin: auto;
-    grid-template-columns: 35% auto;
+    grid-template-columns: 25% auto;
+    
   }
   
   .logo-container {
@@ -32,16 +33,12 @@ const NavContainer = styled.nav`
   }
   
   @media screen and (max-width: ${props => props.theme.breakpoints.large}) {
-    .nav-inner {
-      grid-template-columns: 30% auto;
-    }
     .logo-container {
       height: calc(${props => props.theme.navHeight} * 0.7);
     }
   }
   @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
     .nav-inner {
-      grid-template-columns: 50% auto;
       ul {
         display: none;
       }
@@ -49,15 +46,29 @@ const NavContainer = styled.nav`
   }
 `;
 
-const Nav = (props) => {
+const Nav = () => {
+    const navQueryResponse = useStaticQuery(
+        graphql`
+			query {
+				storyblokEntry(slug: { eq: "main-navigation" }) {
+					content
+				}
+			}
+        `
+    );
+
+    const navData = prepeareStoryblokGraphqlResponse(navQueryResponse);
+
     return (
         <NavContainer>
             <div className="nav-inner">
-                <a href="/" className="logo-container"><img src={props.logo} alt=""/></a>
-                <NavItemsList {...props}/>
+                <a href="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></a>
+                <NavItemsList {...navData}/>
             </div>
         </NavContainer>
     )
 };
+
+
 
 export default Nav;
