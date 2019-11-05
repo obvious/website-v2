@@ -24,7 +24,6 @@ margin: 0;
 padding: 0;
 border: 0;
 font-size: 100%;
-font: inherit;
 vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -52,9 +51,12 @@ border-spacing: 0;
 }
 
 body {
-max-width: ${props => props.theme.containerSizes.default};
-margin: auto;
-padding-top: ${props => props.theme.navHeight};
+  max-width: ${props => props.theme.containerSizes.default};
+  @media screen and (max-width: ${props => props.theme.breakpoints[1]}) {
+    max-width: ${props => props.theme.containerSizes.mobile};
+  }
+  margin: auto;
+  padding-top: ${props => props.theme.navHeight};
 }
 `
 

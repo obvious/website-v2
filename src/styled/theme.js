@@ -7,8 +7,10 @@ import {between} from 'polished';
 const theme = {
     navHeight: between('32px','64px'),
     containerSizes: {
-        default: '90vw'
+        default: '70vw',
+        mobile: '90vw'
     },
+    breakpoints: ['40em', '52em', '64em'],
     fontSizes: [
         between('32px','64px'),
         between('24px','48px'),
@@ -31,6 +33,14 @@ const theme = {
         between('40px','80px'),
         between('20px','40px'),
         between('12px','24px'),
+    ],
+    paddings: [
+        between('12px','24px'),
+        between('10px','20px'),
+        between('8px','16px'),
+        between('6px','12px'),
+        between('4px','8px'),
+        between('2px','4px'),
     ],
     colors: {
         blue: '#0070E0',

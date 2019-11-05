@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
 
-import {BodyText2} from "../atoms/BodyText";
 import {HeaderText3} from "../atoms/HeaderText";
 
 const NavContainer = styled.nav`
@@ -13,6 +12,9 @@ const NavContainer = styled.nav`
   background: ${props => props.theme.colors.black};
   .nav-inner {
     max-width: ${props => props.theme.containerSizes.default};
+    @media screen and (max-width: ${props => props.theme.breakpoints[1]}) {
+        max-width: ${props => props.theme.containerSizes.mobile};
+    }
     height: 100%;
     display: grid;
     align-content: center;
