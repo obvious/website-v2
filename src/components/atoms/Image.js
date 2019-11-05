@@ -9,10 +9,11 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Image = ({url, ...otherProps}) => (
-    <ImageContainer {...otherProps}>
-        <img src={url} alt=""/>
-    </ImageContainer>
-);
+const Image = ({url, ...otherProps}) => {
+    const optimizedImageUrl = url.replace('/upload/', '/upload/q_auto/');
+    return (<ImageContainer {...otherProps}>
+        <img src={optimizedImageUrl} alt=""/>
+    </ImageContainer>)
+};
 
 export default Image;
