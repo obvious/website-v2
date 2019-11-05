@@ -8,13 +8,9 @@ import {BodyText3} from "../atoms/BodyText";
 const VideoContainer = styled.div`
   position: relative;
   text-decoration: none;
-  &.full {
-    max-height: 40vh !important;
-    overflow: hidden;
-    video {
-      width: auto !important;
-      height: 100% !important;
-    }
+  .video-player {
+    width: 100% !important;
+    height: auto !important;
   }
   .overlay {
     position: absolute;
@@ -44,9 +40,10 @@ const VideoContainer = styled.div`
 const Video = ({video, ...otherProps}) => {
     return (
         <VideoContainer {...otherProps}>
-            <ReactPlayer url={video}  width="100%" height="auto" playing={true} loop={true} />
-            {otherProps.hasOverlay ? <div className="overlay">
-            </div> : null}
+            <ReactPlayer url={video} className="video-player" playing={true} loop={true} />
+            {otherProps.hasOverlay ?
+                <div className="overlay"/>
+                : null}
             <div className="content-overlay">
                 {otherProps.hasOverlay ?<BodyText3 className="heading" richText={otherProps.overlayHeading}></BodyText3> :null}
                 <Button>{otherProps.overlayButtonText || 'Watch'}</Button>

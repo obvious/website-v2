@@ -11,22 +11,27 @@ const CaseStudySection2Container = styled.section`
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: ${props => props.theme.spacings[4]};
-    .header {
-      margin-bottom: ${props => props.theme.spacings[4]};
-    }
+    align-items: start;
     margin-bottom: ${props => props.theme.spacings[4]};
-    .video:not(video) {
-      overflow: hidden;
+    .header-and-description {
+      height: 100%;
       display: grid;
+      .header {
+        margin-bottom: ${props => props.theme.spacings[4]};
+      }
+      .description {
+        align-self: end;
+      }
+    }    
   }
   
   .subsection-2 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 33.33%;
+    justify-content: end;
     grid-gap: ${props => props.theme.spacings[4]};
     margin-bottom: ${props => props.theme.spacings[2]};
   }
-  margin-bottom: ${props => props.theme.spacings[1]};
 `;
 
 const CaseStudySection2 = (props) => {
@@ -41,7 +46,6 @@ const CaseStudySection2 = (props) => {
             </div>
 
             <div className="subsection-2">
-                <div></div>
                 <BodyText3 richText={props.otherBlocks[0].text} />
             </div>
         </CaseStudySection2Container>
