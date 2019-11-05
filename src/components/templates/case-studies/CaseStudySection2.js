@@ -11,38 +11,21 @@ const CaseStudySection2Container = styled.section`
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: ${props => props.theme.spacings[4]};
-
-    //grid-template-areas: 'header-and-description video video'
-    //'header-and-description video video'
-    //'header-and-description video video';
-    //  
-    //.header-and-description {
-    //  grid-area: header-and-description;
-    //}
-    
     .header {
       margin-bottom: ${props => props.theme.spacings[4]};
     }
-    
     margin-bottom: ${props => props.theme.spacings[4]};
-    
     .video:not(video) {
       overflow: hidden;
       display: grid;
-    }
   }
   
   .subsection-2 {
-    
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: ${props => props.theme.spacings[4]};
-    
     margin-bottom: ${props => props.theme.spacings[2]};
-    
-    
   }
-  
   margin-bottom: ${props => props.theme.spacings[1]};
 `;
 

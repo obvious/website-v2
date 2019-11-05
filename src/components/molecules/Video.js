@@ -8,17 +8,14 @@ import {BodyText3} from "../atoms/BodyText";
 const VideoContainer = styled.div`
   position: relative;
   text-decoration: none;
-  //overflow: hidden;
   &.full {
     max-height: 40vh !important;
     overflow: hidden;
     video {
       width: auto !important;
       height: 100% !important;
-      
     }
   }
-
   .overlay {
     position: absolute;
     background: ${props => props.theme.colors.blue};
@@ -56,7 +53,6 @@ const Video = ({video, ...otherProps}) => {
             </div>
         </VideoContainer>
     )
-
 };
 
 export default Video;
