@@ -25,7 +25,6 @@ const CaseStudySection1Container = styled.section`
 `;
 
 const CaseStudySection1 = (props) => {
-    console.log(props.otherBlocks[1])
     return (
         <CaseStudySection1Container>
             <Video className="video" {...props.otherBlocks[0]}/>

@@ -2,8 +2,10 @@ const path = require('path');
 
 const utils = require('./utils');
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
+
+
 
     return new Promise((resolve, reject) => {
         const CaseStudyStory = path.resolve('src/templates/case-study.js');
@@ -46,6 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
 
                     let component = null;
 
+
                     switch (full_slug.split('/')[0]) {
                         case 'home':
                             component = IndexStory;
@@ -64,7 +67,6 @@ exports.createPages = ({ graphql, actions }) => {
                     }
 
                     let data = utils.recursivelyPrepareStoryblokStory(JSON.parse(entry.node.content));
-
                     createPage({
                         path: `/${pagePath}`,
                         component: component,
@@ -75,5 +77,6 @@ exports.createPages = ({ graphql, actions }) => {
                 })
             })
         )
+
     })
 };

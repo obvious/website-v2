@@ -52,7 +52,7 @@ border-spacing: 0;
 
 body {
   max-width: ${props => props.theme.containerSizes.default};
-  @media screen and (max-width: ${props => props.theme.breakpoints[1]}) {
+  @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
     max-width: ${props => props.theme.containerSizes.mobile};
   }
   margin: auto;

@@ -6,12 +6,16 @@ import Nav from "../templates/Nav";
 
 const LayoutContainer = styled.div``;
 
-export default ({ children }) => (
-    <ThemeProvider theme={theme}>
-        <LayoutContainer>
-            <GlobalStyle/>
-            <Nav/>
-            {children}
-        </LayoutContainer>
-    </ThemeProvider>
-)
+const DefaultLayout = ({children}) => {
+    return (
+        <ThemeProvider theme={theme}>
+            <LayoutContainer>
+                <GlobalStyle/>
+                <Nav/>
+                {children}
+            </LayoutContainer>
+        </ThemeProvider>
+    )
+};
+
+export default DefaultLayout;

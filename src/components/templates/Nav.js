@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from "styled-components";
-
-import {HeaderText3} from "../atoms/HeaderText";
+import {graphql, useStaticQuery} from "gatsby";
+import {prepeareStoryblokGraphqlResponse} from "../../../utils";
+import NavItemsList from "../molecules/NavItemList";
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -12,28 +13,62 @@ const NavContainer = styled.nav`
   background: ${props => props.theme.colors.black};
   .nav-inner {
     max-width: ${props => props.theme.containerSizes.default};
-    @media screen and (max-width: ${props => props.theme.breakpoints[1]}) {
+    @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
         max-width: ${props => props.theme.containerSizes.mobile};
     }
     height: 100%;
     display: grid;
-    align-content: center;
+    align-items: center;
     margin: auto;
+    grid-template-columns: 25% auto;
+    
   }
-  .title {
-    color: ${props => props.theme.colors.white};
+  
+  .logo-container {
+    height: calc(${props => props.theme.navHeight} * 0.6);
+    display: grid;
+    img {
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: ${props => props.theme.breakpoints.large}) {
+    .logo-container {
+      height: calc(${props => props.theme.navHeight} * 0.7);
+    }
+  }
+  @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
+    .nav-inner {
+      ul {
+        display: none;
+      }
+    }
   }
 `;
 
 const Nav = () => {
+    const navQueryResponse = useStaticQuery(
+        graphql`
+			query {
+				storyblokEntry(slug: { eq: "main-navigation" }) {
+					content
+				}
+			}
+        `
+    );
+
+    const navData = prepeareStoryblokGraphqlResponse(navQueryResponse);
+
     return (
         <NavContainer>
             <div className="nav-inner">
-                <HeaderText3 className='title'>Obvious</HeaderText3>
-
+                <a href="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></a>
+                <NavItemsList {...navData}/>
             </div>
         </NavContainer>
     )
 };
+
+
 
 export default Nav;
