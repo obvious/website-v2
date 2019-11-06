@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
         const CaseStudyStory = path.resolve('src/templates/case-study.js');
         const PublicationArticlesCollectionStory = path.resolve('src/templates/article-collection.js');
+        const PublicationArticlesCollectionsLandingStory = path.resolve('src/templates/article-collections-landing.js');
         const PublicationArticleStory = path.resolve('src/templates/article.js');
         const IndexStory = path.resolve('src/templates/index.js');
 
@@ -59,6 +60,9 @@ exports.createPages = async ({ graphql, actions }) => {
                             break;
                         case 'article':
                             component = PublicationArticleStory;
+                            break;
+                        case 'articles':
+                            component = PublicationArticlesCollectionsLandingStory;
                             break;
                         default:
                             return;
