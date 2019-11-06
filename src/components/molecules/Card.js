@@ -9,7 +9,18 @@ import {BodyText3} from "../atoms/BodyText";
 
 
 const CardContentsContainer = styled.div`
-  
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: calc(2* ${props => props.theme.lineHeights[5]}); // This needs to be in relation to line-height of the text component, currently BodyText3
+  }
+  .image {
+    margin-top: ${props => props.theme.spacings[3]};
+  }
 `;
 
 const CardContents = (props) => (

@@ -6,10 +6,10 @@ import CardGroup from "../../molecules/CardGroup";
 import {HeaderText2} from "../../atoms/HeaderText";
 
 const CaseStudyRelatedArticlesContainer = styled.aside`
-  margin-left: ${props =>  props.theme.spacings[1]};
-
+  margin-left: ${props =>  props.theme.spacings[2]};
+  
   .card-group {
-    margin-top: ${props =>  props.theme.spacings[4]};
+    margin-top: ${props =>  props.theme.spacings[3]};
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: ${props => props.theme.spacings[4]};
