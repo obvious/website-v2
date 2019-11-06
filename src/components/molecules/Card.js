@@ -40,7 +40,7 @@ const Card = (props) => {
           return <Link className="card" to={props.url}><CardContents {...props}/></Link>
       }
       else {
-          return <a className="card" href={props.url} target="_blank"><CardContents {...props}/></a>
+          return <a className="card" href={props.url} target="_blank" rel="noopener noreferrer"><CardContents {...props}/></a>
       }
   }
   else
