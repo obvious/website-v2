@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { HeaderText4 } from "../../atoms/HeaderText";
 import { BodyText3 } from "../../atoms/BodyText";
 import Image from "../../atoms/Image";
-import { GraphPoint } from "../../atoms/GraphPoint";
+import {Graph} from "../../templates/Graph";
 
 const CaseStudySection3Container = styled.section`
   .subsection-1 {
@@ -38,10 +38,7 @@ const CaseStudySection3 = props => {
         </div>
         <Image className="image" url={props.otherBlocks[0].image} />
       </div>
-      <GraphPoint {...props.otherBlocks[1].points[0]} />
-      <GraphPoint {...props.otherBlocks[1].points[1]} />
-      <GraphPoint {...props.otherBlocks[1].points[2]} />
-      <GraphPoint {...props.otherBlocks[1].points[3]} />
+      <Graph {...props.otherBlocks[1]} />
     </CaseStudySection3Container>
   );
 };
