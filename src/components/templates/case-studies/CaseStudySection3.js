@@ -8,6 +8,7 @@ import ImageSet from "../../molecules/ImageSet";
 import { HeaderText4 } from "../../atoms/HeaderText";
 import { BodyText3 } from "../../atoms/BodyText";
 import Image from "../../atoms/Image";
+import {CaptionText1, CaptionTextHighlight} from "../../atoms/CaptionText";
 
 const CaseStudySection3Container = styled.section`
   .subsection-1 {
@@ -38,6 +39,8 @@ const CaseStudySection3 = props => {
         </div>
         <Image className="image" url={props.otherBlocks[0].image} />
       </div>
+        <CaptionText1>Stuff</CaptionText1>
+        <CaptionTextHighlight>And bother</CaptionTextHighlight>
     </CaseStudySection3Container>
   );
 };
