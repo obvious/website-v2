@@ -11,20 +11,22 @@ const theme = {
         mobile: '90vw'
     },
     fontSizes: [
-        between('32px','64px'),
-        between('24px','48px'),
-        between('20px','40px'),
-        between('18px','36px'),
-        between('16px','32px'),
-        between('11px','22px'),
+        between('32px','64px'), //h1
+        between('24px','48px'), //h2
+        between('20px','40px'), //h3
+        between('18px','36px'), //body text 1
+        between('16px','32px'), //body text 2
+        between('11px','22px'), //body text 3
+        between('9px','18px'), //caption text
     ],
     lineHeights: [
-        between('38px','76px'),
-        between('28.5px','57px'),
-        between('24px','48px'),
-        between('23.5px','47px'),
-        between('16px','32px'),
-        between('16px','32px'),
+        between('38px','76px'), //h1
+        between('28.5px','57px'), //h2
+        between('24px','48px'), //h3
+        between('23.5px','47px'), //body text 1
+        between('16px','32px'), //body text 2
+        between('16px','32px'),  //body text 3
+        between('13px','27px'), //caption text
     ],
     spacings: [
         between('100px','200px'),
