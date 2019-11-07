@@ -79,8 +79,8 @@ export const BodyText3 = ({richText, ...otherProps}) => (
 
 
 const BodyText5Container = styled.div`
-  font-size: ${props => props.theme.fontSizes[6]};
-  line-height: ${props => props.theme.lineHeights[6]};
+  font-size: ${props => props.theme.fontSizes[7]};
+  line-height: ${props => props.theme.lineHeights[7]};
   > div > p {
     &:not(:last-child) {
       margin-bottom: ${props => props.theme.lineHeights[5]}

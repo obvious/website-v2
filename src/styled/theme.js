@@ -19,6 +19,7 @@ const theme = {
         between('16px','32px'), //body text 2
         between('11px','22px'), //body text 3
         between('9px','18px'), //caption text
+        between('8px','14px'), // not proportional
     ],
     lineHeights: [
         between('38px','76px'), //h1
@@ -28,6 +29,7 @@ const theme = {
         between('16px','32px'), //body text 2
         between('16px','32px'),  //body text 3
         between('13px','27px'), //caption text
+        between('16px','22px'), //not proportional
     ],
     spacings: [
         between('100px','200px'),
@@ -44,16 +46,27 @@ const theme = {
         between('4px','8px'),
         between('2px','4px'),
     ],
+    borderRadii: {
+      small:  between('4px','8px'),
+        smaller: between('2px','4px')
+    },
+    boxShadows: {
+      specialCard: '0px 4px 16px rgba(0, 0, 0, 0.16)'
+    },
     colors: {
         blue: '#0070E0',
         black: '#000',
+        lightBlack: '#1F2629',
         lighterBlack: '#3E4B52',
         white: '#fff',
         orange: '#FFB399',
-        gray: 'rgba(10, 73, 100, 0.1)'
+        gray: 'rgba(10, 73, 100, 0.1)',
+        darkgray: '#5E6366'
     },
     backgrounds: {
-        gray: 'rgba(10, 73, 100, 0.1)'
+        gray: 'rgba(10, 73, 100, 0.1)',
+        orange: '#EF6031',
+        white: '#fff',
     },
     breakpoints: {
         small: '40em',

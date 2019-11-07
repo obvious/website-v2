@@ -1,11 +1,13 @@
 import React from 'react'
 import {graphql, useStaticQuery} from "gatsby";
-import {prepeareStoryblokGraphqlResponse} from "../../utils";
+import {prepareStoryblokGraphqlResponse, prepareArticlesFromMultipleCollections} from "../utils";
 
+import PageHeader from "../components/templates/common/PageHeader";
+import ArticleCollectionDetailedView from "../components/templates/articles/ArticleCollectionDetailedView";
 
 const ArticleCollection = () => {
-    const articleCollectionsQueryResponse = useStaticQuery(
-        graphql`
+	const articleCollectionsQueryResponse = useStaticQuery(
+		graphql`
 			query {
 				allStoryblokEntry(filter: {full_slug: {regex: "/^article\\//"}}) {
 					edges {
@@ -25,15 +27,17 @@ const ArticleCollection = () => {
 					}
 				}
 			}
-        `
-    );
+		`
+	);
 
-    const articleCollectionsData = prepeareStoryblokGraphqlResponse(articleCollectionsQueryResponse);
-    return (
-        <div>
-            {JSON.stringify(articleCollectionsData)}
-        </div>
-    )
+	let articleCollectionsData = prepareStoryblokGraphqlResponse(articleCollectionsQueryResponse);
+	const articleCollectionsDataGroupedByCollection = prepareArticlesFromMultipleCollections(articleCollectionsData);
+	return (
+		<div>
+			<PageHeader title="Publications"/>
+			{articleCollectionsDataGroupedByCollection.map(collection => <ArticleCollectionDetailedView key={collection.name} {...collection}/>)}
+		</div>
+	)
 };
 
 
