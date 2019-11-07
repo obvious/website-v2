@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
 
+import PageHeader from "../common/PageHeader";
 import {BodyText2} from "../../atoms/BodyText";
-import {HeaderText1} from "../../atoms/HeaderText";
 import LinkGroup from "../../molecules/LinkGroup";
 
 const CaseStudyHeaderContainer = styled.section`
@@ -26,7 +26,7 @@ const CaseStudyHeaderContainer = styled.section`
 const CaseStudyHeader = (props) => {
     return (
         <CaseStudyHeaderContainer>
-            <HeaderText1 className='title'>{props.title[0].text}</HeaderText1>
+            <PageHeader className='title' text={props.title[0].text}/>
             <BodyText2 className='caption' richText={props.caption[0].text}/>
             <LinkGroup className='links' links={props.links[0].links}></LinkGroup>
         </CaseStudyHeaderContainer>
