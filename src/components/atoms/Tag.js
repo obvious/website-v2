@@ -10,6 +10,7 @@ const TagContainer = styled.div`
   font-size: ${props=> props.theme.fontSizes[6]};
   line-height: ${props=> props.theme.lineHeights[6]};
   justify-self: start;
+  align-self: start;
   border-radius: ${props => props.theme.borderRadii.smaller};
 `;
 

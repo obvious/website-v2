@@ -47,11 +47,11 @@ const theme = {
         between('2px','4px'),
     ],
     borderRadii: {
-      small:  between('4px','8px'),
+        small:  between('4px','8px'),
         smaller: between('2px','4px')
     },
     boxShadows: {
-      specialCard: '0px 4px 16px rgba(0, 0, 0, 0.16)'
+        specialCard: '0px 4px 16px rgba(0, 0, 0, 0.16)'
     },
     colors: {
         blue: '#0070E0',
