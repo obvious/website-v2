@@ -1,0 +1,32 @@
+import React from "react"
+import styled from "styled-components";
+
+const TagContainer = styled.div`
+  color: ${props => props.theme.colors[props.color]};
+  background-color: ${props => props.theme.backgrounds[props.backgroundColor]};
+  padding: 0 ${props => props.theme.paddings[4]};
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: ${props=> props.theme.fontSizes[6]};
+  line-height: ${props=> props.theme.lineHeights[6]};
+  justify-self: start;
+  border-radius: ${props => props.theme.borderRadii.smaller};
+`;
+
+const Tag = (props) => {
+    let color, backgroundColor;
+    switch(props.type) {
+        case 'latest':
+            color = 'white';
+            backgroundColor = 'orange';
+            break;
+        default:
+            color = 'darkgray';
+            backgroundColor = 'gray'
+    }
+    return (<TagContainer {...props} color={color} backgroundColor={backgroundColor} className='tag'>
+        {props.text}
+    </TagContainer>)
+};
+
+export default Tag;
