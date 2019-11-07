@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {graphql, useStaticQuery} from "gatsby";
-import {prepeareStoryblokGraphqlResponse} from "../../../utils";
-import NavItemsList from "../molecules/NavItemList";
+import {prepareStoryblokGraphqlResponse} from "../../../utils";
+import NavItemsList from "../../molecules/NavItemList";
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -57,7 +57,7 @@ const Nav = () => {
         `
     );
 
-    const navData = prepeareStoryblokGraphqlResponse(navQueryResponse);
+    const navData = prepareStoryblokGraphqlResponse(navQueryResponse);
 
     return (
         <NavContainer>
