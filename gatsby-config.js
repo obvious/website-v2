@@ -16,7 +16,8 @@ module.exports = {
                 accessToken: credentials.storyblokPublicKey,
                 homeSlug: 'home',
                 version: 'published',
-                includeLinks: true
+                includeLinks: true,
+                resolveRelations: ['case-study.relatedArticles']
             }
         },
         `gatsby-plugin-offline`
