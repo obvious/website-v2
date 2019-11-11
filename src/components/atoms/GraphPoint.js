@@ -17,6 +17,10 @@ const GraphPointContainer = styled.div`
     border-radius: 50%;
     background-color: ${props => props.isHighlighted && props.theme.colors.blue};
     }
+    
+  .divider-spacing {
+    margin-bottom: ${props => props.theme.paddings[2]};
+  }
 `;
 
 export const GraphPoint = props => (
@@ -25,7 +29,7 @@ export const GraphPoint = props => (
              <CaptionText2>{props.label[0].text}</CaptionText2>
              {props.specialLabel[0] ? (
                <CaptionTextHighlight>
-                   <Divider/>
+                   <Divider className="divider-spacing"/>
                  {props.specialLabel[0].Text}
                </CaptionTextHighlight>
              ) : null}
