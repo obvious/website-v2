@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components";
 
-import Image from "../atoms/Image";
 import {HeaderText5} from "../atoms/HeaderText";
 import {BodyText5} from "../atoms/BodyText";
 import Tag from "../atoms/Tag";
