@@ -55,9 +55,18 @@ const prepareArticlesFromMultipleCollections = (preparedStoryblokResponse) => {
     });
 };
 
+const formatDate = (date, options) => {
+    const defaultOptions = {
+        month: 'short',
+        day: '2-digit'
+    };
+    return (new Date(date)).toLocaleDateString('en-US', options || defaultOptions)
+};
+
 
 module.exports = {
     prepareStoryblokGraphqlResponse,
     groupBy,
-    prepareArticlesFromMultipleCollections
+    prepareArticlesFromMultipleCollections,
+    formatDate
 };
