@@ -7,8 +7,8 @@ const TagContainer = styled.div`
   padding: 0 ${props => props.theme.paddings[4]};
   font-weight: 600;
   letter-spacing: 1px;
-  font-size: ${props=> props.theme.fontSizes[6]};
-  line-height: ${props=> props.theme.lineHeights[6]};
+  font-size: ${props=> props.theme.fontSizes[7]};
+  line-height: ${props=> props.theme.lineHeights[7]};
   justify-self: start;
   align-self: start;
   border-radius: ${props => props.theme.borderRadii.smaller};

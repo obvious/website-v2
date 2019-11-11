@@ -19,7 +19,7 @@ const theme = {
         between('16px','32px'), //body text 2
         between('11px','22px'), //body text 3
         between('9px','18px'), //caption text
-        between('8px','14px'), // not proportional
+        between('11px','16px'), // not proportional
     ],
     lineHeights: [
         between('38px','76px'), //h1
@@ -29,7 +29,7 @@ const theme = {
         between('16px','32px'), //body text 2
         between('16px','32px'),  //body text 3
         between('13px','27px'), //caption text
-        between('16px','22px'), //not proportional
+        between('16px','24px'), //not proportional
     ],
     spacings: [
         between('100px','200px'),

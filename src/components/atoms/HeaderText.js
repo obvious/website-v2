@@ -60,3 +60,15 @@ export const HeaderText5 = ({children, ...otherProps}) => (
         {children}
     </HeaderText5Container>
 );
+
+const HeaderText6Container = styled.h6`
+  font-size: ${props => props.theme.fontSizes[7]};
+  line-height: ${props => props.theme.lineHeights[7]};
+  font-family: 'SF UI Display Bold';
+`;
+
+export const HeaderText6 = ({children, ...otherProps}) => (
+    <HeaderText6Container {...otherProps}>
+        {children}
+    </HeaderText6Container>
+);
