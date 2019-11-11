@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { CaptionText2, CaptionTextHighlight } from "./CaptionText";
+import { CaptionText2, CaptionTextHighlighted } from "./CaptionText";
 import { Divider } from "./Divider";
 
 const GraphPointContainer = styled.div`
@@ -31,9 +31,9 @@ export const GraphPoint = props => (
     {props.specialLabel[0] ? (
       <>
         <Divider className="divider-spacing" />
-        <CaptionTextHighlight>
+        <CaptionTextHighlighted>
           {props.specialLabel[0].Text}
-        </CaptionTextHighlight>
+        </CaptionTextHighlighted>
       </>
     ) : null}
   </GraphPointContainer>
