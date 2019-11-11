@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components";
 
-import Image from "../atoms/Image";
 import {HeaderText5} from "../atoms/HeaderText";
+import BackgroundImage from "../atoms/BackgroundImage";
 
 const ArticleCollectionFeaturedImageContainer = styled.div`
   padding: ${props => props.theme.paddings[4]} ${props => props.theme.paddings[2]} ${props => props.theme.paddings[2]};
@@ -12,12 +12,11 @@ const ArticleCollectionFeaturedImageContainer = styled.div`
   margin: 0;
   position: relative;
   background: ${props => props.theme.colors.white};
+  grid-gap: ${props => props.theme.paddings[1]};
+  align-content: start;
+  grid-template-rows: min-content 1fr;
   .featured-image {
-    align-self: end;
-    margin-top: ${props => props.theme.paddings[1]};
-    img {
-      height: 100%;
-    }
+    min-height: 30vh;
   }
   &:before, &:after {
     content: '';
@@ -44,7 +43,7 @@ const ArticleCollectionFeaturedImageContainer = styled.div`
 const ArticleCollectionFeaturedImage = (props) => (
     <ArticleCollectionFeaturedImageContainer {...props}>
         <HeaderText5 className="text">{props.name}</HeaderText5>
-        <Image className="featured-image" url={props.content.featuredImage}/>
+        <BackgroundImage className="featured-image" url={props.content.featuredImage}/>
     </ArticleCollectionFeaturedImageContainer>
 );
 
