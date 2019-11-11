@@ -6,9 +6,11 @@ import { Divider } from "./Divider";
 const GraphPointContainer = styled.div`
   display: inline-block;
   max-width: ${props => props.theme.captionWidth};
-  position: relative;
-  left: ${props => Number(props.xCoordinate)}vw;
-  bottom: ${props => Number(props.yCoordinate)}vh;
+  margin-left: ${props => props.theme.spacings[4]};
+  //TODO: Understand how graph-data input will be done from the editor and find a way to map it accordingly 
+  //position: relative;
+  // left: ${props => Number(props.xCoordinate)}vw;
+  // bottom: ${props => Number(props.yCoordinate)}vh;
 
   .point {
     width: ${props => props.theme.spacings[4]};

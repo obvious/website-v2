@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { GraphPoint } from "../atoms/GraphPoint";
 
 const GraphPointListContainer = styled.div`
-  //  TODO: Pull the graph out into the body by 60px
+  //TODO: Draw lines connecting the different GraphPoints
 `;
 
 export const GraphPointList = props => (
