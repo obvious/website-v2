@@ -29,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 is_startpage
                 parent_id
                 group_id
+                published_at
               }
             }
           }
@@ -68,7 +69,7 @@ exports.createPages = async ({ graphql, actions }) => {
                             return;
                     }
 
-                    let data = JSON.parse(entry.node.content);
+                    let data = Object.assign({}, entry.node, {content: JSON.parse(entry.node.content)})
                     createPage({
                         path: `/${pagePath}`,
                         component: component,

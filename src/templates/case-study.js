@@ -14,11 +14,11 @@ const CaseStudyContainer = styled.main`
 const CaseStudy = ({pageContext: {data}, ...otherProps}) => {
     return (
         <CaseStudyContainer {...otherProps}>
-            <CaseStudyHeader {...data.header[0]}/>
-            <CaseStudySection1 {...data.sections[0]}/>
-            <CaseStudySection2 {...data.sections[1]}/>
-            <CaseStudySection3 {...data.sections[2]}/>
-            <CaseStudyRelatedArticles articles={data.relatedArticles} heading={`Stories from ${data.header[0].title[0].text}`}/>
+            <CaseStudyHeader {...data.content.header[0]}/>
+            <CaseStudySection1 {...data.content.sections[0]}/>
+            <CaseStudySection2 {...data.content.sections[1]}/>
+            <CaseStudySection3 {...data.content.sections[2]}/>
+            <CaseStudyRelatedArticles articles={data.content.relatedArticles} heading={`Stories from ${data.content.header[0].title[0].text}`}/>
         </CaseStudyContainer>
     )
 };
