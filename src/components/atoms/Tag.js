@@ -11,6 +11,7 @@ const TagContainer = styled.div`
   line-height: ${props=> props.theme.lineHeights[7]};
   justify-self: start;
   align-self: start;
+  display: inline-flex;
   border-radius: ${props => props.theme.borderRadii.smaller};
 `;
 
