@@ -5,6 +5,7 @@ import Image from "../atoms/Image";
 import {HeaderText5} from "../atoms/HeaderText";
 import {BodyText5} from "../atoms/BodyText";
 import Tag from "../atoms/Tag";
+import Link from "../atoms/Link";
 import BackgroundImage from "../atoms/BackgroundImage";
 
 const ArticleCollectionFeaturedArticleContainer = styled.div`
@@ -29,6 +30,12 @@ const ArticleCollectionFeaturedArticleContainer = styled.div`
     }
   }
   
+  a {
+   margin-top: ${props => props.theme.paddings[1]};
+   font-size: ${props => props.theme.fontSizes[7]};
+   line-height: ${props => props.theme.lineHeights[7]};  
+   align-self: end; 
+  }
 `;
 
 const ArticleCollectionFeaturedArticle = (props) => (
@@ -39,6 +46,7 @@ const ArticleCollectionFeaturedArticle = (props) => (
             <BackgroundImage isThumbnail className="featured-image" url={props.content.featuredImage}/>
             <BodyText5 className="caption" richText={props.content.caption}/>
         </div>
+        <Link url={{url: `/${props.full_slug}`}} displayText={`Read Full Article →`}/>
 
     </ArticleCollectionFeaturedArticleContainer>
 );
