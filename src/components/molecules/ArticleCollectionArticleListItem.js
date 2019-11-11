@@ -14,12 +14,13 @@ const ArticleCollectionArticleListItemContainer = styled(GatsbyLink)`
   text-decoration: none;
   grid-gap: ${props => props.theme.paddings[3]};
   grid-template-columns: 2fr 6fr;
+  margin-top: 0;
   .title {
     color: ${props => props.theme.colors.lighterBlack};
     letter-spacing: 0.5px; // TODO - move to theme.js
   }
   .tag {
-    margin-top: ${props => props.theme.paddings[3]};
+    margin-top: ${props => props.theme.paddings[5]};
   }
   .featured-image {
     align-self: start;

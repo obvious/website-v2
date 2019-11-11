@@ -11,10 +11,11 @@ const LinkContainer = styled.div`
   }
 `;
 
-const Link = ({url, displayText, openInNewTab}) => {
+const Link = ({url, displayText, openInNewTab, ...otherProps}) => {
     // TODO - refactor url.url to only be url
     const isInternalLink = url.url.indexOf('http') !== 0;
     return (<LinkContainer
+        {...otherProps}
         as={isInternalLink ? GatsbyLink : 'a'}
         target={openInNewTab ? "_blank" : undefined}
         href={!isInternalLink ? url.url: undefined}
