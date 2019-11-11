@@ -4,9 +4,9 @@ import PropTypes from "prop-types"
 import Card from "./Card";
 
 const CardGroup = (props) => (
-    <div className="card-group" {...props}>
+    <ul className="card-group" {...props}>
         {props.cards.map((card, index) => <li key={`card-${index}`}><Card {...card}/></li>)}
-    </div>
+    </ul>
 );
 
 CardGroup.propTypes = {
