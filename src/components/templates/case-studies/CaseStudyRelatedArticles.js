@@ -37,9 +37,4 @@ CaseStudyRelatedArticles.propTypes = {
     articles: PropTypes.array.isRequired,
 };
 
-CaseStudyRelatedArticles.defaultProps = {
-    heading: null,
-    articles: null,
-};
-
 export default CaseStudyRelatedArticles;
