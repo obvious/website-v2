@@ -6,9 +6,9 @@ import {HeaderText6} from "../../atoms/HeaderText";
 import Tag from "../../atoms/Tag";
 
 import {formatDate} from '../../../utils';
-import BackgroundImage from "../../atoms/BackgroundImage";
 
 import {Link as GatsbyLink} from "gatsby";
+import Image from "../../atoms/Image";
 
 const ArticleListItemContainer = styled(GatsbyLink)`
   display: grid;
@@ -24,16 +24,21 @@ const ArticleListItemContainer = styled(GatsbyLink)`
   .tag {
     margin-top: ${props => props.theme.paddings[4]};
   }
-  .featured-image {
+  .featured-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .featured-image{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
     align-self: start;
-    height: 100%;
   }
 `;
 
 const ArticleListItem = (props) => (
     <ArticleListItemContainer to={`/${props.full_slug}`} {...props}>
-        <div>
-            <BackgroundImage className="featured-image" url={props.content.featuredImage}/>
+        <div className="featured-image-container">
+            <Image className="featured-image" url={props.content.featuredImage}/>
         </div>
         <div className="content-group">
             <HeaderText6 className="title">{props.name}</HeaderText6>
