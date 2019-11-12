@@ -37,7 +37,7 @@ const PublicationArticleListItem = (props) => (
         </div>
         <div className="content-group">
             <HeaderText6 className="title">{props.name}</HeaderText6>
-            <Tag text={formatDate(props.published_at)} />
+            <Tag text={formatDate(props.first_published_at)} />
         </div>
 
     </ArticleCollectionArticleListItemContainer>
