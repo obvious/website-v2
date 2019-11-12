@@ -45,7 +45,6 @@ const groupBy = (list, keyGetter) => {
 
 const prepareArticlesFromMultipleCollections = (preparedStoryblokResponse) => {
     let articleCollectionsDataGroupedByCollection = groupBy(preparedStoryblokResponse, article => article.content.collection.uuid);
-    console.log(articleCollectionsDataGroupedByCollection)
 
     return Object.keys(articleCollectionsDataGroupedByCollection).map(key => {
         const articleGroup = articleCollectionsDataGroupedByCollection[key];
