@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 import PageHeader from "../components/templates/common/PageHeader";
 import Image from "../components/atoms/Image";
-import {BodyText3, BodyText2} from "../components/atoms/BodyText";
+import {BodyText3} from "../components/atoms/BodyText";
 
-const ArticleCollectionContainer = styled.main`
+const PublicationContainer = styled.main`
   .page-content {
     display: grid;
     grid-template-columns: 4fr 8fr;
@@ -17,17 +17,17 @@ const ArticleCollectionContainer = styled.main`
   }
 `;
 
-const ArticleCollection = ({pageContext, theme}) => {
+const Publication = ({pageContext, theme}) => {
 
     return (
-        <ArticleCollectionContainer theme={theme}>
-            <PageHeader title={pageContext.data.name} caption="This is a collection of articles"/>
+        <PublicationContainer theme={theme}>
+            <PageHeader title={pageContext.data.name} caption="This is a publication"/>
             <div className="page-content">
                 <Image className="featured-image" url={pageContext.data.content.featuredImage}/>
                 <BodyText3 className="text" richText={pageContext.data.content.caption} />
             </div>
-        </ArticleCollectionContainer>
+        </PublicationContainer>
     )
 };
 
-export default ArticleCollection;
+export default Publication;

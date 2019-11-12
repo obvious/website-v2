@@ -41,11 +41,11 @@ const groupBy = (list, criteriaGetter) => {
     const map = new Map();
     list.forEach((item) => {
         const key = criteriaGetter(item);
-        const collection = map.get(key);
-        if (!collection) {
+        const publication = map.get(key);
+        if (!publication) {
             map.set(key, [item]);
         } else {
-            collection.push(item);
+            publication.push(item);
         }
     });
 
@@ -59,24 +59,24 @@ const groupBy = (list, criteriaGetter) => {
 
 
 /**
- * A function to turn an array of articles (with collection object populated in each) into an array of collections each containing metadata and an array of articles
+ * A function to turn an array of articles (with publication object populated in each) into an array of publications each containing metadata and an array of relevant articles
  * @param preparedStoryblokResponse - Sanitised response object from prepareStoryblokGraphqlResponse
  * @see prepareStoryblokGraphqlResponse
- * @returns {any[]} - An array of collections each containing metadata and an array of articles
+ * @returns {any[]} - An array of publications each containing metadata and an array of articles
  */
-const prepareArticlesFromMultipleCollections = (preparedStoryblokResponse) => {
-    /** First, group the articles by collection uuids */
-    let articleCollectionsDataGroupedByCollection = groupBy(preparedStoryblokResponse, article => article.content.collection.uuid);
+const prepareArticlesFromMultiplePublications = (preparedStoryblokResponse) => {
+    /** First, group the publications by publication uuids */
+    let articlesDataGroupedByPublication = groupBy(preparedStoryblokResponse, article => article.content.publication.uuid);
 
-    /** Convert the grouped object to have collection metadata as well */
-    return Object.keys(articleCollectionsDataGroupedByCollection).map(key => {
-        const articleGroup = articleCollectionsDataGroupedByCollection[key];
+    /** Convert the grouped object to have publication metadata as well */
+    return Object.keys(articlesDataGroupedByPublication).map(key => {
+        const articleGroup = articlesDataGroupedByPublication[key];
 
-        /** Clone the collection object to avoid overwriting the original object */
-        let collectionData = Object.assign({}, articleGroup[0].content.collection);
+        /** Clone the publication object to avoid overwriting the original object */
+        let publicationData = Object.assign({}, articleGroup[0].content.publication);
 
-        collectionData.articles = articleGroup;
-        return collectionData;
+        publicationData.articles = articleGroup;
+        return publicationData;
     });
 };
 
@@ -99,6 +99,6 @@ const formatDate = (utcDateString, options) => {
 module.exports = {
     prepareStoryblokGraphqlResponse,
     groupBy,
-    prepareArticlesFromMultipleCollections,
+    prepareArticlesFromMultiplePublications,
     formatDate
 };

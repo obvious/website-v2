@@ -6,11 +6,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
     return new Promise((resolve, reject) => {
-        const CaseStudyStory = path.resolve('src/templates/case-study.js');
-        const PublicationArticlesCollectionStory = path.resolve('src/templates/article-collection.js');
-        const PublicationArticlesCollectionsLandingStory = path.resolve('src/templates/article-collections-landing.js');
-        const PublicationArticleStory = path.resolve('src/templates/article.js');
-        const IndexStory = path.resolve('src/templates/index.js');
+        const CaseStudyPageTemplate = path.resolve('src/templates/case-study.js');
+        const PublicationPageTemplate = path.resolve('src/templates/publication.js');
+        const PublicationsLandingPagePageTemplate = path.resolve('src/templates/publications-landing.js');
+        const PublicationArticlePageTemplate = path.resolve('src/templates/article.js');
+        const IndexPageTemplate = path.resolve('src/templates/index.js');
 
         resolve(
             graphql(
@@ -26,7 +26,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 field_component
                 full_slug
                 content
-                is_startpage
                 parent_id
                 group_id
                 published_at
@@ -51,19 +50,19 @@ exports.createPages = async ({ graphql, actions }) => {
 
                     switch (full_slug.split('/')[0]) {
                         case 'home':
-                            component = IndexStory;
+                            component = IndexPageTemplate;
                             break;
                         case 'case-studies':
-                            component = CaseStudyStory;
+                            component = CaseStudyPageTemplate;
                             break;
-                        case 'article-collection':
-                            component = PublicationArticlesCollectionStory;
+                        case 'publication':
+                            component = PublicationPageTemplate;
                             break;
                         case 'article':
-                            component = PublicationArticleStory;
+                            component = PublicationArticlePageTemplate;
                             break;
-                        case 'articles':
-                            component = PublicationArticlesCollectionsLandingStory;
+                        case 'publications':
+                            component = PublicationsLandingPagePageTemplate;
                             break;
                         default:
                             return;

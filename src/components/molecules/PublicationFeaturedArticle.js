@@ -37,7 +37,7 @@ const ArticleCollectionFeaturedArticleContainer = styled.div`
   }
 `;
 
-const ArticleCollectionFeaturedArticle = (props) => (
+const PublicationFeaturedArticle = (props) => (
     <ArticleCollectionFeaturedArticleContainer {...props}>
         <Tag text="Latest" type="latest" />
         <HeaderText5 className="title">{props.name}</HeaderText5>
@@ -50,4 +50,4 @@ const ArticleCollectionFeaturedArticle = (props) => (
     </ArticleCollectionFeaturedArticleContainer>
 );
 
-export default ArticleCollectionFeaturedArticle;
+export default PublicationFeaturedArticle;

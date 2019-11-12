@@ -27,7 +27,7 @@ const ArticleCollectionArticleListItemContainer = styled(GatsbyLink)`
   }
 `;
 
-const ArticleCollectionArticleListItem = (props) => (
+const PublicationArticleListItem = (props) => (
     <ArticleCollectionArticleListItemContainer to={`/${props.full_slug}`} {...props}>
         <BackgroundImage isThumbnail className="featured-image" url={props.content.featuredImage}/>
         <div className="content-group">
@@ -38,4 +38,4 @@ const ArticleCollectionArticleListItem = (props) => (
     </ArticleCollectionArticleListItemContainer>
 );
 
-export default ArticleCollectionArticleListItem;
+export default PublicationArticleListItem;

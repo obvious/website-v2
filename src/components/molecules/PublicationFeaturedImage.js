@@ -40,11 +40,11 @@ const ArticleCollectionFeaturedImageContainer = styled.div`
   }
 `;
 
-const ArticleCollectionFeaturedImage = (props) => (
+const PublicationFeaturedImage = (props) => (
     <ArticleCollectionFeaturedImageContainer {...props}>
         <HeaderText5 className="text">{props.name}</HeaderText5>
         <BackgroundImage className="featured-image" url={props.content.featuredImage}/>
     </ArticleCollectionFeaturedImageContainer>
 );
 
-export default ArticleCollectionFeaturedImage;
+export default PublicationFeaturedImage;
