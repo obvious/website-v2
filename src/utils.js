@@ -92,7 +92,7 @@ const formatDate = (utcDateString, options) => {
         month: 'short',
         day: '2-digit'
     };
-    return (new Date(date)).toLocaleDateString('en-US', options || defaultOptions)
+    return (new Date(utcDateString)).toLocaleDateString('en-US', options || defaultOptions)
 };
 
 
