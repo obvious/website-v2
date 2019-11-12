@@ -17,7 +17,7 @@ const LinkGroup = ({links, ...otherProps}) => (
     <LinkGroupContainer {...otherProps}>
         {links.map((link, index) => (
             <li key={link._uid}>
-                <Link {...link} />
+                <Link {...link}>{link.displayText}</Link>
                 {index<= links.length - 2 ? <span>•</span> : null}
             </li>
         ))}

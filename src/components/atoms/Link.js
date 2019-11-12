@@ -11,7 +11,7 @@ const LinkContainer = styled.div`
   }
 `;
 
-const Link = ({url, displayText, openInNewTab, ...otherProps}) => {
+const Link = ({url, children, openInNewTab, ...otherProps}) => {
     // TODO - refactor url.url to only be url
     const isInternalLink = url.url.indexOf('http') !== 0;
     return (<LinkContainer
@@ -20,7 +20,7 @@ const Link = ({url, displayText, openInNewTab, ...otherProps}) => {
         target={openInNewTab ? "_blank" : undefined}
         href={!isInternalLink ? url.url: undefined}
         to={isInternalLink ? url.url: undefined}>
-        {displayText}
+        {children}
     </LinkContainer>)
 };
 

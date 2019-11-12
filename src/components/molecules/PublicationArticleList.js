@@ -21,11 +21,12 @@ const PublicationArticleList = (props) => {
         {props.articles.slice(0, noOfArticlesToShow).map(article =>
             <PublicationArticleListItem key={article.uuid} {...article}/>)}
         {noOfExtraArticles > 0 ?
-            <Link
+            (<Link
                 className="read-more-articles-link"
                 url={{url: `/${props.full_slug}`}}
-                displayText={noOfExtraArticles === 1  ? `+ 1 more article →`: `+ ${noOfExtraArticles} articles →`}
-            /> : null
+            >
+                {noOfExtraArticles === 1  ? `+ 1 more article →`: `+ ${noOfExtraArticles} articles →`}
+            </Link>) : null
         }
 
     </ArticleCollectionArticleListContainer>)
