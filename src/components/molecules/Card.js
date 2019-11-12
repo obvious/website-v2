@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components";
+import {ClampLines} from "../../styled/mixins";
 
 import {Link} from "gatsby";
 
@@ -10,12 +11,7 @@ import {BodyText3} from "../atoms/BodyText";
 
 const CardContentsContainer = styled.div`
   .text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+    ${ClampLines(2)};
     max-height: calc(2* ${props => props.theme.lineHeights[5]}); // This needs to be in relation to line-height of the text component, currently BodyText3
   }
   .image {
