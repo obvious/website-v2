@@ -95,10 +95,30 @@ const formatDate = (utcDateString, options) => {
     return (new Date(utcDateString)).toLocaleDateString('en-US', options || defaultOptions)
 };
 
+/**
+ * A function that returns a function to feed to Array.sort.
+ * Use the returned function to sort an array of objects based on the value of one of the keys.
+ * @param property - Property to sort by
+ * @returns {function(*, *): number} - A function meant to be provided to Array.sort
+ */
+const dynamicSort = (property) => {
+    let sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+};
+
+
 
 module.exports = {
     prepareStoryblokGraphqlResponse,
     groupBy,
     prepareArticlesFromMultiplePublications,
-    formatDate
+    formatDate,
+    dynamicSort
 };
