@@ -6,7 +6,8 @@ import PublicationArticleListItem from "./PublicationArticleListItem";
 
 const ArticleCollectionArticleListContainer = styled.div`
   display: grid;
-  grid-gap: ${props => props.theme.paddings[1]};
+  grid-gap: ${props => props.theme.paddings[0]};
+  align-content: start;
   a.read-more-articles-link {
     font-size: ${props => props.theme.fontSizes[7]};
     line-height: ${props => props.theme.lineHeights[7]};
