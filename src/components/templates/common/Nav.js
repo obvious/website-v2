@@ -4,6 +4,8 @@ import {graphql, useStaticQuery} from "gatsby";
 import {prepareStoryblokGraphqlResponse} from "../../../utils";
 import NavItemsList from "../../molecules/NavItemList";
 
+import {Link as GatsbyLink} from "gatsby";
+
 const NavContainer = styled.nav`
   position: absolute;
   top: 0;
@@ -62,7 +64,7 @@ const Nav = () => {
     return (
         <NavContainer>
             <div className="nav-inner">
-                <a href="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></a>
+                <GatsbyLink to="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></GatsbyLink>
                 <NavItemsList {...navData}/>
             </div>
         </NavContainer>
