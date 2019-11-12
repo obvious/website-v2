@@ -10,7 +10,7 @@ import BackgroundImage from "../../atoms/BackgroundImage";
 
 import {Link as GatsbyLink} from "gatsby";
 
-const ArticleCollectionArticleListItemContainer = styled(GatsbyLink)`
+const ArticleListItemContainer = styled(GatsbyLink)`
   display: grid;
   text-decoration: none;
   grid-gap: ${props => props.theme.paddings[3]};
@@ -30,8 +30,8 @@ const ArticleCollectionArticleListItemContainer = styled(GatsbyLink)`
   }
 `;
 
-const PublicationArticleListItem = (props) => (
-    <ArticleCollectionArticleListItemContainer to={`/${props.full_slug}`} {...props}>
+const ArticleListItem = (props) => (
+    <ArticleListItemContainer to={`/${props.full_slug}`} {...props}>
         <div>
             <BackgroundImage className="featured-image" url={props.content.featuredImage}/>
         </div>
@@ -40,7 +40,7 @@ const PublicationArticleListItem = (props) => (
             <Tag text={formatDate(props.first_published_at)} />
         </div>
 
-    </ArticleCollectionArticleListItemContainer>
+    </ArticleListItemContainer>
 );
 
-export default PublicationArticleListItem;
+export default ArticleListItem;

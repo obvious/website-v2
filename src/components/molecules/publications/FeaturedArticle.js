@@ -7,7 +7,7 @@ import Tag from "../../atoms/Tag";
 import Link from "../../atoms/Link";
 import Image from "../../atoms/Image";
 
-const ArticleCollectionFeaturedArticleContainer = styled.div`
+const FeaturedArticleContainer = styled.div`
   display: grid;
   width: 100%;
   align-content: start;
@@ -37,8 +37,8 @@ const ArticleCollectionFeaturedArticleContainer = styled.div`
   }
 `;
 
-const PublicationFeaturedArticle = (props) => (
-    <ArticleCollectionFeaturedArticleContainer {...props}>
+const FeaturedArticle = (props) => (
+    <FeaturedArticleContainer {...props}>
         <Tag text="Latest" type="latest" />
         <HeaderText5 className="title">{props.name}</HeaderText5>
         <div className="article-content">
@@ -46,7 +46,7 @@ const PublicationFeaturedArticle = (props) => (
             <BodyText5 className="caption" richText={props.content.caption}/>
         </div>
         <Link url={{url: `/${props.full_slug}`}}>{`Read Full Article →`}</Link>
-    </ArticleCollectionFeaturedArticleContainer>
+    </FeaturedArticleContainer>
 );
 
-export default PublicationFeaturedArticle;
+export default FeaturedArticle;

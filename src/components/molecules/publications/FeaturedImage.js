@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {HeaderText5} from "../../atoms/HeaderText";
 import BackgroundImage from "../../atoms/BackgroundImage";
 
-const ArticleCollectionFeaturedImageContainer = styled.div`
+const FeaturedImageContainer = styled.div`
   padding: ${props => props.theme.paddings[4]} ${props => props.theme.paddings[2]} ${props => props.theme.paddings[2]};
   display: grid;
   border-radius: ${props => props.theme.borderRadii.small};
@@ -40,11 +40,11 @@ const ArticleCollectionFeaturedImageContainer = styled.div`
   }
 `;
 
-const PublicationFeaturedImage = (props) => (
-    <ArticleCollectionFeaturedImageContainer {...props}>
+const FeaturedImage = (props) => (
+    <FeaturedImageContainer {...props}>
         <HeaderText5 className="text">{props.name}</HeaderText5>
         <BackgroundImage className="featured-image" url={props.content.featuredImage}/>
-    </ArticleCollectionFeaturedImageContainer>
+    </FeaturedImageContainer>
 );
 
-export default PublicationFeaturedImage;
+export default FeaturedImage;

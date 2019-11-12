@@ -3,10 +3,10 @@ import {graphql, useStaticQuery} from "gatsby";
 import {prepareStoryblokGraphqlResponse, prepareArticlesFromMultiplePublications, dynamicSort} from "../utils";
 
 import PageHeader from "../components/templates/common/PageHeader";
-import PublicationDetailedView from "../components/templates/publications/PublicationDetailedView";
+import DetailedView from "../components/templates/publications/DetailedView";
 
 const PublicationLandingPage = () => {
-	const publicationsQueryResponse = useStaticQuery(
+	const articlesQueryResponse = useStaticQuery(
 		graphql`
 			query {
 				allStoryblokEntry(filter: {full_slug: {regex: "/^article\\//"}}) {
@@ -30,15 +30,14 @@ const PublicationLandingPage = () => {
 		`
 	);
 
-	let publicationsData = prepareStoryblokGraphqlResponse(publicationsQueryResponse);
-	const publicationsDataGroupedByCollection = prepareArticlesFromMultiplePublications(publicationsData);
+	let articlesData = prepareStoryblokGraphqlResponse(articlesQueryResponse);
+	const articlesDataGroupedByPublications = prepareArticlesFromMultiplePublications(articlesData);
 	return (
 		<div>
 			<PageHeader title="Publications"/>
-			{publicationsDataGroupedByCollection.map(publication => {
+			{articlesDataGroupedByPublications.map(publication => {
 				publication.articles = publication.articles.sort(dynamicSort('-first_published_at'));
-				console.log(publication.articles);
-				return (<PublicationDetailedView key={publication.uuid} {...publication}/>);
+				return (<DetailedView key={publication.uuid} {...publication}/>);
 			})}
 		</div>
 	)
