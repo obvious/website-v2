@@ -6,6 +6,7 @@ import {between} from 'polished';
 
 const theme = {
     navHeight: between('32px','64px'),
+    captionWidth: between('110px', '220px' ),
     containerSizes: {
         default: '80vw',
         mobile: '90vw'
@@ -48,7 +49,8 @@ const theme = {
         black: '#000',
         lighterBlack: '#3E4B52',
         white: '#fff',
-        orange: '#FFB399'
+        orange: '#FFB399',
+        gray: 'rgba(10, 73, 100, 0.1)'
     },
     backgrounds: {
         gray: 'rgba(10, 73, 100, 0.1)'
