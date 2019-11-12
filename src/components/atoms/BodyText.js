@@ -76,3 +76,27 @@ const BodyText3Container = styled.div`
 export const BodyText3 = ({richText, ...otherProps}) => (
     <BodyText3Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? `<div>${Storyblok.richTextResolver.render(richText)}</div>` : richText}}/>
 );
+
+
+const BodyText5Container = styled.div`
+  font-size: ${props => props.theme.fontSizes[7]};
+  line-height: ${props => props.theme.lineHeights[7]};
+  > div > p {
+    &:not(:last-child) {
+      margin-bottom: ${props => props.theme.lineHeights[5]}
+    }
+  }
+  ul {
+    list-style: initial; 
+  }
+  li {
+    list-style-position:inside;
+    p {
+      display: inline;
+    }
+  }
+`;
+
+export const BodyText5 = ({richText, ...otherProps}) => (
+    <BodyText5Container {...otherProps} dangerouslySetInnerHTML={{__html: typeof richText === 'object' ? `<div>${Storyblok.richTextResolver.render(richText)}</div>` : richText}}/>
+);

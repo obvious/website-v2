@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
 import {graphql, useStaticQuery} from "gatsby";
-import {prepeareStoryblokGraphqlResponse} from "../../../utils";
-import NavItemsList from "../molecules/NavItemList";
+import {prepareStoryblokGraphqlResponse} from "../../../utils";
+import NavItemsList from "../../molecules/NavItemList";
+
+import {Link as GatsbyLink} from "gatsby";
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -57,12 +59,12 @@ const Nav = () => {
         `
     );
 
-    const navData = prepeareStoryblokGraphqlResponse(navQueryResponse);
+    const navData = prepareStoryblokGraphqlResponse(navQueryResponse);
 
     return (
         <NavContainer>
             <div className="nav-inner">
-                <a href="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></a>
+                <GatsbyLink to="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></GatsbyLink>
                 <NavItemsList {...navData}/>
             </div>
         </NavContainer>
