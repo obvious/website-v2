@@ -13,6 +13,7 @@ const TagContainer = styled.div`
   align-self: start;
   display: inline-flex;
   border-radius: ${props => props.theme.borderRadii.smaller};
+  text-transform: capitalize;
 `;
 
 const Tag = (props) => {
