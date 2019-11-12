@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components";
 
-import PublicationFeaturedImage from "../../molecules/PublicationFeaturedImage";
-import PublicationFeaturedArticle from "../../molecules/PublicationFeaturedArticle";
-import PublicationArticleList from "../../molecules/PublicationArticleList";
+import PublicationFeaturedImage from "../../molecules/publications/PublicationFeaturedImage";
+import PublicationFeaturedArticle from "../../molecules/publications/PublicationFeaturedArticle";
+import PublicationArticleList from "../../molecules/publications/PublicationArticleList";
 
 const ArticleCollectionDetailedViewContainer = styled.section`
   display: grid;

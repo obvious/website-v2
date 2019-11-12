@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 
-import Link from "../atoms/Link";
+import Link from "../../atoms/Link";
 import PublicationArticleListItem from "./PublicationArticleListItem";
 
 const ArticleCollectionArticleListContainer = styled.div`

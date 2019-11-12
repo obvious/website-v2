@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components";
 
-import {HeaderText6} from "../atoms/HeaderText";
-import Tag from "../atoms/Tag";
+import {HeaderText6} from "../../atoms/HeaderText";
+import Tag from "../../atoms/Tag";
 
-import {formatDate} from '../../utils';
-import BackgroundImage from "../atoms/BackgroundImage";
+import {formatDate} from '../../../utils';
+import Image from "../../atoms/Image";
 
 import {Link as GatsbyLink} from "gatsby";
 
@@ -29,7 +29,7 @@ const ArticleCollectionArticleListItemContainer = styled(GatsbyLink)`
 
 const PublicationArticleListItem = (props) => (
     <ArticleCollectionArticleListItemContainer to={`/${props.full_slug}`} {...props}>
-        <BackgroundImage isThumbnail className="featured-image" url={props.content.featuredImage}/>
+        <Image isThumbnail className="featured-image" url={props.content.featuredImage}/>
         <div className="content-group">
             <HeaderText6 className="title">{props.name}</HeaderText6>
             <Tag text={formatDate(props.published_at)} />

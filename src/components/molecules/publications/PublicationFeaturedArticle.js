@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components";
 
-import {HeaderText5} from "../atoms/HeaderText";
-import {BodyText5} from "../atoms/BodyText";
-import Tag from "../atoms/Tag";
-import Link from "../atoms/Link";
-import BackgroundImage from "../atoms/BackgroundImage";
+import {HeaderText5} from "../../atoms/HeaderText";
+import {BodyText5} from "../../atoms/BodyText";
+import Tag from "../../atoms/Tag";
+import Link from "../../atoms/Link";
+import Image from "../../atoms/Image";
 
 const ArticleCollectionFeaturedArticleContainer = styled.div`
   display: grid;
@@ -42,7 +42,7 @@ const PublicationFeaturedArticle = (props) => (
         <Tag text="Latest" type="latest" />
         <HeaderText5 className="title">{props.name}</HeaderText5>
         <div className="article-content">
-            <BackgroundImage isThumbnail className="featured-image" url={props.content.featuredImage}/>
+            <Image isThumbnail className="featured-image" url={props.content.featuredImage}/>
             <BodyText5 className="caption" richText={props.content.caption}/>
         </div>
         <Link url={{url: `/${props.full_slug}`}}>{`Read Full Article →`}</Link>

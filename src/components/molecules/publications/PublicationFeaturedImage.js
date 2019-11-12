@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components";
 
-import {HeaderText5} from "../atoms/HeaderText";
-import BackgroundImage from "../atoms/BackgroundImage";
+import {HeaderText5} from "../../atoms/HeaderText";
+import BackgroundImage from "../../atoms/BackgroundImage";
 
 const ArticleCollectionFeaturedImageContainer = styled.div`
   padding: ${props => props.theme.paddings[4]} ${props => props.theme.paddings[2]} ${props => props.theme.paddings[2]};
