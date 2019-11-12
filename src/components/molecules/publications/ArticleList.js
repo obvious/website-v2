@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components";
 
 import Link from "../../atoms/Link";
-import PublicationArticleListItem from "./PublicationArticleListItem";
+import ArticleListItem from "./ArticleListItem";
 
-const ArticleCollectionArticleListContainer = styled.div`
+const ArticleListContainer = styled.div`
   display: grid;
   grid-gap: ${props => props.theme.paddings[0]};
   align-content: start;
@@ -15,12 +15,12 @@ const ArticleCollectionArticleListContainer = styled.div`
   }
 `;
 
-const PublicationArticleList = (props) => {
+const ArticleList = (props) => {
     const noOfArticlesToShow = 4;
     const noOfExtraArticles = props.articles.length - noOfArticlesToShow;
-    return (<ArticleCollectionArticleListContainer {...props}>
+    return (<ArticleListContainer {...props}>
         {props.articles.slice(0, noOfArticlesToShow).map(article =>
-            <PublicationArticleListItem key={article.uuid} {...article}/>)}
+            <ArticleListItem key={article.uuid} {...article}/>)}
         {noOfExtraArticles > 0 ?
             (<Link
                 className="read-more-articles-link"
@@ -30,7 +30,7 @@ const PublicationArticleList = (props) => {
             </Link>) : null
         }
 
-    </ArticleCollectionArticleListContainer>)
+    </ArticleListContainer>)
 };
 
-export default PublicationArticleList;
+export default ArticleList;
