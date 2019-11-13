@@ -25,7 +25,7 @@ const IndexPage = ({pageContext: {data}, theme}) => {
     let filteredStories = data.filter(item => {
         const contentType = item.node.full_slug.split('/')[0];
         item.node.contentType = contentType;
-        return ['case-studies',  'publication', 'article', 'publications'].indexOf(contentType) > -1;
+        return ['case-studies', 'publications'].indexOf(contentType) > -1;
     });
 
     filteredStories = filteredStories.map(item => item.node);
