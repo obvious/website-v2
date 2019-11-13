@@ -73,7 +73,7 @@ exports.createPages = async ({ graphql, actions }) => {
                         path: `/${pagePath}`,
                         component: component,
                         context: {
-                            data: data
+                            data: full_slug === 'home' ? edges : data
                         }
                     })
                 })
