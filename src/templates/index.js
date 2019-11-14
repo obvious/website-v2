@@ -8,6 +8,7 @@ import {HeaderText5, HeaderText2} from '../components/atoms/HeaderText'
 import {groupBy} from '../utils'
 import PageHeader from "../components/templates/common/PageHeader";
 import Link from "../components/atoms/Link";
+import {NewsCardList} from "../components/molecules/NewsCardList";
 
 const IndexPageContainer = styled.div`
   padding-bottom: ${props => props.theme.spacings[0]};
@@ -28,12 +29,22 @@ const IndexPage = ({pageContext: {data}, theme}) => {
         return ['case-studies', 'publications'].indexOf(contentType) > -1;
     });
 
+    let newsStories = data.filter(item => {
+        const contentType = item.node.full_slug.split('/')[0];
+        item.node.contentType = contentType;
+        return ['news'].indexOf(contentType) > -1;
+    })
+
     filteredStories = filteredStories.map(item => item.node);
+    newsStories = Object.values(newsStories.map(item => item.node));
 
     const groupedStories = groupBy(filteredStories, story => story.contentType);
 
     return(<IndexPageContainer theme={theme}>
         <PageHeader title={`Hello World.`}/>
+
+        <NewsCardList {...newsStories}/>
+
         {Object.keys(groupedStories).map(key =>
             (<>
                 <HeaderText2 className="homepage-section-header">{key.replace('-', ' ')}</HeaderText2>
