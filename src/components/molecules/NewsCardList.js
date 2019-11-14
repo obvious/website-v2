@@ -4,9 +4,12 @@ import { NewsCard } from "./NewsCard";
 import { HeaderText2, HeaderText4 } from "../atoms/HeaderText";
 
 const NewsCardListContainer = styled.ol`
-  all: unset;
-  
-//  TODO: Add a scrollbar at the bottom
+  .newsCard-group {
+    display: flex;
+    flex-direction: row;
+  }
+
+  //  TODO: Add a scrollbar at the bottom
 `;
 
 export const NewsCardList = props => {

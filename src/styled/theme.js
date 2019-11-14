@@ -11,6 +11,17 @@ const theme = {
         default: '80vw',
         mobile: '90vw'
     },
+    //for news card
+    cardSizes : {
+        default: {
+            width: between('216px', '325px'),
+            height: between('307px', '460px')
+        },
+        selected: {
+            width: between('200px', '300px'),
+            height: between('287px', '430px')
+        }
+    },
     fontSizes: [
         between('32px','64px'), //h1
         between('24px','48px'), //h2
@@ -20,6 +31,7 @@ const theme = {
         between('11px','22px'), //body text 3
         between('9px','18px'), //caption text
         between('11px','16px'), // not proportional
+        between('12px', '24px') //news card headline size
     ],
     lineHeights: [
         between('38px','76px'), //h1
