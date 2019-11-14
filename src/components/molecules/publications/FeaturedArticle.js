@@ -39,7 +39,7 @@ const FeaturedArticleContainer = styled.div`
 
 const FeaturedArticle = (props) => (
     <FeaturedArticleContainer {...props}>
-        <Tag text="Latest" type="latest" />
+        <Tag type="latest">Latest</Tag>
         <HeaderText5 className="title">{props.name}</HeaderText5>
         <div className="article-content">
             <Image isThumbnail className="featured-image" url={props.content.featuredImage}/>
