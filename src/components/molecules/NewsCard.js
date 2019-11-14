@@ -8,9 +8,9 @@ const NewsCardContainer = styled.li``;
 
 export const NewsCard = props => (
   <NewsCardContainer>
-    <Tag>{props.context_setting_text}</Tag>
-    <Tag>{props.date_published}</Tag>
     <BodyText3 className="text" richText={props.name} />
+      <Tag type="news" className="tag">{props.context_setting_text}</Tag>
+      <Tag type="news" className="tag">{props.date_published}</Tag>
     {props.feature_image && props.feature_image.length ? (
       <Image className="image" url={props.feature_image}></Image>
     ) : null}
