@@ -4,12 +4,34 @@ import { NewsCard } from "./NewsCard";
 import { HeaderText2, HeaderText4 } from "../atoms/HeaderText";
 
 const NewsCardListContainer = styled.ol`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .heading {
+    font-weight: 300;
+    padding: ${props => props.theme.spacings[2]} 0;
+  }
+  
   .newsCard-group {
     display: flex;
     flex-direction: row;
   }
 
-  //  TODO: Add a scrollbar at the bottom
+  .scrollbar {
+    padding-top: ${props => props.theme.spacings[2]};
+    display: flex;
+    align-content: baseline;
+  }
+
+  .scrollbar-item {
+    width: 56px;
+    border: solid 2px ${props => props.theme.colors.gray};
+    
+    .highlighted {
+      border: solid 4px ${props => props.theme.colors.blue};
+    }
+  }
 `;
 
 export const NewsCardList = props => {
@@ -32,10 +54,15 @@ export const NewsCardList = props => {
 
   return (
     <NewsCardListContainer {...props}>
-      <HeaderText2>News</HeaderText2>
+      <HeaderText2 className="heading">News</HeaderText2>
       <div className="newsCard-group">
         {newsStories.map(newsStory => (
           <NewsCard {...newsStory} />
+        ))}
+      </div>
+      <div className="scrollbar">
+        {newsStories.map(item => (
+          <div className="scrollbar-item" />
         ))}
       </div>
     </NewsCardListContainer>
