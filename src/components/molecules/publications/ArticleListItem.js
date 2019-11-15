@@ -18,7 +18,6 @@ const ArticleListItemContainer = styled(GatsbyLink)`
   margin-top: 0;
   .title {
     color: ${props => props.theme.colors.lighterBlack};
-    letter-spacing: 0.5px; // TODO - move to theme.js
     ${ClampLines(2)};
   }
   .tag {
