@@ -30,15 +30,22 @@
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.3",
     "lodash": "^4.17.15",
-    "prettier": "^1.19.1"
+    "prettier": "1.19.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+      "src/**/*.{js,css}": [
+        "prettier --write",
+        "git add"
+      ]
   },
   "repository": {
     "type": "git",
