@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
 import {MakeLinesClamp} from "../styled/mixins";
 
-import {HeaderText5, HeaderText2} from '../components/atoms/HeaderText'
+import { HeaderText5, HeaderText2 } from "../components/atoms/HeaderText";
 
-import {groupBy} from '../utils'
+import { groupBy } from "../utils";
 import PageHeader from "../components/templates/common/PageHeader";
 import Link from "../components/atoms/Link";
 import {NewsCardList} from "../components/molecules/NewsCardList";

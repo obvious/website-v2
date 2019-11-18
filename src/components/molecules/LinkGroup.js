@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
 import Link from "../atoms/Link";
@@ -9,19 +9,19 @@ const LinkGroupContainer = styled.ul`
   justify-content: flex-start;
   align-items: center;
   span {
-    margin: 0 ${props=> props.theme.paddings[4]};
+    margin: 0 ${props => props.theme.paddings[4]};
   }
 `;
 
-const LinkGroup = ({links, ...otherProps}) => (
-    <LinkGroupContainer {...otherProps}>
-        {links.map((link, index) => (
-            <li key={link._uid}>
-                <Link {...link}>{link.displayText}</Link>
-                {index<= links.length - 2 ? <span>•</span> : null}
-            </li>
-        ))}
-    </LinkGroupContainer>
+const LinkGroup = ({ links, ...otherProps }) => (
+  <LinkGroupContainer {...otherProps}>
+    {links.map((link, index) => (
+      <li key={link._uid}>
+        <Link {...link}>{link.displayText}</Link>
+        {index <= links.length - 2 ? <span>•</span> : null}
+      </li>
+    ))}
+  </LinkGroupContainer>
 );
 
 export default LinkGroup;

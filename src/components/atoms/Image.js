@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
 const ImageContainer = styled.div`
@@ -9,11 +9,13 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Image = ({url, ...otherProps}) => {
-    const optimizedImageUrl = url.replace('/upload/', '/upload/q_auto/');
-    return (<ImageContainer {...otherProps}>
-        <img src={optimizedImageUrl} alt=""/>
-    </ImageContainer>)
+const Image = ({ url, ...otherProps }) => {
+  const optimizedImageUrl = url.replace("/upload/", "/upload/q_auto/");
+  return (
+    <ImageContainer {...otherProps}>
+      <img src={optimizedImageUrl} alt="" />
+    </ImageContainer>
+  );
 };
 
 export default Image;

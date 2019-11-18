@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import {graphql, useStaticQuery} from "gatsby";
-import {prepareStoryblokGraphqlResponse} from "../../../utils";
+import { graphql, useStaticQuery } from "gatsby";
+import { prepareStoryblokGraphqlResponse } from "../../../utils";
 import NavItemsList from "../../molecules/NavItemList";
 
-import {Link as GatsbyLink} from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -23,9 +23,8 @@ const NavContainer = styled.nav`
     align-items: center;
     margin: auto;
     grid-template-columns: 25% auto;
-    
   }
-  
+
   .logo-container {
     height: calc(${props => props.theme.navHeight} * 0.6);
     display: grid;
@@ -33,7 +32,7 @@ const NavContainer = styled.nav`
       height: 100%;
     }
   }
-  
+
   @media screen and (max-width: ${props => props.theme.breakpoints.large}) {
     .logo-container {
       height: calc(${props => props.theme.navHeight} * 0.7);
@@ -49,28 +48,28 @@ const NavContainer = styled.nav`
 `;
 
 const Nav = () => {
-    const navQueryResponse = useStaticQuery(
-        graphql`
-			query {
-				storyblokEntry(slug: { eq: "main-navigation" }) {
-					content
-				}
-			}
-        `
-    );
+  const navQueryResponse = useStaticQuery(
+    graphql`
+      query {
+        storyblokEntry(slug: { eq: "main-navigation" }) {
+          content
+        }
+      }
+    `
+  );
 
-    const navData = prepareStoryblokGraphqlResponse(navQueryResponse);
+  const navData = prepareStoryblokGraphqlResponse(navQueryResponse);
 
-    return (
-        <NavContainer>
-            <div className="nav-inner">
-                <GatsbyLink to="/" className="logo-container"><img src={navData.logo} alt={navData.alt}/></GatsbyLink>
-                <NavItemsList {...navData}/>
-            </div>
-        </NavContainer>
-    )
+  return (
+    <NavContainer>
+      <div className="nav-inner">
+        <GatsbyLink to="/" className="logo-container">
+          <img src={navData.logo} alt={navData.alt} />
+        </GatsbyLink>
+        <NavItemsList {...navData} />
+      </div>
+    </NavContainer>
+  );
 };
-
-
 
 export default Nav;

@@ -2,7 +2,7 @@
     https://github.com/system-ui/theme-specification
  */
 
-import {between} from 'polished';
+import { between } from "polished";
 
 const theme = {
     navHeight: between('32px','64px'),

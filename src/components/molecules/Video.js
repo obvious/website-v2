@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 
 import Button from "../atoms/Button";
-import {BodyText3} from "../atoms/BodyText";
+import { BodyText3 } from "../atoms/BodyText";
 
 const VideoContainer = styled.div`
   position: relative;
@@ -23,34 +23,42 @@ const VideoContainer = styled.div`
   }
   .content-overlay {
     position: absolute;
-    left: ${props => props.hasOverlay ? props.theme.spacings[1] : 'auto'};
-    right: ${props => props.hasOverlay ? 'auto' : props.theme.spacings[4]};
-    bottom: ${props => props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
+    left: ${props => (props.hasOverlay ? props.theme.spacings[1] : "auto")};
+    right: ${props => (props.hasOverlay ? "auto" : props.theme.spacings[4])};
+    bottom: ${props =>
+      props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
     .heading {
       max-width: 60%;
       color: ${props => props.theme.colors.white};
       margin-bottom: ${props => props.theme.spacings[4]};
     }
     .button {
-      font-size: ${props=> props.theme.fontSizes[5]};
+      font-size: ${props => props.theme.fontSizes[5]};
     }
   }
 `;
 
-const Video = ({video, ...otherProps}) => {
-    return (
-        <VideoContainer {...otherProps}>
-            <ReactPlayer url={video} className="video-player" playing={true} loop={true} />
-            {otherProps.hasOverlay ?
-                <div className="overlay"/>
-                : null}
-            <div className="content-overlay">
-                {otherProps.hasOverlay ?<BodyText3 className="heading" richText={otherProps.overlayHeading}></BodyText3> :null}
-                <Button>{otherProps.overlayButtonText || 'Watch'}</Button>
-            </div>
-        </VideoContainer>
-    )
+const Video = ({ video, ...otherProps }) => {
+  return (
+    <VideoContainer {...otherProps}>
+      <ReactPlayer
+        url={video}
+        className="video-player"
+        playing={true}
+        loop={true}
+      />
+      {otherProps.hasOverlay ? <div className="overlay" /> : null}
+      <div className="content-overlay">
+        {otherProps.hasOverlay ? (
+          <BodyText3
+            className="heading"
+            richText={otherProps.overlayHeading}
+          ></BodyText3>
+        ) : null}
+        <Button>{otherProps.overlayButtonText || "Watch"}</Button>
+      </div>
+    </VideoContainer>
+  );
 };
 
 export default Video;
-
