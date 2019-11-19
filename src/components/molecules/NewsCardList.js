@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NewsCard } from "./NewsCard";
 import { HeaderText2, HeaderText4 } from "../atoms/HeaderText";
+import {MakeFullWidth} from "../../styled/mixins";
 
 const NewsCardListContainer = styled.ol`
   display: flex;
@@ -14,8 +15,10 @@ const NewsCardListContainer = styled.ol`
   }
   
   .newsCard-group {
+    ${MakeFullWidth()};
     display: flex;
     flex-direction: row;
+    overflow-x: scroll;
   }
 
   .scrollbar {
