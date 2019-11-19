@@ -45,7 +45,7 @@ const NewsCardContainer = styled.li`
   }
 
   .card-image {
-    max-height: 240px;
+    max-height: ${props => props.theme.cardSizes.imageHeight};
     margin-top: auto;
     overflow: hidden;
   }
@@ -57,7 +57,7 @@ export const NewsCard = props => (
       <Tag type="news" className="tag">{props.context_setting_text}</Tag>
       <Tag type="news" className="tag">{props.date_published}</Tag>
     </div>
-    <BodyText3 className="text headline" richText={props.name} />
+    <BodyText3 className="headline" richText={props.name} />
     {props.feature_image && props.feature_image.length ? (
       <Image className="image card-image" url={props.feature_image}></Image>
     ) : null}

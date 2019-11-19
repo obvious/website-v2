@@ -11,6 +11,9 @@ const theme = {
         default: '80vw',
         small: '90vw'
     },
+    cardSizes: {
+        imageHeight: between('200px', '240px')
+    },
     fontSizes: [
         between('32px','64px'), //h1
         between('24px','48px'), //h2
