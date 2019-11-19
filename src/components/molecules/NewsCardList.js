@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { NewsCard } from "./NewsCard";
 import { HeaderText2, HeaderText4 } from "../atoms/HeaderText";
 import {MakeFullWidth} from "../../styled/mixins";
+import {formatDate} from "../../utils"
 
 const NewsCardListContainer = styled.ol`
   display: flex;
@@ -43,9 +44,7 @@ export const NewsCardList = props => {
     const content = JSON.parse(newsStory.content);
     return {
       name: newsStory.name,
-      date_published: new Date(
-        content.date_published
-      ).toLocaleDateString(undefined, { month: "short", day: "2-digit" }),
+      date_published: formatDate(content.date_published),
       context_setting_text: content.context_setting_text,
       feature_image:
         content.related_story[0].article &&
