@@ -10,15 +10,22 @@ const NewsCardContainer = styled.li`
   border: solid 2px ${props => props.theme.colors.gray};
   display: flex;
   flex-direction: column;
-  margin-right: ${props => props.theme.spacings[4]};
+  
+  min-width: calc(25vw - ${props => props.theme.spacings[4]}); //This displays 4 and a half cards
+  @media (max-width: ${props => props.theme.breakpoints.medium}) {
+    min-width: calc(38vw - ${props => props.theme.spacings[4]}); //This displays 2 and a half cards  
+  }
+  @media (max-width: ${props => props.theme.breakpoints.small}) {
+    min-width: calc(60vw - ${props => props.theme.spacings[4]}); //This displays 1 and a half cards  
+  }
+  
   padding-top: ${props => props.theme.paddings[1]};
+  margin-right: ${props => props.theme.spacings[4]};
+  &:last-child {  margin-right: 0;  }
   
+  transition: transform 0.33s;
+  &:hover {   transform: scale(1.2);  } 
   
-  width: ${props => props.theme.cardSizes.default.width};
-  height: ${props => props.theme.cardSizes.default.height};
-  max-width: ${props => props.theme.cardSizes.default.width};
-  max-height: ${props => props.theme.cardSizes.default.height};
-
   .tag-group {
     padding: 0 ${props => props.theme.paddings[1]};
     display: flex;
@@ -26,7 +33,7 @@ const NewsCardContainer = styled.li`
   }
   
   .tag {
-    font-weight: 300;
+    font-weight: 400;
     padding: 0;
   }
 

@@ -9,17 +9,6 @@ const theme = {
     captionWidth: between('110px', '220px' ),
     containerSizes: {
         default: '80vw',
-    },
-    //for news card
-    cardSizes : {
-        default: {
-            width: between('216px', '325px'),
-            height: between('307px', '460px')
-        },
-        selected: {
-            width: between('200px', '300px'),
-            height: between('287px', '430px')
-        }
         small: '90vw'
     },
     fontSizes: [
