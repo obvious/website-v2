@@ -15,7 +15,7 @@ const GraphPointContainer = styled.div`
   .point {
     width: ${props => props.theme.spacings[4]};
     height: ${props => props.theme.spacings[4]};
-    border: ${props => props.theme.colors.gray} solid 2px;
+    border: ${props => props.theme.colors.gray} solid ${props => props.theme.borderWidth.default};
     border-radius: 50%;
     background-color: ${props =>
       props.isHighlighted && props.theme.colors.blue};

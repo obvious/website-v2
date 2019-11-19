@@ -30,10 +30,10 @@ const NewsCardListContainer = styled.ol`
 
   .scrollbar-item {
     width: 56px;
-    border: solid 2px ${props => props.theme.colors.gray};
+    border: solid ${props => props.theme.borderWidth.default} ${props => props.theme.colors.gray};
     
     .highlighted {
-      border: solid 4px ${props => props.theme.colors.blue};
+      border: solid ${props => props.theme.borderWidth.thick} ${props => props.theme.colors.blue};
     }
   }
 `;

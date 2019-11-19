@@ -7,7 +7,7 @@ import {MakeLinesClamp} from "../../styled/mixins";
 
 const NewsCardContainer = styled.li`
   all: unset;
-  border: solid 2px ${props => props.theme.colors.gray};
+  border: solid ${props => props.theme.borderWidth.default} ${props => props.theme.colors.gray};
   display: flex;
   flex-direction: column;
   

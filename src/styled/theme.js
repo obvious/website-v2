@@ -50,6 +50,10 @@ const theme = {
         between('4px','8px'),
         between('2px','4px'),
     ],
+    borderWidth: {
+        default: '2px',
+        thick: '4px'
+    },
     borderRadii: {
         small:  between('4px','8px'),
         smaller: between('2px','4px')
