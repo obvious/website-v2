@@ -15,12 +15,12 @@ export const MakeLinesClamp = (lineCount) => {
 export const MakeFullWidth = () => {
    return css`
     width:100vw;
-    margin-left: -calc(calc(100vw - ${theme.containerSizes.default})/2);
-    margin-right: -calc(calc(100vw - ${theme.containerSizes.default})/2);
+    margin-left: calc((100vw - ${theme.containerSizes.default})/-2);
+    margin-right: calc((100vw - ${theme.containerSizes.default})/-2);
     
     @media (max-width: ${theme.breakpoints.medium}) {
-    margin-left: -calc(calc(100vw - ${theme.containerSizes.small})/2);
-    margin-right: -calc(calc(100vw - ${theme.containerSizes.small})/2);
+    margin-left: calc((100vw - ${theme.containerSizes.small})/-2);
+    margin-right:calc((100vw - ${theme.containerSizes.small})/-2);
     }
     `
 }
