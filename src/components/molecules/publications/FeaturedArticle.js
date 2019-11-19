@@ -12,9 +12,7 @@ const FeaturedArticleContainer = styled.div`
   width: 100%;
   align-content: start;
   .title {
-    font-family: 'SF UI Display Medium';
     color: ${props => props.theme.colors.lightBlack};
-    letter-spacing: 1px;
     margin-top: ${props => props.theme.paddings[3]};
   }
   .article-content {

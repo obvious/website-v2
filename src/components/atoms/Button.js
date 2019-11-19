@@ -11,7 +11,6 @@ const ButtonContainer = styled.a`
   align-items: center;
   cursor: pointer;
   font-weight: 600;
-  letter-spacing: 1px;
   span {
     margin-left: ${props => props.theme.paddings[2]};
   }

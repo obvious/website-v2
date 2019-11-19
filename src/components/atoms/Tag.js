@@ -6,9 +6,10 @@ const TagContainer = styled.div`
   background-color: ${props => props.theme.backgrounds[props.backgroundColor]};
   padding: 0 ${props => props.theme.paddings[4]};
   font-weight: 600;
-  letter-spacing: 1px;
   font-size: ${props => props.theme.fontSizes[7]};
   line-height: ${props => props.theme.lineHeights[7]};
+  font-size: ${props=> props.theme.fontSizes[7]};
+  line-height: ${props=> props.theme.lineHeights[7]};
   justify-self: start;
   align-self: start;
   display: inline-flex;
