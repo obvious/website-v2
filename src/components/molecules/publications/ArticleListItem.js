@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components";
-import {ClampLines} from "../../../styled/mixins";
+import {MakeLinesClamp} from "../../../styled/mixins";
 
 import {HeaderText6} from "../../atoms/HeaderText";
 import Tag from "../../atoms/Tag";
@@ -18,7 +18,7 @@ const ArticleListItemContainer = styled(GatsbyLink)`
   margin-top: 0;
   .title {
     color: ${props => props.theme.colors.lighterBlack};
-    ${ClampLines(2)};
+    ${MakeLinesClamp(2)};
   }
   .tag {
     margin-top: ${props => props.theme.paddings[4]};

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Tag from "../atoms/Tag";
 import Image from "../atoms/Image";
 import { BodyText3 } from "../atoms/BodyText";
-import {ClampLines} from "../../styled/mixins";
+import {MakeLinesClamp} from "../../styled/mixins";
 
 const NewsCardContainer = styled.li`
   all: unset;
@@ -34,7 +34,7 @@ const NewsCardContainer = styled.li`
     font-weight: 500;
     font-size: ${props => props.theme.fontSizes[8]};
     padding: ${props => props.theme.paddings[1]};
-    ${ClampLines(2)};
+    ${MakeLinesClamp(2)};
   }
 
   .card-image {

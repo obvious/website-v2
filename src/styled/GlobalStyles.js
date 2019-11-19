@@ -57,7 +57,7 @@ a {
 body {
   max-width: ${props => props.theme.containerSizes.default};
   @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
-    max-width: ${props => props.theme.containerSizes.mobile};
+    max-width: ${props => props.theme.containerSizes.small};
   }
   margin: auto;
   padding-top: ${props => props.theme.navHeight};

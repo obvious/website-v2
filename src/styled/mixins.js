@@ -1,6 +1,6 @@
 import {css} from "styled-components";
 
-export const ClampLines = (lineCount) => {
+export const MakeLinesClamp = (lineCount) => {
    return css`
     overflow: hidden;
     text-overflow: ellipsis;

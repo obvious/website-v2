@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 
-import {ClampLines} from "../styled/mixins";
+import {MakeLinesClamp} from "../styled/mixins";
 
 import {HeaderText5, HeaderText2} from '../components/atoms/HeaderText'
 
@@ -17,7 +17,7 @@ const IndexPageContainer = styled.div`
     margin-top: ${props => props.theme.spacings[3]};
   }
   .homepage-section-item {
-    ${ClampLines(1)}
+    ${MakeLinesClamp(1)}
   }
 `;
 
