@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { NewsCard } from "./NewsCard";
-import { HeaderText2, HeaderText4 } from "../atoms/HeaderText";
+import { HeaderText2 } from "../atoms/HeaderText";
 import { MakeFullWidth } from "../../styled/mixins";
 import { formatDate } from "../../utils";
 

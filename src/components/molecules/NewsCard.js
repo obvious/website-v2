@@ -63,7 +63,7 @@ const NewsCardContainer = styled.li`
 `;
 
 export const NewsCard = props => (
-  <NewsCardContainer>
+  <NewsCardContainer {...props}>
     <div className="tag-group">
       <Tag type="news" className="tag">
         {props.context_setting_text}
@@ -74,7 +74,7 @@ export const NewsCard = props => (
     </div>
     <BodyText3 className="headline" richText={props.name} />
     {props.feature_image && props.feature_image.length ? (
-      <Image className="image card-image" url={props.feature_image}></Image>
+      <Image className="image card-image" url={props.feature_image} />
     ) : null}
   </NewsCardContainer>
 );

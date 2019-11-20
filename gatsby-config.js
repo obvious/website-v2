@@ -17,7 +17,12 @@ module.exports = {
         homeSlug: "home",
         version: "published",
         includeLinks: true,
-        resolveRelations: ["article.publication", "case-study.relatedArticles"]
+        resolveRelations: [
+          "article.publication",
+          "case-study.relatedArticles",
+          "ArticlePicker.article",
+          "CaseStudyPicker.case_study"
+        ]
       }
     },
     `gatsby-plugin-offline`
