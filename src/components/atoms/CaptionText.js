@@ -16,7 +16,7 @@ const CaptionTextHighlightedContainer = styled.figcaption`
   line-height: ${props => props.theme.lineHeights[6]};
   color: ${props => props.theme.colors.blue};
   font-weight: 700;
-`
+`;
 
 export const CaptionTextHighlighted = ({ children, ...otherProps }) => (
   <CaptionTextHighlightedContainer {...otherProps}>

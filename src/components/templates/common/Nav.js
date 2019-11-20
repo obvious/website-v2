@@ -16,7 +16,7 @@ const NavContainer = styled.nav`
   .nav-inner {
     max-width: ${props => props.theme.containerSizes.default};
     @media screen and (max-width: ${props => props.theme.breakpoints.medium}) {
-        max-width: ${props => props.theme.containerSizes.small};
+      max-width: ${props => props.theme.containerSizes.small};
     }
     height: 100%;
     display: grid;

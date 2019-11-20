@@ -8,8 +8,8 @@ const TagContainer = styled.div`
   font-weight: 600;
   font-size: ${props => props.theme.fontSizes[7]};
   line-height: ${props => props.theme.lineHeights[7]};
-  font-size: ${props=> props.theme.fontSizes[7]};
-  line-height: ${props=> props.theme.lineHeights[7]};
+  font-size: ${props => props.theme.fontSizes[7]};
+  line-height: ${props => props.theme.lineHeights[7]};
   justify-self: start;
   align-self: start;
   display: inline-flex;
@@ -17,7 +17,7 @@ const TagContainer = styled.div`
   text-transform: ${props => props.textTransform};
 `;
 
-const Tag = (props) => {
+const Tag = props => {
   let color, backgroundColor, textTransform;
   switch (props.type) {
     case "latest":
@@ -34,7 +34,6 @@ const Tag = (props) => {
       color = "darkgray";
       backgroundColor = "gray";
       textTransform = "capitalize";
-
   }
   return (
     <TagContainer

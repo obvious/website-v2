@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {MakeLinesClamp} from "../../../styled/mixins";
+import { MakeLinesClamp } from "../../../styled/mixins";
 
 import { HeaderText6 } from "../../atoms/HeaderText";
 import Tag from "../../atoms/Tag";
