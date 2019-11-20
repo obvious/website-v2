@@ -14,25 +14,34 @@ const TagContainer = styled.div`
   align-self: start;
   display: inline-flex;
   border-radius: ${props => props.theme.borderRadii.smaller};
-  text-transform: capitalize;
+  text-transform: ${props => props.textTransform};
 `;
 
 const Tag = (props) => {
-  let color, backgroundColor;
+  let color, backgroundColor, textTransform;
   switch (props.type) {
     case "latest":
       color = "white";
       backgroundColor = "orange";
+      textTransform = "uppercase";
+      break;
+    case "news":
+      color = "black";
+      backgroundColor = "white";
+      textTransform = "uppercase";
       break;
     default:
       color = "darkgray";
       backgroundColor = "gray";
+      textTransform = "capitalize";
+
   }
   return (
     <TagContainer
       {...props}
       color={color}
       backgroundColor={backgroundColor}
+      textTransform={textTransform}
       className="tag"
     >
       {props.children}

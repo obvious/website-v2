@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components";
-import {ClampLines} from "../../styled/mixins";
+import {MakeLinesClamp} from "../../styled/mixins";
 
 import {Link} from "gatsby";
 
@@ -11,7 +11,7 @@ import {BodyText3} from "../atoms/BodyText";
 
 const CardContentsContainer = styled.div`
   .text {
-    ${ClampLines(2)};
+    ${MakeLinesClamp(2)};
     max-height: calc(2* ${props => props.theme.lineHeights[5]}); // This needs to be in relation to line-height of the text component, currently BodyText3
   }
   .image {

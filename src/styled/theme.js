@@ -9,7 +9,10 @@ const theme = {
     captionWidth: between('110px', '220px' ),
     containerSizes: {
         default: '80vw',
-        mobile: '90vw'
+        small: '90vw'
+    },
+    cardSizes: {
+        imageHeight: between('200px', '240px')
     },
     fontSizes: [
         between('32px','64px'), //h1
@@ -20,6 +23,7 @@ const theme = {
         between('11px','22px'), //body text 3
         between('9px','18px'), //caption text
         between('11px','16px'), // not proportional
+        between('12px', '24px') //news card headline size
     ],
     lineHeights: [
         between('38px','76px'), //h1
@@ -46,6 +50,10 @@ const theme = {
         between('4px','8px'),
         between('2px','4px'),
     ],
+    borderWidth: {
+        default: '2px',
+        thick: '4px'
+    },
     borderRadii: {
         small:  between('4px','8px'),
         smaller: between('2px','4px')
