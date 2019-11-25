@@ -8,5 +8,6 @@ const DividerContainer = styled.span`
   margin-bottom: ${props => props.theme.paddings[4]};
 `;
 
-export const Divider = (props) => <DividerContainer
-className={props.className}/>;
+export const Divider = props => (
+  <DividerContainer className={props.className} />
+);

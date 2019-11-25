@@ -1,11 +1,12 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
-import {HeaderText5} from "../../atoms/HeaderText";
+import { HeaderText5 } from "../../atoms/HeaderText";
 import BackgroundImage from "../../atoms/BackgroundImage";
 
 const FeaturedImageContainer = styled.div`
-  padding: ${props => props.theme.paddings[4]} ${props => props.theme.paddings[2]} ${props => props.theme.paddings[2]};
+  padding: ${props => props.theme.paddings[4]}
+    ${props => props.theme.paddings[2]} ${props => props.theme.paddings[2]};
   display: grid;
   border-radius: ${props => props.theme.borderRadii.small};
   box-shadow: ${props => props.theme.boxShadows.specialCard};
@@ -18,8 +19,9 @@ const FeaturedImageContainer = styled.div`
   .featured-image {
     min-height: 30vh;
   }
-  &:before, &:after {
-    content: '';
+  &:before,
+  &:after {
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -40,11 +42,14 @@ const FeaturedImageContainer = styled.div`
   }
 `;
 
-const FeaturedImage = (props) => (
-    <FeaturedImageContainer {...props}>
-        <HeaderText5 className="text">{props.name}</HeaderText5>
-        <BackgroundImage className="featured-image" url={props.content.featuredImage}/>
-    </FeaturedImageContainer>
+const FeaturedImage = props => (
+  <FeaturedImageContainer {...props}>
+    <HeaderText5 className="text">{props.name}</HeaderText5>
+    <BackgroundImage
+      className="featured-image"
+      url={props.content.featuredImage}
+    />
+  </FeaturedImageContainer>
 );
 
 export default FeaturedImage;

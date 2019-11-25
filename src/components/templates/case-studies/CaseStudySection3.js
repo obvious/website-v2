@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { HeaderText4 } from "../../atoms/HeaderText";
 import { BodyText3 } from "../../atoms/BodyText";
 import Image from "../../atoms/Image";
-import {Graph} from "../../templates/Graph";
+import { Graph } from "../../templates/Graph";
 
 const CaseStudySection3Container = styled.section`
   .subsection-1 {

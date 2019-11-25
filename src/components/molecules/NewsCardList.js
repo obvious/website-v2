@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { NewsCard } from "./NewsCard";
-import { HeaderText2, HeaderText4 } from "../atoms/HeaderText";
-import {MakeFullWidth} from "../../styled/mixins";
-import {formatDate} from "../../utils"
+import { HeaderText2 } from "../atoms/HeaderText";
+import { MakeFullWidth } from "../../styled/mixins";
+import { formatDate } from "../../utils";
 
 const NewsCardListContainer = styled.ol`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   .heading {
     font-weight: 300;
     padding: ${props => props.theme.spacings[2]} 0;
   }
-  
+
   .newsCard-group {
     ${MakeFullWidth()};
     display: flex;
@@ -30,10 +30,12 @@ const NewsCardListContainer = styled.ol`
 
   .scrollbar-item {
     width: 56px;
-    border: solid ${props => props.theme.borderWidth.default} ${props => props.theme.colors.gray};
-    
+    border: solid ${props => props.theme.borderWidth.default}
+      ${props => props.theme.colors.gray};
+
     .highlighted {
-      border: solid ${props => props.theme.borderWidth.thick} ${props => props.theme.colors.blue};
+      border: solid ${props => props.theme.borderWidth.thick}
+        ${props => props.theme.colors.blue};
     }
   }
 `;

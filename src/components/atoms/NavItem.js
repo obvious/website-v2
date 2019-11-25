@@ -1,30 +1,32 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
-import {BodyText3} from "../atoms/BodyText";
-import {Link as GatsbyLink} from "gatsby";
+import { BodyText3 } from "../atoms/BodyText";
+import { Link as GatsbyLink } from "gatsby";
 
 const NavItemContainer = styled.a`
-  color: ${props => props.isHighlighted ? props.theme.colors.orange : props.theme.colors.white};
+  color: ${props =>
+    props.isHighlighted ? props.theme.colors.orange : props.theme.colors.white};
   text-decoration: none;
   &:hover {
     color: ${props => props.theme.colors.orange};
   }
 `;
 
-const NavItem = ({link, openInNewTab, displayText, ...otherProps}) => {
-    const isInternalLink = link.url.indexOf('http') !== 0;
+const NavItem = ({ link, openInNewTab, displayText, ...otherProps }) => {
+  const isInternalLink = link.url.indexOf("http") !== 0;
 
-    return (
-        <NavItemContainer
-            {...otherProps}
-            as={isInternalLink ? GatsbyLink : 'a'}
-            target={openInNewTab ? "_blank" : undefined}
-            href={!isInternalLink ? link.url: undefined}
-            to={isInternalLink ? link.url: undefined}>
-            <BodyText3 className='nav-item-text' richText={displayText}/>
-        </NavItemContainer>
-    )
+  return (
+    <NavItemContainer
+      {...otherProps}
+      as={isInternalLink ? GatsbyLink : "a"}
+      target={openInNewTab ? "_blank" : undefined}
+      href={!isInternalLink ? link.url : undefined}
+      to={isInternalLink ? link.url : undefined}
+    >
+      <BodyText3 className="nav-item-text" richText={displayText} />
+    </NavItemContainer>
+  );
 };
 
 export default NavItem;

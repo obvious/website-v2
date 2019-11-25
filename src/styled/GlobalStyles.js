@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import '../css/fonts.css';
+import { createGlobalStyle } from "styled-components";
+import "../css/fonts.css";
 
 const GlobalStyle = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -62,6 +62,6 @@ body {
   margin: auto;
   padding-top: ${props => props.theme.navHeight};
 }
-`
+`;
 
 export default GlobalStyle;

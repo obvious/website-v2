@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 import CaseStudyHeader from "../components/templates/case-studies/CaseStudyHeader";
@@ -11,16 +11,19 @@ const CaseStudyContainer = styled.main`
   padding-bottom: ${props => props.theme.spacings[1]};
 `;
 
-const CaseStudy = ({pageContext: {data}, ...otherProps}) => {
-    return (
-        <CaseStudyContainer {...otherProps}>
-            <CaseStudyHeader {...data.content.header[0]}/>
-            <CaseStudySection1 {...data.content.sections[0]}/>
-            <CaseStudySection2 {...data.content.sections[1]}/>
-            <CaseStudySection3 {...data.content.sections[2]}/>
-            <CaseStudyRelatedArticles articles={data.content.relatedArticles} heading={`Stories from ${data.content.header[0].title[0].text}`}/>
-        </CaseStudyContainer>
-    )
+const CaseStudy = ({ pageContext: { data }, ...otherProps }) => {
+  return (
+    <CaseStudyContainer {...otherProps}>
+      <CaseStudyHeader {...data.content.header[0]} />
+      <CaseStudySection1 {...data.content.sections[0]} />
+      <CaseStudySection2 {...data.content.sections[1]} />
+      <CaseStudySection3 {...data.content.sections[2]} />
+      <CaseStudyRelatedArticles
+        articles={data.content.relatedArticles}
+        heading={`Stories from ${data.content.header[0].title[0].text}`}
+      />
+    </CaseStudyContainer>
+  );
 };
 
 export default CaseStudy;

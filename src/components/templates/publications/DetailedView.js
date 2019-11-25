@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 import FeaturedImage from "../../molecules/publications/FeaturedImage";
@@ -19,14 +19,19 @@ const DetailedViewContainer = styled.section`
   }
 `;
 
-const DetailedView = (props) => {
-    return (
-        <DetailedViewContainer {...props}>
-            <FeaturedImage className="featured-image" {...props}/>
-            <FeaturedArticle className="featured-article" {...props.articles[0]}/>
-            <ArticleList className="featured-article" {...Object.assign({}, props, {articles:props.articles.slice(1, props.articles.length)})}/>
-        </DetailedViewContainer>
-    )
+const DetailedView = props => {
+  return (
+    <DetailedViewContainer {...props}>
+      <FeaturedImage className="featured-image" {...props} />
+      <FeaturedArticle className="featured-article" {...props.articles[0]} />
+      <ArticleList
+        className="featured-article"
+        {...Object.assign({}, props, {
+          articles: props.articles.slice(1, props.articles.length)
+        })}
+      />
+    </DetailedViewContainer>
+  );
 };
 
 export default DetailedView;

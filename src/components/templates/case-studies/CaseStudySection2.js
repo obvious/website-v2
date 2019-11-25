@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 import Video from "../../molecules/Video";
 
-import {HeaderText4} from "../../atoms/HeaderText";
-import {BodyText3} from "../../atoms/BodyText";
+import { HeaderText4 } from "../../atoms/HeaderText";
+import { BodyText3 } from "../../atoms/BodyText";
 
 const CaseStudySection2Container = styled.section`
   .subsection-1 {
@@ -22,9 +22,9 @@ const CaseStudySection2Container = styled.section`
       .description {
         align-self: end;
       }
-    }    
+    }
   }
-  
+
   .subsection-2 {
     display: grid;
     grid-template-columns: 33.33%;
@@ -34,22 +34,25 @@ const CaseStudySection2Container = styled.section`
   }
 `;
 
-const CaseStudySection2 = (props) => {
-    return (
-        <CaseStudySection2Container>
-            <div className="subsection-1">
-                <div className="header-and-description">
-                    <HeaderText4 className="header">{props.heading[0].text}</HeaderText4>
-                    <BodyText3 className="description" richText={props.description[0].text} />
-                </div>
-                <Video className="video full" {...props.otherBlocks[1]}/>
-            </div>
+const CaseStudySection2 = props => {
+  return (
+    <CaseStudySection2Container>
+      <div className="subsection-1">
+        <div className="header-and-description">
+          <HeaderText4 className="header">{props.heading[0].text}</HeaderText4>
+          <BodyText3
+            className="description"
+            richText={props.description[0].text}
+          />
+        </div>
+        <Video className="video full" {...props.otherBlocks[1]} />
+      </div>
 
-            <div className="subsection-2">
-                <BodyText3 richText={props.otherBlocks[0].text} />
-            </div>
-        </CaseStudySection2Container>
-    )
+      <div className="subsection-2">
+        <BodyText3 richText={props.otherBlocks[0].text} />
+      </div>
+    </CaseStudySection2Container>
+  );
 };
 
 export default CaseStudySection2;
