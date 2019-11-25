@@ -12,19 +12,20 @@ const NewsCardContainer = styled.li`
   display: flex;
   flex-direction: column;
 
-  min-width: calc(
-    25vw - ${props => props.theme.spacings[4]}
-  ); //This displays 4 and a half cards
+  /* prettier-ignore */
+  min-width: calc(25vw - ${props =>
+    props.theme.spacings[4]}); //This displays 4 and a half cards
   @media (max-width: ${props => props.theme.breakpoints.medium}) {
-    min-width: calc(
-      38vw - ${props => props.theme.spacings[4]}
-    ); //This displays 2 and a half cards
+    /* prettier-ignore */
+    min-width: calc(38vw - ${props =>
+      props.theme.spacings[4]}); //This displays 2 and a half cards
   }
   @media (max-width: ${props => props.theme.breakpoints.small}) {
-    min-width: calc(
-      60vw - ${props => props.theme.spacings[4]}
-    ); //This displays 1 and a half cards
+    /* prettier-ignore */
+    min-width: calc(60vw - ${props =>
+      props.theme.spacings[4]}); //This displays 1 and a half cards
   }
+
 
   padding-top: ${props => props.theme.paddings[1]};
   margin-right: ${props => props.theme.spacings[4]};
