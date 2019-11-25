@@ -21,40 +21,45 @@ const IndexPageContainer = styled.div`
   }
 `;
 
+const IndexPage = ({ data, theme }) => {
+  let filteredStories = data.allStories.filter(item => {
+    const contentType = item.full_slug.split("/")[0];
+    item.contentType = contentType;
+    return ["case-studies", "publication"].indexOf(contentType) > -1;
+  });
 
-const IndexPage = ({data, theme}) => {
-    let filteredStories = data.allStories.filter(item => {
-        const contentType = item.full_slug.split('/')[0];
-        item.contentType = contentType;
-        return ['case-studies', 'publication'].indexOf(contentType) > -1;
-    });
+  let newsStories = data.allStories.filter(item => {
+    const contentType = item.full_slug.split("/")[0];
+    item.contentType = contentType;
+    return ["news"].indexOf(contentType) > -1;
+  });
 
-    let newsStories = data.allStories.filter(item => {
-        const contentType = item.full_slug.split('/')[0];
-        item.contentType = contentType;
-        return ['news'].indexOf(contentType) > -1;
-    });
+  const groupedStories = groupBy(filteredStories, story => story.contentType);
 
-    const groupedStories = groupBy(filteredStories, story => story.contentType);
+  return (
+    <IndexPageContainer theme={theme}>
+      <PageHeader title={`Hello World.`} />
 
-    return(<IndexPageContainer theme={theme}>
-        <PageHeader title={`Hello World.`}/>
+      <NewsCardList {...newsStories} />
 
-        <NewsCardList {...newsStories}/>
-
-        {Object.keys(groupedStories).map(key =>
-            (<>
-                <HeaderText2 className="homepage-section-header">{key.replace('-', ' ')}</HeaderText2>
-                <ul>
-                    {groupedStories[key].map(item => (
-                        <li key={item.uuid}>
-                            <HeaderText5 className="homepage-section-item"><Link url={{url: `/${item.full_slug}`}}>{item.name}</Link></HeaderText5>
-                        </li>
-                    ))}
-                </ul>
-            </>)
-        )}
-    </IndexPageContainer>)
+      {Object.keys(groupedStories).map(key => (
+        <>
+          <HeaderText2 className="homepage-section-header">
+            {key.replace("-", " ")}
+          </HeaderText2>
+          <ul>
+            {groupedStories[key].map(item => (
+              <li key={item.uuid}>
+                <HeaderText5 className="homepage-section-item">
+                  <Link url={{ url: `/${item.full_slug}` }}>{item.name}</Link>
+                </HeaderText5>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))}
+    </IndexPageContainer>
+  );
 };
 
 export default IndexPage;

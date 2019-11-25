@@ -12,16 +12,22 @@ const CaseStudyContainer = styled.main`
   padding-bottom: ${props => props.theme.spacings[1]};
 `;
 
-
-const CaseStudy = ({data, theme}) => {
-    return (
-        <CaseStudyContainer theme={theme}>
-            <CaseStudyHeader {...data.content.header[0]}/>
-            {data.content.sections.map(section =>
-                (React.createElement(Components(section.templateName[0], data.content.full_slug), {key: section._uid, ...section})))}
-            <CaseStudyRelatedArticles articles={data.content.relatedArticles} heading={`Stories from ${data.content.header[0].title[0].text}`}/>
-        </CaseStudyContainer>
-    )
+const CaseStudy = ({ data, theme }) => {
+  return (
+    <CaseStudyContainer theme={theme}>
+      <CaseStudyHeader {...data.content.header[0]} />
+      {data.content.sections.map(section =>
+        React.createElement(
+          Components(section.templateName[0], data.content.full_slug),
+          { key: section._uid, ...section }
+        )
+      )}
+      <CaseStudyRelatedArticles
+        articles={data.content.relatedArticles}
+        heading={`Stories from ${data.content.header[0].title[0].text}`}
+      />
+    </CaseStudyContainer>
+  );
 };
 
 export default CaseStudy;

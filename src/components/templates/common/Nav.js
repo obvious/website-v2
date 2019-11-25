@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import NavItemsList from "../../molecules/NavItemList";
 
-import {Link as GatsbyLink} from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import SbEditable from "storyblok-react";
 
 const NavContainer = styled.nav`
@@ -47,17 +47,19 @@ const NavContainer = styled.nav`
   }
 `;
 
-const Nav = ({data}) => {
-    return (
-        <SbEditable content={data}>
-            <NavContainer>
-                <div className="nav-inner">
-                    <GatsbyLink to="/" className="logo-container"><img src={data.logo} alt={data.alt}/></GatsbyLink>
-                    <NavItemsList {...data}/>
-                </div>
-            </NavContainer>
-        </SbEditable>
-    )
+const Nav = ({ data }) => {
+  return (
+    <SbEditable content={data}>
+      <NavContainer>
+        <div className="nav-inner">
+          <GatsbyLink to="/" className="logo-container">
+            <img src={data.logo} alt={data.alt} />
+          </GatsbyLink>
+          <NavItemsList {...data} />
+        </div>
+      </NavContainer>
+    </SbEditable>
+  );
 };
 
 export default Nav;

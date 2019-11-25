@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import {BodyText3} from "../atoms/BodyText";
-import {Link as GatsbyLink} from "gatsby";
+import { BodyText3 } from "../atoms/BodyText";
+import { Link as GatsbyLink } from "gatsby";
 import SbEditable from "storyblok-react";
 
 const NavItemContainer = styled.a`
@@ -14,21 +14,21 @@ const NavItemContainer = styled.a`
   }
 `;
 
-
-const NavItem = (props) => {
-    const isInternalLink = props.link.url.indexOf('http') !== 0;
-    return (
-        <SbEditable content={props}>
-            <NavItemContainer
-                theme={props.theme}
-                as={isInternalLink ? GatsbyLink : 'a'}
-                target={props.openInNewTab ? "_blank" : undefined}
-                href={!isInternalLink ? props.link.url: undefined}
-                to={isInternalLink ? props.link.url: undefined}>
-                <BodyText3 className='nav-item-text' richText={props.displayText}/>
-            </NavItemContainer>
-        </SbEditable>
-    )
+const NavItem = props => {
+  const isInternalLink = props.link.url.indexOf("http") !== 0;
+  return (
+    <SbEditable content={props}>
+      <NavItemContainer
+        theme={props.theme}
+        as={isInternalLink ? GatsbyLink : "a"}
+        target={props.openInNewTab ? "_blank" : undefined}
+        href={!isInternalLink ? props.link.url : undefined}
+        to={isInternalLink ? props.link.url : undefined}
+      >
+        <BodyText3 className="nav-item-text" richText={props.displayText} />
+      </NavItemContainer>
+    </SbEditable>
+  );
 };
 
 export default NavItem;
