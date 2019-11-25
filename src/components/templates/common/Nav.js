@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, useStaticQuery } from "gatsby";
-import { prepareStoryblokGraphqlResponse } from "../../../utils";
+
 import NavItemsList from "../../molecules/NavItemList";
 
-import { Link as GatsbyLink } from "gatsby";
+import {Link as GatsbyLink} from "gatsby";
+import SbEditable from "storyblok-react";
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -47,29 +47,17 @@ const NavContainer = styled.nav`
   }
 `;
 
-const Nav = () => {
-  const navQueryResponse = useStaticQuery(
-    graphql`
-      query {
-        storyblokEntry(slug: { eq: "main-navigation" }) {
-          content
-        }
-      }
-    `
-  );
-
-  const navData = prepareStoryblokGraphqlResponse(navQueryResponse);
-
-  return (
-    <NavContainer>
-      <div className="nav-inner">
-        <GatsbyLink to="/" className="logo-container">
-          <img src={navData.logo} alt={navData.alt} />
-        </GatsbyLink>
-        <NavItemsList {...navData} />
-      </div>
-    </NavContainer>
-  );
+const Nav = ({data}) => {
+    return (
+        <SbEditable content={data}>
+            <NavContainer>
+                <div className="nav-inner">
+                    <GatsbyLink to="/" className="logo-container"><img src={data.logo} alt={data.alt}/></GatsbyLink>
+                    <NavItemsList {...data}/>
+                </div>
+            </NavContainer>
+        </SbEditable>
+    )
 };
 
 export default Nav;

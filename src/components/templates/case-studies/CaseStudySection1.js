@@ -5,8 +5,10 @@ import Video from "../../molecules/Video";
 
 import ImageSet from "../../molecules/ImageSet";
 
-import { HeaderText4 } from "../../atoms/HeaderText";
-import { BodyText3 } from "../../atoms/BodyText";
+
+import {HeaderText4} from "../../atoms/HeaderText";
+import {BodyText3} from "../../atoms/BodyText";
+import SbEditable from "storyblok-react";
 
 const CaseStudySection1Container = styled.section`
   .video {
@@ -22,19 +24,22 @@ const CaseStudySection1Container = styled.section`
   margin-bottom: ${props => props.theme.spacings[1]};
 `;
 
-const CaseStudySection1 = props => {
-  return (
-    <CaseStudySection1Container>
-      <Video className="video" {...props.otherBlocks[0]} />
-      <div className="subsection-2">
-        <HeaderText4>{props.heading[0].text}</HeaderText4>
-        <BodyText3 richText={props.description[0].text} />
-      </div>
-      <div className="subsection-3">
-        <ImageSet {...props.otherBlocks[1]} />
-      </div>
-    </CaseStudySection1Container>
-  );
+
+const CaseStudySection1 = (props) => {
+    return (
+        <SbEditable content={props}>
+            <CaseStudySection1Container>
+                <Video className="video" {...props.otherBlocks[0]}/>
+                <div className="subsection-2">
+                    <HeaderText4>{props.heading[0].text}</HeaderText4>
+                    <BodyText3 richText={props.description[0].text} />
+                </div>
+                <div className="subsection-3">
+                    <ImageSet {...props.otherBlocks[1]}/>
+                </div>
+            </CaseStudySection1Container>
+        </SbEditable>
+    )
 };
 
 export default CaseStudySection1;
