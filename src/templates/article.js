@@ -17,20 +17,24 @@ const ArticleContainer = styled.main`
 const Article = ({ pageContext, theme }) => {
   return (
     <ArticleContainer theme={theme}>
-      <PageHeader
-        title={pageContext.data.name}
-        caption="This is a single article"
-      />
-      <div className="page-content">
-        <Image
-          className="featured-image"
-          url={pageContext.data.content.featuredImage}
-        />
-        <BodyText3
-          className="text"
-          richText={pageContext.data.content.caption}
-        />
-      </div>
+      {pageContext && (
+        <>
+          <PageHeader
+            title={pageContext.data.name}
+            caption="This is a single article"
+          />
+          <div className="page-content">
+            <Image
+              className="featured-image"
+              url={pageContext.data.content.featuredImage}
+            />
+            <BodyText3
+              className="text"
+              richText={pageContext.data.content.caption}
+            />
+          </div>
+        </>
+      )}
     </ArticleContainer>
   );
 };
