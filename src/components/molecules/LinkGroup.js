@@ -13,8 +13,8 @@ const LinkGroupContainer = styled.ul`
   }
 `;
 
-const LinkGroup = ({ links, ...otherProps }) => (
-  <LinkGroupContainer {...otherProps}>
+const LinkGroup = ({ links }) => (
+  <LinkGroupContainer>
     {links.map((link, index) => (
       <li key={link._uid}>
         <Link {...link}>{link.displayText}</Link>

@@ -21,7 +21,7 @@ const DetailedViewContainer = styled.section`
 
 const DetailedView = props => {
   return (
-    <DetailedViewContainer {...props}>
+    <DetailedViewContainer>
       <FeaturedImage className="featured-image" {...props} />
       <FeaturedArticle className="featured-article" {...props.articles[0]} />
       <ArticleList

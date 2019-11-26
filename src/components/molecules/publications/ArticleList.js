@@ -19,7 +19,7 @@ const ArticleList = props => {
   const noOfArticlesToShow = 4;
   const noOfExtraArticles = props.articles.length - noOfArticlesToShow;
   return (
-    <ArticleListContainer {...props}>
+    <ArticleListContainer>
       {props.articles.slice(0, noOfArticlesToShow).map(article => (
         <ArticleListItem key={article.uuid} {...article} />
       ))}

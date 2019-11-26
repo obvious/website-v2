@@ -13,12 +13,11 @@ const NavItemContainer = styled.a`
   }
 `;
 
-const NavItem = ({ link, openInNewTab, displayText, ...otherProps }) => {
+const NavItem = ({ link, openInNewTab, displayText }) => {
   const isInternalLink = link.url.indexOf("http") !== 0;
 
   return (
     <NavItemContainer
-      {...otherProps}
       as={isInternalLink ? GatsbyLink : "a"}
       target={openInNewTab ? "_blank" : undefined}
       href={!isInternalLink ? link.url : undefined}

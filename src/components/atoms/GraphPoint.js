@@ -28,7 +28,7 @@ const GraphPointContainer = styled.div`
 `;
 
 export const GraphPoint = props => (
-  <GraphPointContainer {...props}>
+  <GraphPointContainer>
     <div className="point"></div>
     <CaptionText2>{props.label[0].text}</CaptionText2>
     {props.specialLabel[0] ? (

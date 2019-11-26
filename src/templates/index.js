@@ -43,7 +43,7 @@ const IndexPage = ({ pageContext: { data }, theme }) => {
     <IndexPageContainer theme={theme}>
       <PageHeader title={`Hello World.`} />
 
-      <NewsCardList {...newsStories} />
+      <NewsCardList newsStories={newsStories} />
 
       {Object.keys(groupedStories).map(key => (
         <>

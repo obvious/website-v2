@@ -40,7 +40,7 @@ const VideoContainer = styled.div`
 
 const Video = ({ video, ...otherProps }) => {
   return (
-    <VideoContainer {...otherProps}>
+    <VideoContainer>
       <ReactPlayer
         url={video}
         className="video-player"

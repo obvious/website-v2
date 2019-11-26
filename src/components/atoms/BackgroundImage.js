@@ -17,11 +17,11 @@ const BackgroundImageContainer = styled.div`
     `}
 `;
 
-const BackgroundImage = ({ url, ...otherProps }) => {
+const BackgroundImage = ({ url }) => {
   const optimizedImageUrl = url.replace("/upload/", "/upload/q_auto/");
   return (
     <BackgroundImageContainer
-      {...Object.assign({}, otherProps, { url: optimizedImageUrl })}
+      {...Object.assign({}, { url: optimizedImageUrl })}
     />
   );
 };

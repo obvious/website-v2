@@ -36,7 +36,7 @@ const FeaturedArticleContainer = styled.div`
 `;
 
 const FeaturedArticle = props => (
-  <FeaturedArticleContainer {...props}>
+  <FeaturedArticleContainer>
     <Tag type="latest">Latest</Tag>
     <HeaderText5 className="title">{props.name}</HeaderText5>
     <div className="article-content">

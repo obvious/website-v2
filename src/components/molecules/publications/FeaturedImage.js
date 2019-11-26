@@ -43,7 +43,7 @@ const FeaturedImageContainer = styled.div`
 `;
 
 const FeaturedImage = props => (
-  <FeaturedImageContainer {...props}>
+  <FeaturedImageContainer>
     <HeaderText5 className="text">{props.name}</HeaderText5>
     <BackgroundImage
       className="featured-image"

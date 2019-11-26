@@ -21,7 +21,7 @@ const CardContentsContainer = styled.div`
 `;
 
 const CardContents = props => (
-  <CardContentsContainer {...props}>
+  <CardContentsContainer>
     {props.caption && props.caption.length ? (
       <BodyText3 className="text" richText={props.caption} />
     ) : null}

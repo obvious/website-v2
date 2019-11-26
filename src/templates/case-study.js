@@ -11,9 +11,9 @@ const CaseStudyContainer = styled.main`
   padding-bottom: ${props => props.theme.spacings[1]};
 `;
 
-const CaseStudy = ({ pageContext: { data }, ...otherProps }) => {
+const CaseStudy = ({ pageContext: { data } }) => {
   return (
-    <CaseStudyContainer {...otherProps}>
+    <CaseStudyContainer>
       <CaseStudyHeader {...data.content.header[0]} />
       <CaseStudySection1 {...data.content.sections[0]} />
       <CaseStudySection2 {...data.content.sections[1]} />

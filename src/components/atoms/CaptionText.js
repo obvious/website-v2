@@ -7,8 +7,8 @@ const CaptionText2Container = styled.figcaption`
   font-weight: 700;
 `;
 
-export const CaptionText2 = ({ children, ...otherProps }) => (
-  <CaptionText2Container {...otherProps}>{children}</CaptionText2Container>
+export const CaptionText2 = ({ children }) => (
+  <CaptionText2Container>{children}</CaptionText2Container>
 );
 
 const CaptionTextHighlightedContainer = styled.figcaption`
@@ -18,8 +18,6 @@ const CaptionTextHighlightedContainer = styled.figcaption`
   font-weight: 700;
 `;
 
-export const CaptionTextHighlighted = ({ children, ...otherProps }) => (
-  <CaptionTextHighlightedContainer {...otherProps}>
-    {children}
-  </CaptionTextHighlightedContainer>
+export const CaptionTextHighlighted = ({ children }) => (
+  <CaptionTextHighlightedContainer>{children}</CaptionTextHighlightedContainer>
 );

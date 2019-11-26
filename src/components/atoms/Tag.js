@@ -37,7 +37,6 @@ const Tag = props => {
   }
   return (
     <TagContainer
-      {...props}
       color={color}
       backgroundColor={backgroundColor}
       textTransform={textTransform}

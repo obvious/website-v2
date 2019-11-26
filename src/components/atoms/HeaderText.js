@@ -7,8 +7,8 @@ const HeaderText1Container = styled.h1`
   font-weight: 700;
 `;
 
-export const HeaderText1 = ({ children, ...otherProps }) => (
-  <HeaderText1Container {...otherProps}>{children}</HeaderText1Container>
+export const HeaderText1 = ({ children }) => (
+  <HeaderText1Container>{children}</HeaderText1Container>
 );
 
 const HeaderText2Container = styled.h2`
@@ -17,8 +17,8 @@ const HeaderText2Container = styled.h2`
   font-weight: 700;
 `;
 
-export const HeaderText2 = ({ children, ...otherProps }) => (
-  <HeaderText2Container {...otherProps}>{children}</HeaderText2Container>
+export const HeaderText2 = ({ children }) => (
+  <HeaderText2Container>{children}</HeaderText2Container>
 );
 
 const HeaderText3Container = styled.h3`
@@ -27,8 +27,8 @@ const HeaderText3Container = styled.h3`
   font-weight: 700;
 `;
 
-export const HeaderText3 = ({ children, ...otherProps }) => (
-  <HeaderText3Container {...otherProps}>{children}</HeaderText3Container>
+export const HeaderText3 = ({ children }) => (
+  <HeaderText3Container>{children}</HeaderText3Container>
 );
 
 const HeaderText4Container = styled.h4`
@@ -37,8 +37,8 @@ const HeaderText4Container = styled.h4`
   font-weight: 700;
 `;
 
-export const HeaderText4 = ({ children, ...otherProps }) => (
-  <HeaderText4Container {...otherProps}>{children}</HeaderText4Container>
+export const HeaderText4 = ({ children }) => (
+  <HeaderText4Container>{children}</HeaderText4Container>
 );
 
 const HeaderText5Container = styled.h5`
@@ -47,8 +47,8 @@ const HeaderText5Container = styled.h5`
   font-weight: 700;
 `;
 
-export const HeaderText5 = ({ children, ...otherProps }) => (
-  <HeaderText5Container {...otherProps}>{children}</HeaderText5Container>
+export const HeaderText5 = ({ children }) => (
+  <HeaderText5Container>{children}</HeaderText5Container>
 );
 
 const HeaderText6Container = styled.h6`
@@ -57,6 +57,6 @@ const HeaderText6Container = styled.h6`
   font-weight: 700;
 `;
 
-export const HeaderText6 = ({ children, ...otherProps }) => (
-  <HeaderText6Container {...otherProps}>{children}</HeaderText6Container>
+export const HeaderText6 = ({ children }) => (
+  <HeaderText6Container>{children}</HeaderText6Container>
 );

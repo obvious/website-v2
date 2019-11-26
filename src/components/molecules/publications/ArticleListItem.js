@@ -38,7 +38,7 @@ const ArticleListItemContainer = styled(GatsbyLink)`
 `;
 
 const ArticleListItem = props => (
-  <ArticleListItemContainer to={`/${props.full_slug}`} {...props}>
+  <ArticleListItemContainer to={`/${props.full_slug}`}>
     <div className="featured-image-container">
       <Image className="featured-image" url={props.content.featuredImage} />
     </div>
