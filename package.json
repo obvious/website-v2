@@ -16,6 +16,7 @@
     "build-storybook": "NODE_ENV=production build-storybook -s public"
   },
   "dependencies": {
+    "core-js": "^2.6.5",
     "gatsby": "^2.17.4",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
