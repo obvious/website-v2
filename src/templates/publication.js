@@ -17,24 +17,18 @@ const PublicationContainer = styled.main`
   }
 `;
 
-const Publication = ({ pageContext, theme }) => {
+const Publication = ({ data, theme }) => {
   return (
     <PublicationContainer theme={theme}>
-      {pageContext && (
+      {data && (
         <>
-          <PageHeader
-            title={pageContext.data.name}
-            caption="This is a publication"
-          />
+          <PageHeader title={data.name} caption="This is a publication" />
           <div className="page-content">
             <Image
               className="featured-image"
-              url={pageContext.data.content.featuredImage}
+              url={data.content.featuredImage}
             />
-            <BodyText3
-              className="text"
-              richText={pageContext.data.content.caption}
-            />
+            <BodyText3 className="text" richText={data.content.caption} />
           </div>
         </>
       )}

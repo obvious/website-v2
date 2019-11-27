@@ -25,6 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
                   parent_id
                   group_id
                   published_at
+                  first_published_at
                 }
               }
             }
