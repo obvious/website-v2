@@ -1,3 +1,9 @@
+/**
+ * Use this component to map component names on Storyblok to component names on the app.
+ * TODO - Have common naming conventions between the Storyblok API and the app.
+ * TODO - Fix circular dependency with CaseStudy page Template
+ */
+
 import NavItem from "./atoms/NavItem";
 import Article from "../templates/article";
 import CaseStudy from "../templates/case-study";
@@ -12,7 +18,7 @@ import CaseStudySection3 from "./templates/case-studies/CaseStudySection3";
 
 const ComponentList = {
   MainNav: Nav,
-  NavItem: NavItem,
+  NavItem,
   article: Article,
   "case-study": CaseStudy,
   publication: Publication,
@@ -23,14 +29,15 @@ const ComponentList = {
   template3: CaseStudySection3
 };
 
-const Components = (type, full_slug) => {
+const FindComponent = (type, fullSlug) => {
+  let computedType = type;
   if (type === "page") {
-    type = full_slug;
+    computedType = fullSlug;
   }
-  if (typeof ComponentList[type] === "undefined") {
+  if (typeof ComponentList[computedType] === "undefined") {
     return ComponentNotFound;
   }
-  return ComponentList[type];
+  return ComponentList[computedType];
 };
 
-export default Components;
+export default FindComponent;

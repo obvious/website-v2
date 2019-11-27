@@ -39,14 +39,14 @@ exports.createPages = ({ graphql, actions }) => {
 
         const entries = result.data.stories.edges;
         const contents = entries.filter(entry => {
-          return entry.node.field_component != "MainNav";
+          return entry.node.field_component !== "MainNav";
         });
 
         contents.forEach(entry => {
           const pagePath =
-            entry.node.full_slug == "home" ? "" : `${entry.node.full_slug}/`;
+            entry.node.full_slug === "home" ? "" : `${entry.node.full_slug}/`;
           const mainNavigation = entries.filter(globalEntry => {
-            return globalEntry.node.field_component == "MainNav";
+            return globalEntry.node.field_component === "MainNav";
           });
           if (!mainNavigation.length) {
             throw new Error(
@@ -54,23 +54,22 @@ exports.createPages = ({ graphql, actions }) => {
             );
           }
 
-          const story = Object.assign({}, entry.node);
+          const story = { ...entry.node };
 
           /**
            * Custom entry on the home story
            */
-          if (entry.node.full_slug == "home") {
+          if (entry.node.full_slug === "home") {
             story.allStories = contents;
           }
 
           /**
            * Custom entry on the publications landing page story
            */
-          if (entry.node.full_slug == "publications") {
+          if (entry.node.full_slug === "publications") {
             story.articles = contents.filter(
               item => item.node.field_component === "article"
             );
-            console.log(story);
           }
 
           createPage({

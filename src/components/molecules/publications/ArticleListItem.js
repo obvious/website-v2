@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link as GatsbyLink } from "gatsby";
 import { MakeLinesClamp } from "../../../styled/mixins";
 
 import { HeaderText6 } from "../../atoms/HeaderText";
@@ -7,7 +8,6 @@ import Tag from "../../atoms/Tag";
 
 import { formatDate } from "../../../utils";
 
-import { Link as GatsbyLink } from "gatsby";
 import Image from "../../atoms/Image";
 
 const ArticleListItemContainer = styled(GatsbyLink)`

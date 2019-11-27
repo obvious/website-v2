@@ -1,5 +1,5 @@
 import React from "react";
-import Components from "../components/components.js";
+import FindComponent from "../components/find-component.js";
 import Nav from "../components/templates/common/Nav";
 
 class StoryblokEntry extends React.Component {
@@ -72,7 +72,7 @@ class StoryblokEntry extends React.Component {
       <div>
         <Nav data={mainNavigation}></Nav>
         {React.createElement(
-          Components(story.content.component, story.full_slug),
+          FindComponent(story.content.component, story.full_slug),
           { key: story.content._uid, data: story }
         )}
       </div>

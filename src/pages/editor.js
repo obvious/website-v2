@@ -1,25 +1,25 @@
 import React from "react";
-import Components from "../components/components.js";
 import SbEditable from "storyblok-react";
+import FindComponent from "../components/find-component";
 import config from "../../gatsby-config";
 import Nav from "../components/templates/common/Nav";
 
-let sbConfigs = config.plugins.filter(item => {
+const sbConfigs = config.plugins.filter(item => {
   return item.resolve === "gatsby-source-storyblok";
 });
-let sbConfig = sbConfigs.length > 0 ? sbConfigs[0] : {};
+const sbConfig = sbConfigs.length > 0 ? sbConfigs[0] : {};
 
-const loadStoryblokBridge = function(cb) {
-  let script = document.createElement("script");
+const loadStoryblokBridge = function(callback) {
+  const script = document.createElement("script");
   script.type = "text/javascript";
   script.src = `//app.storyblok.com/f/storyblok-latest.js?t=${sbConfig.options.accessToken}`;
-  script.onload = cb;
+  script.onload = callback;
   document.getElementsByTagName("head")[0].appendChild(script);
 };
 
 const getParam = function(val) {
-  var result = "";
-  var tmp = [];
+  let result = "";
+  let tmp = [];
 
   window.location.search
     .substr(1)
@@ -56,7 +56,7 @@ class StoryblokEntry extends React.Component {
 
     window.storyblok.get(
       {
-        slug: slug,
+        slug,
         version: "draft",
         resolve_relations: sbConfig.options.resolveRelations || []
       },
@@ -101,7 +101,7 @@ class StoryblokEntry extends React.Component {
   initStoryblokEvents() {
     this.loadStory({ storyId: getParam("path") });
 
-    let sb = window.storyblok;
+    const sb = window.storyblok;
 
     sb.on(["change", "published"], payload => {
       this.loadStory(payload);
@@ -125,19 +125,17 @@ class StoryblokEntry extends React.Component {
   }
 
   render() {
-    if (this.state.story == null) {
-      return <div></div>;
+    const { mainNavigation, story } = this.state;
+    if (story === null) {
+      return null;
     }
-
-    let story = this.state.story;
-    let mainNavigation = this.state.mainNavigation.content;
 
     return (
       <SbEditable content={story.content}>
         <div>
-          <Nav data={mainNavigation}></Nav>
+          <Nav data={mainNavigation.content} />
           {React.createElement(
-            Components(story.content.component, story.full_slug),
+            FindComponent(story.content.component, story.full_slug),
             { key: story.content._uid, data: story }
           )}
         </div>
