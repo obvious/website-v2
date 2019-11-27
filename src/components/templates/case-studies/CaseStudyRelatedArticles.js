@@ -21,7 +21,10 @@ const CaseStudyRelatedArticles = ({ heading, articles }) => {
     return {
       caption: article.name,
       url: `/${article.full_slug}`,
-      featuredImage: article.content.featuredImage
+      featuredImage:
+        article && article.content && article.content.featuredImage
+          ? article.content.featuredImage
+          : undefined
     };
   });
   return (
