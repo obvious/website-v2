@@ -4,9 +4,9 @@ import { prepareArticlesFromMultiplePublications, dynamicSort } from "../utils";
 import PageHeader from "../components/templates/common/PageHeader";
 import DetailedView from "../components/templates/publications/DetailedView";
 
-const PublicationLandingPage = ({ data }) => {
+const PublicationLandingPage = ({ story }) => {
   const articlesDataGroupedByPublications = prepareArticlesFromMultiplePublications(
-    data.articles
+    story.articles
   );
   return (
     <div>

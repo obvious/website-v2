@@ -47,15 +47,15 @@ const NavContainer = styled.nav`
   }
 `;
 
-const Nav = ({ data }) => {
+const Nav = ({ story }) => {
   return (
-    <SbEditable content={data}>
+    <SbEditable content={story}>
       <NavContainer>
         <div className="nav-inner">
           <GatsbyLink to="/" className="logo-container">
-            <img src={data.logo} alt={data.alt} />
+            <img src={story.logo} alt={story.alt} />
           </GatsbyLink>
-          <NavItemsList {...data} />
+          <NavItemsList {...story} />
         </div>
       </NavContainer>
     </SbEditable>

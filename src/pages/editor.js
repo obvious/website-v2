@@ -9,6 +9,9 @@ const sbConfigs = config.plugins.filter(item => {
 });
 const sbConfig = sbConfigs.length > 0 ? sbConfigs[0] : {};
 
+/**
+ * Load storyblok JS bridge https://www.storyblok.com/docs/Guides/storyblok-latest-js
+ */
 const loadStoryblokBridge = function(callback) {
   const script = document.createElement("script");
   script.type = "text/javascript";
@@ -133,10 +136,10 @@ class StoryblokEntry extends React.Component {
     return (
       <SbEditable content={story.content}>
         <div>
-          <Nav data={mainNavigation.content} />
+          <Nav story={mainNavigation.content} />
           {React.createElement(
             FindComponent(story.content.component, story.full_slug),
-            { key: story.content._uid, data: story }
+            { key: story.content._uid, story }
           )}
         </div>
       </SbEditable>

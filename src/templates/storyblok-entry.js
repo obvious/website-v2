@@ -1,5 +1,5 @@
 import React from "react";
-import FindComponent from "../components/find-component.js";
+import FindComponent from "../components/find-component";
 import Nav from "../components/templates/common/Nav";
 
 class StoryblokEntry extends React.Component {
@@ -12,10 +12,10 @@ class StoryblokEntry extends React.Component {
   }
 
   static prepareStory(props) {
-    const mainNavigation = Object.assign({}, props.pageContext.mainNavigation);
+    const mainNavigation = { ...props.pageContext.mainNavigation };
     mainNavigation.content = JSON.parse(mainNavigation.content);
 
-    const story = Object.assign({}, props.pageContext.story);
+    const story = { ...props.pageContext.story };
 
     try {
       story.content = JSON.parse(story.content);
@@ -65,15 +65,14 @@ class StoryblokEntry extends React.Component {
   }
 
   render() {
-    let story = this.state.story;
-    let mainNavigation = this.state.mainNavigation.content;
-
+    const { story } = this.state;
+    const { mainNavigation } = this.state;
     return (
       <div>
-        <Nav data={mainNavigation}></Nav>
+        <Nav story={mainNavigation.content}></Nav>
         {React.createElement(
           FindComponent(story.content.component, story.full_slug),
-          { key: story.content._uid, data: story }
+          { key: story.content._uid, story }
         )}
       </div>
     );

@@ -21,14 +21,14 @@ const IndexPageContainer = styled.div`
   }
 `;
 
-const IndexPage = ({ data, theme }) => {
-  let filteredStories = data.allStories.filter(item => {
+const IndexPage = ({ story, theme }) => {
+  const filteredStories = story.allStories.filter(item => {
     const contentType = item.full_slug.split("/")[0];
     item.contentType = contentType;
     return ["case-studies", "publication"].indexOf(contentType) > -1;
   });
 
-  let newsStories = data.allStories.filter(item => {
+  const newsStories = story.allStories.filter(item => {
     const contentType = item.full_slug.split("/")[0];
     item.contentType = contentType;
     return ["news"].indexOf(contentType) > -1;
@@ -38,7 +38,7 @@ const IndexPage = ({ data, theme }) => {
 
   return (
     <IndexPageContainer theme={theme}>
-      <PageHeader title={`Hello World.`} />
+      <PageHeader title="Hello World." />
 
       <NewsCardList {...newsStories} />
 

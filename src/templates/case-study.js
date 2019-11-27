@@ -9,19 +9,19 @@ const CaseStudyContainer = styled.main`
   padding-bottom: ${props => props.theme.spacings[1]};
 `;
 
-const CaseStudy = ({ data, theme }) => {
+const CaseStudy = ({ story, theme }) => {
   return (
     <CaseStudyContainer theme={theme}>
-      <CaseStudyHeader {...data.content.header[0]} />
-      {data.content.sections.map(section =>
+      <CaseStudyHeader {...story.content.header[0]} />
+      {story.content.sections.map(section =>
         React.createElement(
-          FindComponent(section.templateName[0], data.content.full_slug),
+          FindComponent(section.templateName[0], story.content.full_slug),
           { key: section._uid, ...section }
         )
       )}
       <CaseStudyRelatedArticles
-        articles={data.content.relatedArticles}
-        heading={`Stories from ${data.content.header[0].title[0].text}`}
+        articles={story.content.relatedArticles}
+        heading={`Stories from ${story.content.header[0].title[0].text}`}
       />
     </CaseStudyContainer>
   );

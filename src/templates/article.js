@@ -14,18 +14,18 @@ const ArticleContainer = styled.main`
   }
 `;
 
-const Article = ({ data, theme }) => {
+const Article = ({ story, theme }) => {
   return (
     <ArticleContainer theme={theme}>
-      {data && (
+      {story && (
         <>
-          <PageHeader title={data.name} caption="This is a single article" />
+          <PageHeader title={story.name} caption="This is a single article" />
           <div className="page-content">
             <Image
               className="featured-image"
-              url={data.content.featuredImage}
+              url={story.content.featuredImage}
             />
-            <BodyText3 className="text" richText={data.content.caption} />
+            <BodyText3 className="text" richText={story.content.caption} />
           </div>
         </>
       )}
