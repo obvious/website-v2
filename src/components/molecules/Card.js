@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { MakeLinesClamp } from "../../styled/mixins";
-
 import { Link } from "gatsby";
+import { MakeLinesClamp } from "../../styled/mixins";
 
 import Image from "../atoms/Image";
 import { BodyText3 } from "../atoms/BodyText";
@@ -25,7 +24,9 @@ const CardContents = props => (
     {props.caption && props.caption.length ? (
       <BodyText3 className="text" richText={props.caption} />
     ) : null}
-    <Image className="image" url={props.featuredImage} />
+    {props.featuredImage && (
+      <Image className="image" url={props.featuredImage} />
+    )}
   </CardContentsContainer>
 );
 

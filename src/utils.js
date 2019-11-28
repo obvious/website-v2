@@ -14,7 +14,7 @@ const prepareStoryblokGraphqlResponse = response => {
   } else if ("allStoryblokEntry" in response) {
     /** Check if the query is of the type `allStoryblokEntry` */
     data = response.allStoryblokEntry.edges.map(edge => {
-      let node = edge.node;
+      const { node } = edge;
       try {
         if (typeof node.content === "string")
           node.content = JSON.parse(node.content);
@@ -47,8 +47,8 @@ const groupBy = (list, criteriaGetter) => {
   });
 
   /** Convert the generated map into an object, which will be returned by the function */
-  let groupedBy = {};
-  for (let [key, val] of map.entries()) {
+  const groupedBy = {};
+  for (const [key, val] of map.entries()) {
     groupedBy[key] = val;
   }
   return groupedBy;
@@ -62,7 +62,7 @@ const groupBy = (list, criteriaGetter) => {
  */
 const prepareArticlesFromMultiplePublications = preparedStoryblokResponse => {
   /** First, group the publications by publication uuids */
-  let articlesDataGroupedByPublication = groupBy(
+  const articlesDataGroupedByPublication = groupBy(
     preparedStoryblokResponse,
     article => article.content.publication.uuid
   );
@@ -72,10 +72,9 @@ const prepareArticlesFromMultiplePublications = preparedStoryblokResponse => {
     const articleGroup = articlesDataGroupedByPublication[key];
 
     /** Clone the publication object to avoid overwriting the original object */
-    let publicationData = Object.assign(
-      {},
-      articleGroup[0].content.publication
-    );
+    const publicationData = {
+      ...articleGroup[0].content.publication
+    };
 
     publicationData.articles = articleGroup;
     return publicationData;
@@ -113,10 +112,28 @@ const dynamicSort = property => {
     property = property.substr(1);
   }
   return function(a, b) {
-    let result =
+    const result =
       a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
     return result * sortOrder;
   };
+};
+
+const getParam = val => {
+  let result = "";
+  let tmp = [];
+
+  window &&
+    window.location.search
+      .substr(1)
+      .split("&")
+      .forEach(function(item) {
+        tmp = item.split("=");
+        if (tmp[0] === val) {
+          result = decodeURIComponent(tmp[1]);
+        }
+      });
+
+  return result;
 };
 
 module.exports = {
@@ -124,5 +141,6 @@ module.exports = {
   groupBy,
   prepareArticlesFromMultiplePublications,
   formatDate,
-  dynamicSort
+  dynamicSort,
+  getParam
 };

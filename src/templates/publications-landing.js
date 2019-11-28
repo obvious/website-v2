@@ -1,42 +1,12 @@
 import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import {
-  prepareStoryblokGraphqlResponse,
-  prepareArticlesFromMultiplePublications,
-  dynamicSort
-} from "../utils";
+import { prepareArticlesFromMultiplePublications, dynamicSort } from "../utils";
 
 import PageHeader from "../components/templates/common/PageHeader";
 import DetailedView from "../components/templates/publications/DetailedView";
 
-const PublicationLandingPage = () => {
-  const articlesQueryResponse = useStaticQuery(
-    graphql`
-      query {
-        allStoryblokEntry(filter: { full_slug: { regex: "/^article//" } }) {
-          edges {
-            node {
-              id
-              name
-              created_at
-              published_at
-              uuid
-              slug
-              full_slug
-              content
-              parent_id
-              group_id
-              first_published_at
-            }
-          }
-        }
-      }
-    `
-  );
-
-  let articlesData = prepareStoryblokGraphqlResponse(articlesQueryResponse);
+const PublicationLandingPage = ({ story }) => {
   const articlesDataGroupedByPublications = prepareArticlesFromMultiplePublications(
-    articlesData
+    story.articles
   );
   return (
     <div>

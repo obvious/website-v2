@@ -21,27 +21,24 @@ const IndexPageContainer = styled.div`
   }
 `;
 
-const IndexPage = ({ pageContext: { data }, theme }) => {
-  let filteredStories = data.filter(item => {
-    const contentType = item.node.full_slug.split("/")[0];
-    item.node.contentType = contentType;
-    return ["case-studies", "publications"].indexOf(contentType) > -1;
+const IndexPage = ({ story, theme }) => {
+  const filteredStories = story.allStories.filter(item => {
+    const contentType = item.full_slug.split("/")[0];
+    item.contentType = contentType;
+    return ["case-studies", "publication"].indexOf(contentType) > -1;
   });
 
-  let newsStories = data.filter(item => {
-    const contentType = item.node.full_slug.split("/")[0];
-    item.node.contentType = contentType;
+  const newsStories = story.allStories.filter(item => {
+    const contentType = item.full_slug.split("/")[0];
+    item.contentType = contentType;
     return ["news"].indexOf(contentType) > -1;
   });
-
-  filteredStories = filteredStories.map(item => item.node);
-  newsStories = Object.values(newsStories.map(item => item.node));
 
   const groupedStories = groupBy(filteredStories, story => story.contentType);
 
   return (
     <IndexPageContainer theme={theme}>
-      <PageHeader title={`Hello World.`} />
+      <PageHeader title="Hello World." />
 
       <NewsCardList {...newsStories} />
 
@@ -54,7 +51,7 @@ const IndexPage = ({ pageContext: { data }, theme }) => {
             {groupedStories[key].map(item => (
               <li key={item.uuid}>
                 <HeaderText5 className="homepage-section-item">
-                  <Link url={{ url: item.full_slug }}>{item.name}</Link>
+                  <Link url={{ url: `/${item.full_slug}` }}>{item.name}</Link>
                 </HeaderText5>
               </li>
             ))}

@@ -43,7 +43,7 @@ const NewsCardListContainer = styled.ol`
 export const NewsCardList = props => {
   let newsStories = Object.values(props);
   newsStories = newsStories.map(newsStory => {
-    const content = JSON.parse(newsStory.content);
+    const content = newsStory.content;
     return {
       name: newsStory.name,
       date_published: formatDate(content.date_published),

@@ -3,8 +3,5 @@
   "rules": {
     "prettier/prettier": "error"
   },
-  "extends": [
-    "airbnb",
-    "prettier"
-  ]
+  "extends": ["airbnb", "prettier"]
 }

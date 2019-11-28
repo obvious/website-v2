@@ -5,6 +5,7 @@ import Video from "../../molecules/Video";
 
 import { HeaderText4 } from "../../atoms/HeaderText";
 import { BodyText3 } from "../../atoms/BodyText";
+import SbEditable from "storyblok-react";
 
 const CaseStudySection2Container = styled.section`
   .subsection-1 {
@@ -36,22 +37,26 @@ const CaseStudySection2Container = styled.section`
 
 const CaseStudySection2 = props => {
   return (
-    <CaseStudySection2Container>
-      <div className="subsection-1">
-        <div className="header-and-description">
-          <HeaderText4 className="header">{props.heading[0].text}</HeaderText4>
-          <BodyText3
-            className="description"
-            richText={props.description[0].text}
-          />
+    <SbEditable content={props}>
+      <CaseStudySection2Container>
+        <div className="subsection-1">
+          <div className="header-and-description">
+            <HeaderText4 className="header">
+              {props.heading[0].text}
+            </HeaderText4>
+            <BodyText3
+              className="description"
+              richText={props.description[0].text}
+            />
+          </div>
+          <Video className="video full" {...props.otherBlocks[1]} />
         </div>
-        <Video className="video full" {...props.otherBlocks[1]} />
-      </div>
 
-      <div className="subsection-2">
-        <BodyText3 richText={props.otherBlocks[0].text} />
-      </div>
-    </CaseStudySection2Container>
+        <div className="subsection-2">
+          <BodyText3 richText={props.otherBlocks[0].text} />
+        </div>
+      </CaseStudySection2Container>
+    </SbEditable>
   );
 };
 
