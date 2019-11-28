@@ -3,6 +3,7 @@ import SbEditable from "storyblok-react";
 import FindComponent from "../components/find-component";
 import config from "../../gatsby-config";
 import Nav from "../components/templates/common/Nav";
+import { getParam } from "../utils";
 
 const sbConfigs = config.plugins.filter(item => {
   return item.resolve === "gatsby-source-storyblok";
@@ -18,23 +19,6 @@ const loadStoryblokBridge = function(callback) {
   script.src = `//app.storyblok.com/f/storyblok-latest.js?t=${sbConfig.options.accessToken}`;
   script.onload = callback;
   document.getElementsByTagName("head")[0].appendChild(script);
-};
-
-const getParam = function(val) {
-  let result = "";
-  let tmp = [];
-
-  window.location.search
-    .substr(1)
-    .split("&")
-    .forEach(function(item) {
-      tmp = item.split("=");
-      if (tmp[0] === val) {
-        result = decodeURIComponent(tmp[1]);
-      }
-    });
-
-  return result;
 };
 
 class StoryblokEntry extends React.Component {
