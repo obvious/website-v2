@@ -55,6 +55,8 @@ class StoryblokEntry extends React.Component {
               resolve_relations: sbConfig.options.resolveRelations || []
             },
             allStoriesData => {
+              // TODO - document these cases where an extra call needs to be made to populate extra data on the story.
+              // TODO - write a common function for these extra API calls that can also be consumed by createPages on gatsby-node.js
               if (slug === "home") {
                 storyData.story.allStories = allStoriesData.stories;
               }

@@ -56,6 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
 
           const story = { ...entry.node };
 
+          // TODO - avoid dupication of code between this and pages/editor.js. Have common functions for both.
           /**
            * Custom entry on the home story
            */
