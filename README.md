@@ -33,6 +33,17 @@ An up-to-date version of everything on the `master` branch of this repository is
 
     Open the `website-v2` directory in your code editor of choice. Save your changes and the browser will update in real time!
 
+## Frequently used terms
+
+- `story` - used to denote singular data entries fetched from the _Storyblok_ API. Usage of `story` can be found primarily on
+
+  1. page-level components
+  2. the live preview editor page
+  3. and _Gatsby createPage_ API (gatsby-node.js)
+
+- `[filename].stories.js and the stories/ directory` - These are visual representations of various states of each component, intended to be served as part of a visual directory of all components. This visual directory is a _[Storybook](https://storybook.js.org/)_ app.
+  IMPORTANT NOTE: all things _Storybook_ need to be renamed to `renders` instead of `stories` to avoid confusion with the similarly named _Storyblok_ entries.
+
 ## 🧐 What's inside?
 
 A quick look at some additional things we are using within the project:
