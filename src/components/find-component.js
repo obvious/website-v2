@@ -10,7 +10,7 @@ import CaseStudy from "../templates/case-study";
 import Publication from "../templates/publication";
 import PublicationLandingPage from "../templates/publications-landing";
 import IndexPage from "../templates";
-import ComponentNotFound from "./component_not_found";
+import ComponentNotFound from "./component-not-found";
 import Nav from "./templates/common/Nav";
 import CaseStudySection1 from "./templates/case-studies/CaseStudySection1";
 import CaseStudySection2 from "./templates/case-studies/CaseStudySection2";
