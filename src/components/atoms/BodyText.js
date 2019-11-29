@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StoryblokClient = require("storyblok-js-client");
@@ -131,3 +132,19 @@ export const BodyText5 = ({ richText, ...otherProps }) => (
     }}
   />
 );
+
+BodyText1.propTypes = {
+  richText: PropTypes.oneOfType(["object", "string"])
+};
+
+BodyText2.propTypes = {
+  richText: PropTypes.oneOfType(["object", "string"])
+};
+
+BodyText3.propTypes = {
+  richText: PropTypes.oneOfType(["object", "string"])
+};
+
+BodyText5.propTypes = {
+  richText: PropTypes.oneOfType(["object", "string"])
+};

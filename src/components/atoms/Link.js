@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 
@@ -11,7 +12,7 @@ const LinkContainer = styled.div`
   }
 `;
 
-const Link = ({ url, children, openInNewTab, ...otherProps }) => {
+const Link = ({ url, openInNewTab, children, ...otherProps }) => {
   // TODO - refactor url.url to only be url
   const isInternalLink = url.url.indexOf("http") !== 0;
   return (
@@ -25,6 +26,11 @@ const Link = ({ url, children, openInNewTab, ...otherProps }) => {
       {children}
     </LinkContainer>
   );
+};
+
+Link.propTypes = {
+  url: PropTypes.string,
+  openInNewTab: PropTypes.boolean
 };
 
 export default Link;
