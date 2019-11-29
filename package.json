@@ -11,7 +11,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "prettier": "prettier --write src/**/*.{js,css}",
+    "prettier": "prettier --write \"./**/*.{js,css,json,md}\"",
     "storybook": "NODE_ENV=production start-storybook -s public",
     "build-storybook": "NODE_ENV=production build-storybook -s public"
   },
@@ -60,19 +60,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,css}": [
-      "prettier --write",
-      "git add"
-    ],
-    "./*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "./*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
+    "./**/*.{js,css,json,md}": [
       "prettier --write",
       "git add"
     ]
