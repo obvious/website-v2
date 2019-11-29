@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { CaptionText2, CaptionTextHighlighted } from "./CaptionText";
-import { Divider } from "./Divider";
+import { CaptionText2, CaptionTextHighlighted } from "../atoms/CaptionText";
+import { Divider } from "../atoms/Divider";
 
 const GraphPointContainer = styled.div`
   display: inline-block;
