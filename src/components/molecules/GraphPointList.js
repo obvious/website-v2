@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { GraphPoint } from "../atoms/GraphPoint";
+import { GraphPoint } from "./GraphPoint";
 
 const GraphPointListContainer = styled.div`
   //TODO: Draw lines connecting the different GraphPoints

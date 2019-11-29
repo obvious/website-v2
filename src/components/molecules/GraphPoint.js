@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { CaptionText2, CaptionTextHighlighted } from "./CaptionText";
-import { Divider } from "./Divider";
+import { CaptionText2, CaptionTextHighlighted } from "../atoms/CaptionText";
+import { Divider } from "../atoms/Divider";
 
 const GraphPointContainer = styled.div`
   display: inline-block;
@@ -13,6 +14,7 @@ const GraphPointContainer = styled.div`
   // bottom: ${props => Number(props.yCoordinate)}vh;
 
   .point {
+    display: inline-block;
     width: ${props => props.theme.spacings[4]};
     height: ${props => props.theme.spacings[4]};
     border: ${props => props.theme.colors.gray} solid ${props =>
@@ -29,7 +31,7 @@ const GraphPointContainer = styled.div`
 
 export const GraphPoint = props => (
   <GraphPointContainer {...props}>
-    <div className="point"></div>
+    <span className="point"></span>
     <CaptionText2>{props.label[0].text}</CaptionText2>
     {props.specialLabel[0] ? (
       <>
@@ -41,3 +43,6 @@ export const GraphPoint = props => (
     ) : null}
   </GraphPointContainer>
 );
+
+//TODO: Refactor this into a named prop
+//TODO: add prop=type for shape of this prop

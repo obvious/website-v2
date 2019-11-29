@@ -17,15 +17,8 @@ const ButtonContainer = styled.a`
   }
 `;
 
-const Button = ({ url, children, icon, openInNewTab }) => (
-  <ButtonContainer className="button">
-    {children}
-    {icon ? (
-      <span>
-        <img src={icon} />
-      </span>
-    ) : null}
-  </ButtonContainer>
+const Button = ({ children }) => (
+  <ButtonContainer className="button">{children}</ButtonContainer>
 );
 
 export default Button;
