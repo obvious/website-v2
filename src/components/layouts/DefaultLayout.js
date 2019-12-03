@@ -10,6 +10,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <>
       <Helmet>
+        <html lang="en" />
         <title>Obvious</title>
       </Helmet>
       <ThemeProvider theme={theme}>

@@ -11,12 +11,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-html-attributes",
-      options: {
-        lang: "en"
-      }
-    },
-    {
       resolve: "gatsby-source-storyblok",
       options: {
         accessToken: credentials.storyBlokPreviewKey,
