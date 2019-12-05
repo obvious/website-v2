@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ReactPlayer from "react-player";
 
+import SbEditable from "storyblok-react";
 import Button from "../atoms/Button";
 import { BodyText3 } from "../atoms/BodyText";
-import SbEditable from "storyblok-react";
 
 const VideoContainer = styled.div`
   position: relative;
@@ -27,7 +27,7 @@ const VideoContainer = styled.div`
     left: ${props => (props.hasOverlay ? props.theme.spacings[1] : "auto")};
     right: ${props => (props.hasOverlay ? "auto" : props.theme.spacings[4])};
     bottom: ${props =>
-  props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
+      props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
     .heading {
       max-width: 60%;
       color: ${props => props.theme.colors.white};
@@ -43,21 +43,20 @@ const Video = ({ video, ...otherProps }) => {
   return (
     <SbEditable content={video}>
       <VideoContainer {...otherProps}>
-        <ReactPlayer
-          url={video}
-          className="video-player"
-          playing={true}
-          loop={true}
-        />
+        <ReactPlayer url={video} className="video-player" playing loop />
         {otherProps.hasOverlay ? <div className="overlay" /> : null}
         <div className="content-overlay">
           {otherProps.hasOverlay ? (
-            <BodyText3
-              className="heading"
-              richText={otherProps.overlayHeading}
-            ></BodyText3>
+            <SbEditable content={otherProps}>
+              <BodyText3
+                className="heading"
+                richText={otherProps.overlayHeading}
+              />
+            </SbEditable>
           ) : null}
-          <Button>{otherProps.overlayButtonText || "Watch"}</Button>
+          <SbEditable content={otherProps}>
+            <Button>{otherProps.overlayButtonText || "Watch"}</Button>
+          </SbEditable>
         </div>
       </VideoContainer>
     </SbEditable>

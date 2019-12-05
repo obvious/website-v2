@@ -21,11 +21,11 @@ const PageHeaderContainer = styled.div`
 const PageHeader = props => {
   return (
     <PageHeaderContainer>
-      <SbEditable content={props.editableTitleProps}>
+      <SbEditable content={props.editableTitleProps || props}>
         <HeaderText1 className="title">{props.title}</HeaderText1>
       </SbEditable>
       {props.caption && (
-        <SbEditable content={props.editableCaptionProps}>
+        <SbEditable content={props.editableCaptionProps || props}>
           <BodyText2 className="caption" richText={props.caption} />
         </SbEditable>
       )}
