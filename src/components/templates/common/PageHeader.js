@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { HeaderText1 } from "../../atoms/HeaderText";
 import { BodyText2 } from "../../atoms/BodyText";
+import SbEditable from "storyblok-react";
 
 const PageHeaderContainer = styled.div`
   max-width: 60%;
@@ -20,9 +21,13 @@ const PageHeaderContainer = styled.div`
 const PageHeader = props => {
   return (
     <PageHeaderContainer>
-      <HeaderText1 className="title">{props.title}</HeaderText1>
+      <SbEditable content={props.editableTitleProps || props}>
+        <HeaderText1 className="title">{props.title}</HeaderText1>
+      </SbEditable>
       {props.caption && (
-        <BodyText2 className="caption" richText={props.caption} />
+        <SbEditable content={props.editableCaptionProps || props}>
+          <BodyText2 className="caption" richText={props.caption} />
+        </SbEditable>
       )}
       {props.children}
     </PageHeaderContainer>

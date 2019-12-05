@@ -13,9 +13,9 @@ const CaseStudy = ({ story, theme }) => {
   return (
     <CaseStudyContainer theme={theme}>
       <CaseStudyHeader {...story.content.header[0]} />
-      {story.content.sections.map(section =>
+      {story.content.refactoredSections.map(section =>
         React.createElement(
-          FindComponent(section.templateName[0], story.content.full_slug),
+          FindComponent(section.component, story.content.full_slug),
           { key: section._uid, ...section }
         )
       )}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import PageHeader from "../common/PageHeader";
 import LinkGroup from "../../molecules/LinkGroup";
+import SbEditable from "storyblok-react";
 
 const CaseStudyHeaderContainer = styled.section`
   .links {
@@ -15,15 +16,21 @@ const CaseStudyHeaderContainer = styled.section`
 
 const CaseStudyHeader = props => {
   return (
-    <CaseStudyHeaderContainer>
-      <PageHeader
-        className="title"
-        title={props.title[0].text}
-        caption={props.caption[0].text}
-      >
-        <LinkGroup className="links" links={props.links[0].links} />
-      </PageHeader>
-    </CaseStudyHeaderContainer>
+    <SbEditable content={props}>
+      <CaseStudyHeaderContainer>
+        <SbEditable content={props}>
+          <PageHeader
+            className="title"
+            editableTitleProps={props.title[0]}
+            editableCaptionProps={props.caption[0]}
+            title={props.title[0].text}
+            caption={props.caption[0].text}
+          >
+            <LinkGroup className="links" links={props.links[0].links} />
+          </PageHeader>
+        </SbEditable>
+      </CaseStudyHeaderContainer>
+    </SbEditable>
   );
 };
 

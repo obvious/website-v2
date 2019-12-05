@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ReactPlayer from "react-player";
 
+import SbEditable from "storyblok-react";
 import Button from "../atoms/Button";
 import { BodyText3 } from "../atoms/BodyText";
 
@@ -40,24 +41,25 @@ const VideoContainer = styled.div`
 
 const Video = ({ video, ...otherProps }) => {
   return (
-    <VideoContainer {...otherProps}>
-      <ReactPlayer
-        url={video}
-        className="video-player"
-        playing={true}
-        loop={true}
-      />
-      {otherProps.hasOverlay ? <div className="overlay" /> : null}
-      <div className="content-overlay">
-        {otherProps.hasOverlay ? (
-          <BodyText3
-            className="heading"
-            richText={otherProps.overlayHeading}
-          ></BodyText3>
-        ) : null}
-        <Button>{otherProps.overlayButtonText || "Watch"}</Button>
-      </div>
-    </VideoContainer>
+    <SbEditable content={video}>
+      <VideoContainer {...otherProps}>
+        <ReactPlayer url={video} className="video-player" playing loop />
+        {otherProps.hasOverlay ? <div className="overlay" /> : null}
+        <div className="content-overlay">
+          {otherProps.hasOverlay ? (
+            <SbEditable content={otherProps}>
+              <BodyText3
+                className="heading"
+                richText={otherProps.overlayHeading}
+              />
+            </SbEditable>
+          ) : null}
+          <SbEditable content={otherProps}>
+            <Button>{otherProps.overlayButtonText || "Watch"}</Button>
+          </SbEditable>
+        </div>
+      </VideoContainer>
+    </SbEditable>
   );
 };
 

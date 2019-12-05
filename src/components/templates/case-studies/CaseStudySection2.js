@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+import SbEditable from "storyblok-react";
 import Video from "../../molecules/Video";
 
 import { HeaderText4 } from "../../atoms/HeaderText";
 import { BodyText3 } from "../../atoms/BodyText";
-import SbEditable from "storyblok-react";
 
 const CaseStudySection2Container = styled.section`
   .subsection-1 {
@@ -49,11 +49,11 @@ const CaseStudySection2 = props => {
               richText={props.description[0].text}
             />
           </div>
-          <Video className="video full" {...props.otherBlocks[1]} />
+          <Video className="video full" {...props.video[0]} />
         </div>
 
         <div className="subsection-2">
-          <BodyText3 richText={props.otherBlocks[0].text} />
+          <BodyText3 richText={props.additionalText[0].text} />
         </div>
       </CaseStudySection2Container>
     </SbEditable>

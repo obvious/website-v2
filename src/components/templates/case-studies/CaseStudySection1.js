@@ -27,13 +27,17 @@ const CaseStudySection1 = props => {
   return (
     <SbEditable content={props}>
       <CaseStudySection1Container>
-        <Video className="video" {...props.otherBlocks[0]} />
+        <Video className="video" {...props.video[0]} />
         <div className="subsection-2">
-          <HeaderText4>{props.heading[0].text}</HeaderText4>
-          <BodyText3 richText={props.description[0].text} />
+          <SbEditable content={props.heading[0]}>
+            <HeaderText4>{props.heading[0].text}</HeaderText4>
+          </SbEditable>
+          <SbEditable content={props.description[0]}>
+            <BodyText3 richText={props.description[0].text} />
+          </SbEditable>
         </div>
         <div className="subsection-3">
-          <ImageSet {...props.otherBlocks[1]} />
+          <ImageSet {...props.imageSet[0]} />
         </div>
       </CaseStudySection1Container>
     </SbEditable>
