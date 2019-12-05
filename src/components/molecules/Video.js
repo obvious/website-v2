@@ -4,6 +4,7 @@ import ReactPlayer from "react-player";
 
 import Button from "../atoms/Button";
 import { BodyText3 } from "../atoms/BodyText";
+import SbEditable from "storyblok-react";
 
 const VideoContainer = styled.div`
   position: relative;
@@ -26,7 +27,7 @@ const VideoContainer = styled.div`
     left: ${props => (props.hasOverlay ? props.theme.spacings[1] : "auto")};
     right: ${props => (props.hasOverlay ? "auto" : props.theme.spacings[4])};
     bottom: ${props =>
-      props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
+  props.hasOverlay ? props.theme.spacings[2] : props.theme.spacings[4]};
     .heading {
       max-width: 60%;
       color: ${props => props.theme.colors.white};
@@ -40,24 +41,26 @@ const VideoContainer = styled.div`
 
 const Video = ({ video, ...otherProps }) => {
   return (
-    <VideoContainer {...otherProps}>
-      <ReactPlayer
-        url={video}
-        className="video-player"
-        playing={true}
-        loop={true}
-      />
-      {otherProps.hasOverlay ? <div className="overlay" /> : null}
-      <div className="content-overlay">
-        {otherProps.hasOverlay ? (
-          <BodyText3
-            className="heading"
-            richText={otherProps.overlayHeading}
-          ></BodyText3>
-        ) : null}
-        <Button>{otherProps.overlayButtonText || "Watch"}</Button>
-      </div>
-    </VideoContainer>
+    <SbEditable content={video}>
+      <VideoContainer {...otherProps}>
+        <ReactPlayer
+          url={video}
+          className="video-player"
+          playing={true}
+          loop={true}
+        />
+        {otherProps.hasOverlay ? <div className="overlay" /> : null}
+        <div className="content-overlay">
+          {otherProps.hasOverlay ? (
+            <BodyText3
+              className="heading"
+              richText={otherProps.overlayHeading}
+            ></BodyText3>
+          ) : null}
+          <Button>{otherProps.overlayButtonText || "Watch"}</Button>
+        </div>
+      </VideoContainer>
+    </SbEditable>
   );
 };
 

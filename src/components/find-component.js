@@ -24,9 +24,9 @@ const ComponentList = {
   publication: Publication,
   "publications-landing-page": PublicationLandingPage,
   home: IndexPage,
-  template1: CaseStudySection1,
-  template2: CaseStudySection2,
-  template3: CaseStudySection3
+  CaseStudySection1,
+  CaseStudySection2,
+  CaseStudySection3
 };
 
 const FindComponent = (type, fullSlug) => {
