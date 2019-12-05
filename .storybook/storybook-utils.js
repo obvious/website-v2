@@ -1,7 +1,7 @@
 import StoryblokClient from "storyblok-js-client";
 // Initialize the client with the oauth token
 const Storyblok = new StoryblokClient({
-  oauthToken: process.env.STORYBLOK_OAUTH_TOKEN
+  oauthToken: process.env.STORYBOOK_STORYBLOK_OAUTH_TOKEN
 });
 
 export const getPresetsForComponent = componentName => {
