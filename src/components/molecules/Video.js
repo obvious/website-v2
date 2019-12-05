@@ -41,7 +41,7 @@ const VideoContainer = styled.div`
 
 const Video = ({ video, ...otherProps }) => {
   return (
-    <SbEditable content={video}>
+    <SbEditable content={{video, ...otherProps}}>
       <VideoContainer {...otherProps}>
         <ReactPlayer url={video} className="video-player" playing loop />
         {otherProps.hasOverlay ? <div className="overlay" /> : null}

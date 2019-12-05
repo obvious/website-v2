@@ -15,7 +15,7 @@ const LinkContainer = styled.div`
 
 const Link = ({ url, openInNewTab, children, ...otherProps }) => {
   // TODO - refactor url.url to only be url
-  const isInternalLink = url.url.indexOf("http") !== 0;
+  const isInternalLink = url.url ? url.url.indexOf("http") !== 0 : false;
   return (
     <SbEditable content={{ url, openInNewTab, children, ...otherProps }}>
       <LinkContainer
@@ -33,7 +33,14 @@ const Link = ({ url, openInNewTab, children, ...otherProps }) => {
 
 Link.propTypes = {
   url: PropTypes.string,
-  openInNewTab: PropTypes.boolean
+  openInNewTab: PropTypes.bool
+};
+
+Link.defaultProps = {
+  url: {
+    url: ""
+  },
+  openInNewTab: false
 };
 
 export default Link;
