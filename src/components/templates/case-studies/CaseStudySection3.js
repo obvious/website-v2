@@ -33,15 +33,21 @@ const CaseStudySection3 = props => {
       <CaseStudySection3Container>
         <div className="subsection-1">
           <div>
-            <HeaderText4>{props.heading[0].text}</HeaderText4>
-            <BodyText3
-              className="description"
-              richText={props.description[0].text}
-            />
+            <SbEditable content={props.heading[0]}>
+              <HeaderText4>{props.heading[0].text}</HeaderText4>
+            </SbEditable>
+            <SbEditable content={props.description[0]}>
+              <BodyText3
+                className="description"
+                richText={props.description[0].text}
+              />
+            </SbEditable>
           </div>
-          <Image className="image" url={props.otherBlocks[0].image} />
+          <SbEditable content={props.image[0]}>
+            <Image className="image" url={props.image[0].image} />
+          </SbEditable>
         </div>
-        <Graph {...props.otherBlocks[1]} />
+        <Graph {...props.graph[0]} />
       </CaseStudySection3Container>
     </SbEditable>
   );
