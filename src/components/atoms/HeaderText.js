@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import SbEditable from "storyblok-react";
 
 const HeaderText1Container = styled.h1`
   font-size: ${props => props.theme.fontSizes[0]};
@@ -9,9 +8,7 @@ const HeaderText1Container = styled.h1`
 `;
 
 export const HeaderText1 = ({ children, ...otherProps }) => (
-  <SbEditable content={{ children, ...otherProps }}>
-    <HeaderText1Container {...otherProps}>{children}</HeaderText1Container>
-  </SbEditable>
+  <HeaderText1Container {...otherProps}>{children}</HeaderText1Container>
 );
 
 const HeaderText2Container = styled.h2`
@@ -21,9 +18,7 @@ const HeaderText2Container = styled.h2`
 `;
 
 export const HeaderText2 = ({ children, ...otherProps }) => (
-  <SbEditable content={{ children, ...otherProps }}>
-    <HeaderText2Container {...otherProps}>{children}</HeaderText2Container>
-  </SbEditable>
+  <HeaderText2Container {...otherProps}>{children}</HeaderText2Container>
 );
 
 const HeaderText3Container = styled.h3`
@@ -33,9 +28,7 @@ const HeaderText3Container = styled.h3`
 `;
 
 export const HeaderText3 = ({ children, ...otherProps }) => (
-  <SbEditable content={{ children, ...otherProps }}>
-    <HeaderText3Container {...otherProps}>{children}</HeaderText3Container>
-  </SbEditable>
+  <HeaderText3Container {...otherProps}>{children}</HeaderText3Container>
 );
 
 const HeaderText4Container = styled.h4`
@@ -45,9 +38,7 @@ const HeaderText4Container = styled.h4`
 `;
 
 export const HeaderText4 = ({ children, ...otherProps }) => (
-  <SbEditable content={{ children, ...otherProps }}>
-    <HeaderText4Container {...otherProps}>{children}</HeaderText4Container>
-  </SbEditable>
+  <HeaderText4Container {...otherProps}>{children}</HeaderText4Container>
 );
 
 const HeaderText5Container = styled.h5`
@@ -57,9 +48,7 @@ const HeaderText5Container = styled.h5`
 `;
 
 export const HeaderText5 = ({ children, ...otherProps }) => (
-  <SbEditable content={{ children, ...otherProps }}>
-    <HeaderText5Container {...otherProps}>{children}</HeaderText5Container>
-  </SbEditable>
+  <HeaderText5Container {...otherProps}>{children}</HeaderText5Container>
 );
 
 const HeaderText6Container = styled.h6`
@@ -69,7 +58,5 @@ const HeaderText6Container = styled.h6`
 `;
 
 export const HeaderText6 = ({ children, ...otherProps }) => (
-  <SbEditable content={{ children, ...otherProps }}>
-    <HeaderText6Container {...otherProps}>{children}</HeaderText6Container>
-  </SbEditable>
+  <HeaderText6Container {...otherProps}>{children}</HeaderText6Container>
 );

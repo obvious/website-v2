@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import SbEditable from "storyblok-react";
 
 const ImageContainer = styled.div`
   img {
@@ -17,11 +16,9 @@ const Image = ({ url, ...otherProps }) => {
     : url;
 
   return (
-    <SbEditable content={{ url, ...otherProps }}>
-      <ImageContainer {...otherProps}>
-        <img src={optimizedImageUrl} alt="" />
-      </ImageContainer>
-    </SbEditable>
+    <ImageContainer {...otherProps}>
+      <img src={optimizedImageUrl} alt="" />
+    </ImageContainer>
   );
 };
 

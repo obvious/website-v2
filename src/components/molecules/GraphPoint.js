@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { CaptionText2, CaptionTextHighlighted } from "../atoms/CaptionText";
 import { Divider } from "../atoms/Divider";
-import SbEditable from "storyblok-react";
 
 const GraphPointContainer = styled.div`
   display: inline-block;
@@ -33,17 +32,13 @@ const GraphPointContainer = styled.div`
 export const GraphPoint = props => (
   <GraphPointContainer {...props}>
     <span className="point"></span>
-    <SbEditable content={props.label[0]}>
-      <CaptionText2>{props.label[0].text}</CaptionText2>
-    </SbEditable>
+    <CaptionText2>{props.label[0].text}</CaptionText2>
     {props.specialLabel[0] ? (
       <>
         <Divider className="divider-spacing" />
-        <SbEditable content={props.specialLabel[0]}>
-          <CaptionTextHighlighted>
-            {props.specialLabel[0].Text}
-          </CaptionTextHighlighted>
-        </SbEditable>
+        <CaptionTextHighlighted>
+          {props.specialLabel[0].Text}
+        </CaptionTextHighlighted>
       </>
     ) : null}
   </GraphPointContainer>
