@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Image from "../atoms/Image";
 import { BodyText3 } from "../atoms/BodyText";
+import SbEditable from "storyblok-react";
 
 const ImageSetContainer = styled.ul`
   display: grid;
@@ -27,11 +28,17 @@ const ImageSetContainer = styled.ul`
 `;
 
 const ImageSet = props => (
-  <ImageSetContainer {...props}>
-    <Image className="featured-image" url={props.featuredImage} />
-    <BodyText3 className="text" richText={props.caption[0].text} />
-    <Image className="other-image" url={props.otherImages[0].image} />
-  </ImageSetContainer>
+  <SbEditable content={props}>
+    <ImageSetContainer {...props}>
+      <Image className="featured-image" url={props.featuredImage} />
+      <SbEditable content={props.caption[0]}>
+        <BodyText3 className="text" richText={props.caption[0].text} />
+      </SbEditable>
+      <SbEditable content={props.otherImages[0]}>
+        <Image className="other-image" url={props.otherImages[0].image} />
+      </SbEditable>
+    </ImageSetContainer>
+  </SbEditable>
 );
 
 export default ImageSet;
