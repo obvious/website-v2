@@ -18,6 +18,13 @@ module.exports = ({ config }) => {
     require.resolve("babel-plugin-remove-graphql-queries")
   ];
 
+  // Allows storybook/adddon-storysource to generate a decorator call in every story
+  config.module.rules.push({
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve("@storybook/source-loader")],
+    enforce: "pre"
+  });
+
   // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
   config.resolve.mainFields = ["browser", "module", "main"];
 
