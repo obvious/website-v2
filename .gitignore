@@ -4,3 +4,5 @@
 .idea
 # Local Netlify folder
 .netlify
+# Built functions
+functions-build

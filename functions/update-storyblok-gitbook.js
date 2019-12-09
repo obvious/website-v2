@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
   //   };
   // }
 
-  const SBread = new StoryblokClient({
+  const SBRead = new StoryblokClient({
     accessToken: STORYBLOCK_DELIVERY_API_ACCESS_TOKEN_DRAFT,
     cache: {
       clear: "auto",
@@ -21,11 +21,11 @@ exports.handler = async (event, context) => {
     }
   });
 
-  const SBwrite = new StoryblokClient({
+  const SBWrite = new StoryblokClient({
     oauthToken: STORYBLOCK_MANAGEMENT_API_OAUTH_TOKEN
   });
 
-  const gitbookStories = SBread.get("cdn/stories", {
+  const gitbookStories = SBRead.get("cdn/stories", {
     starts_with: "gitbook-articles/",
     version: "draft"
   });
