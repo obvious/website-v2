@@ -1,0 +1,39 @@
+# Naming conventions
+This document lays down guidelines for naming conventions to be followed across Storyblok, Storybook, and the Gatsby app.
+
+## **Storyblok** - Content types
+Content types are entries on Storyblok that usually correspond to the type of content a single page holds. Eg. publication, article
+Storyblok: stories of the type content-type
+Storybook: emplates
+Gatsby: (page-level) templates. See templates/ folder
+
+Naming: Singular, lowercase with hyphens (kebab case)
+Correct - publication, article, case-study, team-member
+Incorrect - Publication, publications, caseStudy, casestudy
+
+## **Storyblok** - Database fields
+Are fields used the define the parts of the schema in Storyblok content-types as well as components.
+Naming: All caps, underscores
+Correct - IS_HIGHLIGHTED, TEXT, FEATURED_IMAGE
+Incorrect - is_highlighted, isHighlighted
+
+
+## Components
+Are component blocks on Storyblok. Eg. CaseStudyHeader, ArticleFeaturedImage
+Storyblok: Components
+Storybook: Components
+Gatsby: Components. See components/ folder
+Naming: Singular, capitalized, camelcase
+Correct - CaseStudyHeader, ArticleFeaturedImage
+Incorrect - caseStudyHeader, case_study_header, Case_Study_Header
+
+
+## Components with state (WIP)
+Are immutable variants for a component. Defined as an independent component block on Storyblok.
+Storyblok: (TODO - need to figure how to extend components)
+Storybook: states/variants of a component
+Gatsby: variants defined by component props
+Naming: [ComponentName]_[state/variant/any modifier in camelcase]
+Correct - CaseStudyHeader_small, ArticleFeaturedImage_isHiglighted
+Incorrect - caseStudyHeader, case_study_header, Case_Study_Header
+

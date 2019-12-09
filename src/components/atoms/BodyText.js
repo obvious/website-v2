@@ -28,6 +28,9 @@ const BodyText1Container = styled.div`
   }
 `;
 
+/**
+ * Use `BodyText1` to make a large point; for example to showcase some statistics in a graoh
+ */
 export const BodyText1 = ({ richText, ...otherProps }) => (
   <BodyText1Container
     {...otherProps}

@@ -9,7 +9,10 @@ import {
 } from "./HeaderText";
 
 export default {
-  title: "Headers"
+  title: "Headers",
+  parameters: {
+    componentSubtitle: "All the titles available for use in the project"
+  }
 };
 
 export const h1 = () => <HeaderText1>This is an H1</HeaderText1>;
