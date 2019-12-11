@@ -5,14 +5,14 @@ const {
 } = process.env;
 
 exports.handler = async (event, context) => {
-  // Uncomment once gitbook webhook is set up
-  // if (event.httpMethod !== "POST") {
-  //   return {
-  //     statusCode: 405,
-  //     body: "Hit me with a POST please"
-  //   };
-  // }
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: "Hit me with a POST please"
+    };
+  }
 
+  //Initialise the read api for storyblok
   const SBRead = new StoryblokClient({
     accessToken: STORYBLOCK_DELIVERY_API_ACCESS_TOKEN_DRAFT,
     cache: {
@@ -21,16 +21,23 @@ exports.handler = async (event, context) => {
     }
   });
 
+  // Initialise the write api for storyblok
   const SBWrite = new StoryblokClient({
     oauthToken: STORYBLOCK_MANAGEMENT_API_OAUTH_TOKEN
   });
 
+  //Get stories existing on storyblok with the gitbook-articles content-type
   const gitbookStories = SBRead.get("cdn/stories", {
     starts_with: "gitbook-articles/",
     version: "draft"
   });
 
-  // Get modified gitbook articles and match it to the respective slugs here
+  // Get all articles from gitbook
+  // Find their IDs
+  // Compare their IDs to IDs existing on storyblok
+  // Update all articles with matching IDs
+  // IDs that are unmatched from storyblok remain where they are, flagged somehow
+  // Lots of IDs will remain unmatched on the gitbook side of things
 
   if (gitbookStories.length > 0) {
     // gitbookStories.forEach(story => {
