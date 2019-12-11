@@ -4,10 +4,18 @@ import { action } from "@storybook/addon-actions";
 import GlobalStyle from "../src/styled/GlobalStyles";
 import { ThemeProvider } from "styled-components";
 import theme from "../src/styled/theme";
-
+import { withA11Y } from "@storybook/addon-a11y";
 
 // Make theme available to all components
-addDecorator(story => <ThemeProvider theme={theme}> <GlobalStyle/> {story()} </ThemeProvider>)
+addDecorator(story => (
+  <ThemeProvider theme={theme}>
+    {" "}
+    <GlobalStyle /> {story()}{" "}
+  </ThemeProvider>
+));
+
+// Use withA11y to check stories for violations of accessibility guidelines
+addDecorator(withA11Y);
 
 // automatically import all files ending in *.stories.js
 configure(require.context("../src", true, /\.stories\.js$/), module);
