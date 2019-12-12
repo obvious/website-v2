@@ -1,7 +1,11 @@
 const StoryblokClient = require("storyblok-js-client");
+const Octokit = require("@octokit/rest");
+
+// Environment variables defined on Netlify
 const {
   STORYBLOCK_MANAGEMENT_API_OAUTH_TOKEN,
-  STORYBLOCK_DELIVERY_API_ACCESS_TOKEN_DRAFT
+  STORYBLOCK_DELIVERY_API_ACCESS_TOKEN_DRAFT,
+  GITHUB_PERSONAL_ACCESS_TOKEN_TANVI
 } = process.env;
 
 exports.handler = async (event, context) => {
@@ -33,6 +37,17 @@ exports.handler = async (event, context) => {
   });
 
   // Get all articles from gitbook
+  const octokit = new Octokit({
+    auth: GITHUB_PERSONAL_ACCESS_TOKEN_TANVI,
+    userAgent: "obvious-website"
+  });
+
+  const data = await octokit.repos.get({
+    owner: "obvious",
+    repo: "handbook"
+  });
+
+  console.log(data);
   // Find their IDs
   // Compare their IDs to IDs existing on storyblok
   // Update all articles with matching IDs

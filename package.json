@@ -15,7 +15,10 @@
     "storybook": "NODE_ENV=production start-storybook -s public",
     "build-storybook": "NODE_ENV=production build-storybook -s public",
     "start:lambda": "netlify-lambda serve functions",
-    "build:lambda": "netlify-lambda build functions"
+    "build:lambda": "netlify-lambda build functions",
+    "start-with-patch:lambda": "npm run patch && netlify-lambda serve functions",
+    "build-with-patch:lambda": "npm run patch && netlify-lambda build functions",
+    "patch": "mv node_modules/universal-user-agent/dist-web/ node_modules/universal-user-agent/dist-back && cp -vr node_modules/universal-user-agent/dist-node/ node_modules/universal-user-agent/dist-web"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
+    "@octokit/rest": "^16.35.0",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addons": "^5.2.6",
