@@ -1,0 +1,4 @@
+[build]
+  Publish = "./public"
+  Functions = "functions-build"
+  Command = "gatsby build && npm run build-with-patch:lambda"

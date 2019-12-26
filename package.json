@@ -12,8 +12,13 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "prettier": "prettier --write \"./**/*.{js,css,json,md}\"",
-    "storybook": "NODE_ENV=development start-storybook -s public",
-    "build-storybook": "NODE_ENV=production build-storybook -s public"
+    "storybook": "NODE_ENV=production start-storybook -s public",
+    "build-storybook": "NODE_ENV=production build-storybook -s public",
+    "start:lambda": "netlify-lambda serve functions",
+    "build:lambda": "netlify-lambda build functions",
+    "start-with-patch:lambda": "npm run patch && netlify-lambda serve functions",
+    "build-with-patch:lambda": "npm run patch && netlify-lambda build functions",
+    "patch": "mv node_modules/universal-user-agent/dist-web/ node_modules/universal-user-agent/dist-back && cp -vr node_modules/universal-user-agent/dist-node/ node_modules/universal-user-agent/dist-web"
   },
   "dependencies": {
     "core-js": "^2.6.5",
@@ -22,6 +27,7 @@
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-styled-components": "^3.1.11",
     "gatsby-source-storyblok": "^0.2.6",
+    "netlify-lambda": "^1.6.3",
     "polished": "^3.4.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
@@ -34,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
+    "@octokit/rest": "^16.35.0",
     "@storybook/addon-actions": "^5.2.6",
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addon-storysource": "^5.2.8",

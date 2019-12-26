@@ -63,3 +63,7 @@ A quick look at some additional things we are using within the project:
 1. **Lint-staged**
 
    Lint only staged files.
+
+## Notes
+
+`npm run patch` is a temporal fix used for building our lambda functions until https://github.com/gr2m/universal-user-agent/issues/23 is fixed.
