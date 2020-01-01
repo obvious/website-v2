@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import SbEditable from "storyblok-react";
 
@@ -8,11 +9,18 @@ const HeaderText1Container = styled.h1`
   font-weight: 700;
 `;
 
+/**
+ * Use `HeaderText[1-6]` for headers of sizes 1-6
+ */
 export const HeaderText1 = ({ children, ...otherProps }) => (
   <SbEditable content={{ children, ...otherProps }}>
     <HeaderText1Container {...otherProps}>{children}</HeaderText1Container>
   </SbEditable>
 );
+
+HeaderText1.propTypes = {
+  children: PropTypes.string.isRequired
+};
 
 const HeaderText2Container = styled.h2`
   font-size: ${props => props.theme.fontSizes[2]};
