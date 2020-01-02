@@ -8,13 +8,14 @@ import { HeaderText5, HeaderText2 } from "../components/atoms/HeaderText";
 import { groupBy } from "../utils";
 import PageHeader from "../components/templates/common/PageHeader";
 import Link from "../components/atoms/Link";
+import Button from "../components/atoms/Button";
 import { NewsCardList } from "../components/molecules/NewsCardList";
 
 const IndexPageContainer = styled.div`
-  padding-bottom: ${props => props.theme.spacings[0]};
+  padding-bottom: ${props => props.theme.spacings.extraSmall};
   .homepage-section-header {
     text-transform: capitalize;
-    margin-top: ${props => props.theme.spacings[3]};
+    margin-top: ${props => props.theme.spacings.large};
   }
   .homepage-section-item {
     ${MakeLinesClamp(1)}
@@ -39,6 +40,8 @@ const IndexPage = ({ story, theme }) => {
   return (
     <IndexPageContainer theme={theme}>
       <PageHeader title="Hello World." />
+
+      <Button>Button Medium</Button>
 
       <NewsCardList {...newsStories} />
 

@@ -14,13 +14,6 @@ const theme = {
   cardSizes: {
     imageHeight: between("200px", "240px")
   },
-  spacings: [
-    between("100px", "200px"),
-    between("60px", "120px"),
-    between("40px", "80px"),
-    between("20px", "40px"),
-    between("12px", "24px")
-  ],
   fontSizes: {
     h1: between("48px", "80px"),
     h2: "40px",
@@ -57,6 +50,13 @@ const theme = {
     buttonMedium: "24px",
     buttonSmall: "16px"
   },
+  spacings: {
+    extraSmall: between("100px", "200px"),
+    small: between("60px", "120px"),
+    medium: between("40px", "80px"),
+    large: between("20px", "40px"),
+    extraLarge: between("12px", "24px")
+  },
   paddings: [
     between("12px", "24px"),
     between("10px", "20px"),
@@ -76,6 +76,7 @@ const theme = {
   boxShadows: {
     specialCard: "0px 4px 16px rgba(0, 0, 0, 0.16)"
   },
+  //This only exists to support old components
   colors: {
     blue: "#0070E0",
     black: "#000",

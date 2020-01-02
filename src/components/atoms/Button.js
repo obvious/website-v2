@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonContainer = styled.a`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.color.light.primaryText};
   text-decoration: none;
-  background: ${props => props.theme.colors.blue};
+  background: ${props => props.theme.color.light.primaryButtons};
   padding: ${props => props.theme.paddings[5]}
     ${props => props.theme.paddings[2]};
-  border-radius: 40px;
+  border-radius: 64px;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
