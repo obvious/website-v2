@@ -71,6 +71,96 @@ const theme = {
     gray: "rgba(10, 73, 100, 0.1)",
     darkgray: "#5E6366"
   },
+  color: {
+    light: {
+      gray: {
+        ten: "#2E332B",
+        thirty: "#6C7067",
+        fifty: "#BFC2BA",
+        seventy: "#EEF0EB",
+        ninety: "#FBFCF7"
+      },
+      red: {
+        ten: "#7A2A3A",
+        thirty: "#B8374D",
+        fifty: "#F54960",
+        seventy: "#FFB8BF",
+        ninety: "#FFEDEF"
+      },
+      orange: {
+        ten: "#FFEDEF",
+        thirty: "#C23B27",
+        fifty: "#FA5737",
+        seventy: "#FFBDA8",
+        ninety: "#FCEBE3"
+      },
+      yellow: {
+        ten: "#7A5F36",
+        thirty: "#C29F3E",
+        fifty: "#FAE246",
+        seventy: "#F7EFA8",
+        ninety: "#FCFADE"
+      },
+      green: {
+        ten: "#2D6644",
+        thirty: "#37A35B",
+        fifty: "#58F582",
+        seventy: "#BFF5CC",
+        ninety: "#E8FCEC"
+      },
+      blue: {
+        ten: "#286685",
+        thirty: "#179AC2",
+        fifty: "#47D8FC",
+        seventy: "#2E332B",
+        ninety: "#E6FCFF"
+      }
+    },
+    dark: {
+      gray: {
+        ten: "",
+        thirty: "",
+        fifty: "",
+        seventy: "",
+        ninety: ""
+      },
+      red: {
+        ten: "",
+        thirty: "",
+        fifty: "",
+        seventy: "",
+        ninety: ""
+      },
+      orange: {
+        ten: "",
+        thirty: "",
+        fifty: "",
+        seventy: "",
+        ninety: ""
+      },
+      yellow: {
+        ten: "",
+        thirty: "",
+        fifty: "",
+        seventy: "",
+        ninety: ""
+      },
+      green: {
+        ten: "",
+        thirty: "",
+        fifty: "",
+        seventy: "",
+        ninety: ""
+      },
+      blue: {
+        ten: "",
+        thirty: "",
+        fifty: "",
+        seventy: "",
+        ninety: ""
+      }
+    }
+  },
   backgrounds: {
     gray: "rgba(10, 73, 100, 0.1)",
     orange: "#EF6031",
@@ -82,5 +172,18 @@ const theme = {
     large: "64em"
   }
 };
+
+// Aliases
+
+//Color
+theme.color.light.primaryText = theme.color.light.gray.ten;
+theme.color.light.secondaryText = theme.color.light.gray.thirty;
+theme.color.light.surface = theme.color.light.gray.ninety;
+theme.color.light.errorText = theme.color.light.red.thirty;
+theme.color.light.errorIcons = theme.color.light.red.fifty;
+theme.color.light.navigation = theme.color.light.orange.fifty;
+theme.color.light.accent = theme.color.light.yellow.fifty;
+theme.color.light.primaryButtons = theme.color.light.green.fifty;
+theme.color.light.secondaryButtons = theme.color.light.blue.fifty;
 
 export default theme;
