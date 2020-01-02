@@ -14,27 +14,6 @@ const theme = {
   cardSizes: {
     imageHeight: between("200px", "240px")
   },
-  fontSizes: [
-    between("32px", "64px"), //h1
-    between("24px", "48px"), //h2
-    between("20px", "40px"), //h3
-    between("18px", "36px"), //body text 1
-    between("16px", "32px"), //body text 2
-    between("11px", "22px"), //body text 3
-    between("9px", "18px"), //caption text
-    between("11px", "16px"), // not proportional
-    between("12px", "24px") //news card headline size
-  ],
-  lineHeights: [
-    between("38px", "76px"), //h1
-    between("28.5px", "57px"), //h2
-    between("24px", "48px"), //h3
-    between("23.5px", "47px"), //body text 1
-    between("16px", "32px"), //body text 2
-    between("16px", "32px"), //body text 3
-    between("13px", "27px"), //caption text
-    between("16px", "24px") //not proportional
-  ],
   spacings: [
     between("100px", "200px"),
     between("60px", "120px"),
@@ -42,6 +21,42 @@ const theme = {
     between("20px", "40px"),
     between("12px", "24px")
   ],
+  fontSizes: {
+    h1: between("48px", "80px"),
+    h2: "40px",
+    h3: "28px",
+    h4: "22px",
+    h5: "18px",
+    h6: "14px",
+    statistic: "104px",
+    subtitleSmall: between("18px", "22px"),
+    subtitleMedium: between("24px", "30px"),
+    bodyMedium: between("16px", "18px"),
+    bodyLarge: "22px",
+    quote: "22px",
+    caption: "14px",
+    code: between("18px", "20px"),
+    buttonMedium: "22px",
+    buttonSmall: "16px"
+  },
+  lineHeights: {
+    h1: between("56px", "88px"),
+    h2: "48px",
+    h3: "32px",
+    h4: "24px",
+    h5: "20px",
+    h6: "16px",
+    statistic: "104px",
+    subtitleSmall: between("24px", "28px"),
+    subtitleMedium: between("32px", "36px"),
+    bodyMedium: between("24px", "28px"),
+    bodyLarge: "32px",
+    quote: "32px",
+    caption: "16px",
+    code: between("24px", "28px"),
+    buttonMedium: "24px",
+    buttonSmall: "16px"
+  },
   paddings: [
     between("12px", "24px"),
     between("10px", "20px"),
